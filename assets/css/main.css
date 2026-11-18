@@ -1,0 +1,153 @@
+/* =========================================================================
+   Design tokens
+   Values are space-separated RGB channels so Tailwind can apply opacity
+   (e.g. bg-accent/10). Change a colour here and every page follows.
+   ========================================================================= */
+:root {
+  /* Light theme (opt-in) */
+  --bg: 250 250 250;
+  --surface: 255 255 255;
+  --elevated: 244 244 245;
+  --line: 228 228 231;
+  --fg: 9 9 11;
+  --muted: 82 82 91;        /* zinc-600 — 7.4:1 on white */
+  --accent: 77 124 15;      /* lime-700 — 5.6:1 on white */
+  --accent-fg: 255 255 255;
+
+  --radius: 1.25rem;
+  --nav-h: 4.5rem;
+  color-scheme: light;
+}
+
+.dark {
+  /* Dark theme (default) */
+  --bg: 10 10 11;
+  --surface: 17 17 19;
+  --elevated: 24 24 27;
+  --line: 39 39 42;
+  --fg: 245 245 247;
+  --muted: 161 161 170;     /* zinc-400 — 8.3:1 on --bg */
+  --accent: 200 245 96;     /* electric lime — 15:1 on --bg */
+  --accent-fg: 10 10 11;
+  color-scheme: dark;
+}
+
+/* =========================================================================
+   Base
+   ========================================================================= */
+html { scroll-padding-top: calc(var(--nav-h) + 1rem); }
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--fg));
+  font-family: Poppins, ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: Montserrat, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+::selection { background: rgb(var(--accent)); color: rgb(var(--accent-fg)); }
+
+:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* =========================================================================
+   Layout primitives
+   ========================================================================= */
+.container-x { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: 1.5rem; }
+.section     { padding-block: clamp(4.5rem, 10vw, 8rem); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font: 600 .75rem/1 Montserrat, sans-serif;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: rgb(var(--accent));
+}
+.eyebrow::before {
+  content: ""; width: 1.5rem; height: 1px; background: currentColor;
+}
+
+.section-title {
+  font: 800 clamp(2.25rem, 5vw, 3.75rem)/1.05 Montserrat, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+/* =========================================================================
+   Components
+   ========================================================================= */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  padding: .9rem 1.6rem; border-radius: 999px;
+  font: 600 .925rem/1 Poppins, sans-serif;
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: rgb(var(--accent)); color: rgb(var(--accent-fg)); }
+.btn-primary:hover { background: rgb(var(--fg)); color: rgb(var(--bg)); }
+.btn-ghost { border: 1px solid rgb(var(--line)); color: rgb(var(--fg)); }
+.btn-ghost:hover { border-color: rgb(var(--accent)); }
+
+.card {
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--line));
+  border-radius: var(--radius);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.card:hover { border-color: rgb(var(--accent) / .5); }
+
+.chip {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .35rem .8rem; border-radius: 999px;
+  border: 1px solid rgb(var(--line));
+  background: rgb(var(--elevated));
+  font-size: .78rem; font-weight: 500; color: rgb(var(--muted));
+}
+
+.icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem; border-radius: 999px;
+  border: 1px solid rgb(var(--line)); color: rgb(var(--fg));
+  transition: border-color .2s ease, color .2s ease;
+}
+.icon-btn:hover { border-color: rgb(var(--accent)); color: rgb(var(--accent)); }
+
+/* Nav */
+.site-nav { height: var(--nav-h); }
+.site-nav.is-scrolled { background: rgb(var(--bg) / .82); border-color: rgb(var(--line)); }
+.nav-link { position: relative; color: rgb(var(--muted)); transition: color .2s ease; }
+.nav-link:hover, .nav-link[aria-current="true"], .nav-link[aria-current="page"] { color: rgb(var(--fg)); }
+.nav-link[aria-current]::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -.45rem;
+  height: 2px; border-radius: 2px; background: rgb(var(--accent));
+}
+
+/* Subtle grid backdrop for hero areas */
+.bg-grid {
+  background-image:
+    linear-gradient(rgb(var(--line) / .55) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--line) / .55) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+
+/* =========================================================================
+   Motion
+   ========================================================================= */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}

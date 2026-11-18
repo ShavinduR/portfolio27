@@ -3,116 +3,86 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Shavindu Rashmika | Undergraduate Creative Technologist</title>
-    
-    <meta name="description" content="Portfolio of Shavindu Rashmika, a Creative Technologist based in Sri Lanka specializing in Full Stack Web Development, UI/UX Design, and Digital Branding.">
-    <meta name="keywords" content="Web Developer Sri Lanka, UI/UX Designer, Creative Technologist, React Developer, Branding Specialist, Shavindu Rashmika">
-    <meta name="author" content="Shavindu Rashmika">
+    <title>Shavindu Rashmika | Creative Technologist &amp; Web Developer</title>
+    <meta name="description" content="Portfolio of W.S.R. Rathnayaka (Shavindu Rashmika) — Creative Technologist, Social Media Manager and MERN Stack Web Developer from Sri Lanka, building premium digital experiences.">
+    <meta name="keywords" content="Shavindu Rashmika, W.S.R. Rathnayaka, Creative Technologist, MERN Stack Developer Sri Lanka, React Developer, Social Media Manager, UI/UX">
+    <meta name="author" content="W.S.R. Rathnayaka (Shavindu Rashmika)">
+    <meta name="theme-color" content="#0A0A0B">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shavindu Rashmika | Creative Technologist">
+    <meta property="og:description" content="Social Media Manager &amp; Web Developer building premium digital experiences.">
+    <meta property="og:image" content="images/home page/Me.png">
 
+    <!-- Theme first (prevents light flash), then Tailwind + shared tokens -->
+    <script src="assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="assets/js/tailwind.config.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-    <script>
-    tailwind.config = {
-        darkMode: 'class',
-        theme: {
-            extend: {
-                fontFamily: { 
-                    heading: ['"Playfair Display"', 'serif'], 
-                    body: ['Inter', 'sans-serif'] 
-                },
-                colors: { 
-                    primary: '#0f172a', 
-                    accent: '#f59e0b', 
-                    secondary: '#3b82f6', 
-                    whatsapp: '#25D366' 
-                },
-                animation: {
-                    'infinite-scroll': 'infinite-scroll 35s linear infinite',
-                },
-                keyframes: {
-                    'infinite-scroll': {
-                        '0%': { transform: 'translateX(0)' },
-                        '100%': { transform: 'translateX(-50%)' },
-                    }
-                }
-            }
-        }
-    }
-    </script>
-    <style>
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; }
-    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-body transition-colors duration-300 flex flex-col min-h-screen">
+<body data-page="home" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
 
-    <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-950/90 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold font-heading text-primary dark:text-white tracking-tighter italic">
-                shavindu<span class="text-accent">.</span>portfolio
-            </a>
+    <header data-layout="nav"></header>
 
-            <div class="hidden md:flex space-x-8 font-medium text-sm font-body items-center">
-                <a href="#home" class="nav-link hover:text-secondary transition">Home</a>
-                <a href="#skills" class="nav-link hover:text-secondary transition">Expertise</a>
-                <a href="#web-dev" class="nav-link hover:text-secondary transition">Projects</a>
-                <a href="#design" class="nav-link hover:text-secondary transition">Design</a>
-                <a href="#photography" class="nav-link hover:text-secondary transition">Gallery</a>
-                <a href="#contact" class="nav-link hover:text-secondary transition">Contact</a>
-            </div>
-
-            <button id="mobile-menu-btn" type="button" class="md:hidden text-2xl text-primary dark:text-white focus:outline-none" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars-staggered"></i>
-            </button>
-        </div>
-        
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-xl">
-            <div class="flex flex-col p-6 space-y-4 font-medium text-center">
-                <a href="#home" class="mobile-link nav-link hover:text-secondary">Home</a>
-                <a href="#skills" class="mobile-link nav-link hover:text-secondary">Expertise</a>
-                <a href="#web-dev" class="mobile-link nav-link hover:text-secondary">Projects</a>
-                <a href="#design" class="mobile-link nav-link hover:text-secondary">Design</a>
-                <a href="#photography" class="mobile-link nav-link hover:text-secondary">Gallery</a>
-                <a href="#contact" class="mobile-link nav-link hover:text-secondary">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <section id="home" class="min-h-screen flex items-center pt-24 overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div class="text-center md:text-left">
-                <span class="bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase mb-6 inline-block">
-                    Based in Sri Lanka
-                </span>
-                <h1 class="text-5xl md:text-7xl font-heading font-extrabold leading-tight mb-6">
-                    Shavindu <span class="text-secondary">Rashmika.</span><br>
-                    <span class="text-3xl md:text-4xl font-light text-gray-500">Creative Technologist <br>& UI/UX Specialist</span>
+    <main id="main">
+    <!-- ============================== HERO ============================== -->
+    <section id="home" class="relative min-h-[100svh] flex items-center pt-[var(--nav-h)] overflow-hidden">
+        <div class="bg-grid absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+        <div class="container-x relative grid lg:grid-cols-[1.25fr_1fr] gap-14 items-center py-16">
+            <div class="animate-fade-up">
+                <span class="eyebrow">Based in Sri Lanka · Open to work</span>
+                <h1 class="mt-6 font-heading font-extrabold tracking-tightest leading-[0.95] text-[clamp(3rem,8vw,6.25rem)]">
+                    Shavindu<br>Rashmika<span class="text-accent">.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-10 max-w-lg">
-                    Crafting high-performance digital experiences through a strategic blend of modern front-end engineering and impactful visual design.
+                <p class="mt-4 text-sm font-medium tracking-wide text-muted">W.S.R. Rathnayaka</p>
+
+                <p class="mt-8 font-heading font-semibold text-xl md:text-2xl leading-snug">
+                    Creative Technologist
+                    <span class="text-muted font-medium">— Social Media Manager &amp; Web Developer</span>
+                </p>
+                <p class="mt-4 max-w-xl text-muted leading-relaxed">
+                    Building premium digital experiences — from real-time MERN platforms and mobile apps to brand strategy, photography and 3D motion.
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#contact" class="bg-secondary text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-blue-700 transition transform hover:-translate-y-1 text-center">
-                        Let's Collaborate
-                    </a>
-                    <a href="MYCV.pdf" download class="group flex items-center justify-center gap-3 border-2 border-gray-200 dark:border-gray-700 px-8 py-4 rounded-2xl font-bold hover:border-accent hover:shadow-xl transition">
-                        Download CV
-                        <i class="fas fa-download text-accent"></i>
-                    </a>
+                <div class="mt-10 flex flex-wrap gap-3">
+                    <a href="#projects" class="btn btn-primary">View projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="MYCV.pdf" download class="btn btn-ghost">Download CV <i class="fas fa-arrow-down text-accent" aria-hidden="true"></i></a>
                 </div>
+
+                <ul class="mt-12 flex flex-wrap gap-2" aria-label="Core stack">
+                    <li class="chip">MongoDB</li>
+                    <li class="chip">Express.js</li>
+                    <li class="chip">React.js</li>
+                    <li class="chip">Node.js</li>
+                    <li class="chip">Socket.IO</li>
+                    <li class="chip">React Native · Expo</li>
+                    <li class="chip">Vercel · Render · R2</li>
+                </ul>
             </div>
 
-            <div class="relative group hidden md:block">
-                <div class="absolute inset-0 bg-secondary rounded-[3rem] rotate-3 opacity-10 group-hover:rotate-6 transition duration-500"></div>
-                <img src="images/home page/Me.png" alt="Shavindu Rashmika" class="relative rounded-[3rem] shadow-2xl border-4 border-white dark:border-gray-800 transition transform group-hover:scale-[1.02] duration-500"/>
+            <div class="relative hidden lg:block animate-fade-up [animation-delay:.15s]">
+                <div class="absolute -inset-4 rounded-[2.5rem] border border-line" aria-hidden="true"></div>
+                <div class="absolute -top-6 -right-6 w-28 h-28 rounded-full bg-accent/20 blur-2xl" aria-hidden="true"></div>
+                <img src="images/home page/Me.png" alt="Portrait of Shavindu Rashmika"
+                     class="relative w-full aspect-[4/5] object-cover rounded-[2rem] border border-line grayscale-[15%]"
+                     width="560" height="700" fetchpriority="high">
+                <div class="absolute -bottom-6 -left-6 card px-5 py-4 flex items-center gap-3 shadow-2xl">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping"></span>
+                        <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent"></span>
+                    </span>
+                    <span class="text-sm font-medium">Available for freelance</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-24 bg-white dark:bg-gray-900 transition-colors">
+    <section id="skills" class="py-24 bg-surface transition-colors">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-6xl font-heading font-bold mb-4">Core Expertise</h2>
@@ -120,36 +90,36 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-[2rem] bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300">
+                <div class="p-8 rounded-[2rem] bg-elevated border border-line hover:shadow-2xl transition duration-300">
                     <div class="w-14 h-14 bg-secondary/10 flex items-center justify-center rounded-2xl mb-6 text-secondary text-2xl">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic font-heading">Development</h3>
-                    <ul class="space-y-3 text-gray-600 dark:text-gray-400 font-medium">
+                    <h3 class="text-2xl font-bold mb-4 font-heading">Development</h3>
+                    <ul class="space-y-3 text-muted font-medium">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> HTML5, CSS3, JS (React)</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Node.js & MongoDB</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Tailwind CSS & GitHub</li>
                     </ul>
                 </div>
 
-                <div class="p-8 rounded-[2rem] bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition duration-300">
+                <div class="p-8 rounded-[2rem] bg-surface border border-line hover:shadow-2xl transition duration-300">
                     <div class="w-14 h-14 bg-accent/10 flex items-center justify-center rounded-2xl mb-6 text-accent text-2xl">
                         <i class="fas fa-pen-nib"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic font-heading">UI/UX & Branding</h3>
-                    <ul class="space-y-3 text-gray-600 dark:text-gray-400 font-medium">
+                    <h3 class="text-2xl font-bold mb-4 font-heading">UI/UX & Branding</h3>
+                    <ul class="space-y-3 text-muted font-medium">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Figma & Adobe XD</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Photoshop & Illustrator</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Concept & Strategy Dev</li>
                     </ul>
                 </div>
 
-                <div class="p-8 rounded-[2rem] bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition duration-300">
+                <div class="p-8 rounded-[2rem] bg-elevated border border-line hover:shadow-2xl transition duration-300">
                     <div class="w-14 h-14 bg-red-500/10 flex items-center justify-center rounded-2xl mb-6 text-red-500 text-2xl">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 italic font-heading">Multimedia</h3>
-                    <ul class="space-y-3 text-gray-600 dark:text-gray-400 font-medium">
+                    <h3 class="text-2xl font-bold mb-4 font-heading">Multimedia</h3>
+                    <ul class="space-y-3 text-muted font-medium">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Premiere Pro & After Effects</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Maya & Blender (3D)</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> FL Studio & Protools</li>
@@ -159,51 +129,51 @@
         </div>
     </section>
 
-    <section id="web-dev" class="py-24 bg-gray-50 dark:bg-gray-950">
+    <section id="projects" class="py-24 bg-bg">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl md:text-6xl font-heading font-bold mb-16 text-center">Selected Works</h2>
             
             <div class="grid md:grid-cols-2 gap-8 font-body">
-                <a href="https://shavindur.github.io/GEM-CITY/" target="_blank" rel="noopener noreferrer" class="group block bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition duration-300">
+                <a href="https://shavindur.github.io/GEM-CITY/" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
                     <div class="flex justify-between items-start mb-6">
                         <i class="fab fa-github text-3xl text-secondary"></i>
                         <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Landing Page</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">GEM-CITY <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">Designed and developed an interactive landing page focused on visual storytelling, combining clean UI, smooth animations, and responsive design.</p>
+                    <p class="text-muted leading-relaxed mb-4">Designed and developed an interactive landing page focused on visual storytelling, combining clean UI, smooth animations, and responsive design.</p>
                 </a>
 
-                <a href="https://ilikemediacorporate.com" target="_blank" rel="noopener noreferrer" class="group block bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition duration-300">
+                <a href="https://ilikemediacorporate.com" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
                     <div class="flex justify-between items-start mb-6">
                         <i class="fas fa-bullhorn text-3xl text-secondary"></i>
                         <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Corporate Site</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">Ilikemedia Corporate <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">Designed and developed a corporate website with a strong focus on brand credibility, user experience, and clear service communication.</p>
+                    <p class="text-muted leading-relaxed mb-4">Designed and developed a corporate website with a strong focus on brand credibility, user experience, and clear service communication.</p>
                 </a>
 
-                <a href="https://www.peakmomentsbyrumesh.com/" target="_blank" rel="noopener noreferrer" class="group block bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition duration-300">
+                <a href="https://www.peakmomentsbyrumesh.com/" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
                     <div class="flex justify-between items-start mb-6">
                         <i class="fas fa-camera-retro text-3xl text-secondary"></i>
                         <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Portfolio Site</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">Peak Moments <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">Official photography studio website highlighting visual storytelling through immersive layouts and optimized image presentation.</p>
+                    <p class="text-muted leading-relaxed mb-4">Official photography studio website highlighting visual storytelling through immersive layouts and optimized image presentation.</p>
                 </a>
 
-                <a href="https://peakmomentslifestyle.com/" target="_blank" rel="noopener noreferrer" class="group block bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-sm hover:shadow-xl border border-gray-100 dark:border-gray-800 transition duration-300">
+                <a href="https://peakmomentslifestyle.com/" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
                     <div class="flex justify-between items-start mb-6">
                         <i class="fas fa-leaf text-3xl text-secondary"></i>
                         <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Lifestyle Blog</span>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">Peak Moments Lifestyle <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">Lifestyle-focused platform with emphasis on content flow, visual consistency, and mobile-first responsiveness.</p>
+                    <p class="text-muted leading-relaxed mb-4">Lifestyle-focused platform with emphasis on content flow, visual consistency, and mobile-first responsiveness.</p>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="design" class="py-24 bg-white dark:bg-gray-900">
+    <section id="design" class="py-24 bg-surface">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-6xl font-heading font-bold mb-16 text-center">Creative Design</h2>
             
@@ -227,7 +197,7 @@
                     </div>
                 </a>
                 <a href="merch.html" class="group relative h-96 overflow-hidden rounded-[2rem] shadow-lg">
-                    <img src="images/home page/merch.jpg" alt="Merch Design portfolio" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" onerror="this.src='https://via.placeholder.com/400x600?text=Merch+Design'">
+                    <img src="images/home page/merch.jpg" alt="Merch Design portfolio" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" >
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 flex flex-col justify-end p-8">
                         <h4 class="text-white text-2xl font-bold">Merch Design</h4>
                     </div>
@@ -236,7 +206,7 @@
         </div>
     </section>
 
-    <section id="photography" class="py-24 bg-white dark:bg-gray-900 overflow-hidden">
+    <section id="photography" class="py-24 bg-surface overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
             <h2 class="text-4xl md:text-6xl font-heading font-bold">Wildlife Moments</h2>
             <a href="wildlife.html" class="text-secondary font-bold hover:underline font-body mt-4 md:mt-0">View Gallery →</a>
@@ -260,7 +230,7 @@
         </div>
     </section>
 
-    <!--section id="portrait" class="py-24 bg-gray-50 dark:bg-gray-950 overflow-hidden">
+    <!--section id="portrait" class="py-24 bg-bg overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-end text-center md:text-left">
             <div>
                 <h2 class="text-4xl md:text-6xl font-heading font-bold">Portrait & Lifestyle</h2>
@@ -287,131 +257,11 @@
         </div>
 </section-->
 
-    <footer id="contact" class="bg-gray-900 text-white border-t border-gray-800 mt-auto font-body">
-        <div class="max-w-7xl mx-auto px-6 py-16">
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                
-                <div class="space-y-6 md:max-w-xl">
-                    <h2 class="text-3xl font-heading font-bold italic">shavindu<span class="text-accent">.</span>designer</h2>
-                    <p class="text-gray-400 leading-relaxed">
-                        I am Shavindu Rashmika, a Creative Technologist with over 2 years of experience. 
-                        My approach blends strategic thinking with artistic ability to deliver designs that not only look beautiful but also achieve business objectives. 
-                        I specialize in graphic design, web development, professional social media management, and photography.
-                    </p>
-                    <p class="text-sm text-gray-500 pt-4">© 2026 Shavindu Rashmika. All Rights Reserved.</p>
-                </div>
+    </main>
 
-                <div class="flex flex-col md:items-end space-y-6">
-                    <h3 class="text-xl font-bold text-accent">Get in Touch</h3>
-                    
-                    <div class="space-y-4 text-gray-300 md:text-right">
-                        <div class="flex items-center md:flex-row-reverse gap-3">
-                            <i class="fas fa-phone text-accent"></i>
-                            <div>
-                                <span class="block">+94 74 23 27 807 | +94 71 10 98 429 </span>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center md:flex-row-reverse gap-3">
-                            <i class="fas fa-envelope text-accent"></i>
-                            <a href="mailto:shavindu.rashmika928@gmail.com" class="hover:text-white transition">shavindu.rashmika928@gmail.com</a>
-                        </div>
-                        
-                        <div class="pt-4">
-                            <a href="https://wa.me/94711098429" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1EBE57] text-white font-bold py-3 px-6 rounded-full shadow-lg transition transform hover:-translate-y-1">
-                                <i class="fab fa-whatsapp text-2xl"></i>
-                                <span>Chat on WhatsApp</span>
-                            </a>
-                        </div>
-                    </div>
+    <footer data-layout="footer" id="contact"></footer>
 
-                    <div class="flex gap-4 mt-6">
-                            <a href="https://github.com/ShavinduR/ShavinduR" target="_blank" rel="noopener noreferrer" title="GitHub" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition border border-gray-700">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/shavindu-rashmika-rathnayake" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition border border-gray-700">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.facebook.com/share/1DWMwvZ1x4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition border border-gray-700">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://discord.com/users/1043745550467616788" target="_blank" rel="noopener noreferrer" title="Discord" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#5865F2] hover:text-white transition border border-gray-700">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </footer>
-
-    <button id="theme-toggle" class="fixed bottom-6 right-6 bg-primary dark:bg-white text-white dark:text-primary p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition duration-300 flex items-center justify-center w-14 h-14 border border-gray-700 dark:border-gray-200" title="Toggle Dark Mode">
-        <i class="fas fa-moon dark:hidden text-xl"></i>
-        <i class="fas fa-sun hidden dark:block text-xl"></i>
-    </button>
-
-    <script>
-        // MOBILE MENU LOGIC
-        const openBtn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
-
-        function toggleMenu() {
-            menu.classList.toggle('hidden');
-        }
-
-        openBtn.addEventListener('click', toggleMenu);
-        links.forEach(l => l.addEventListener('click', toggleMenu));
-        
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !openBtn.contains(e.target) && !menu.classList.contains('hidden')) {
-                toggleMenu();
-            }
-        });
-
-        // DARK MODE LOGIC
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        } else {
-            html.classList.remove('dark');
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            if (html.classList.contains('dark')) {
-                localStorage.theme = 'dark';
-            } else {
-                localStorage.theme = 'light';
-            }
-        });
-
-        // SCROLL SPY - HIGHLIGHT ACTIVE LINK
-        // This makes the Nav Bar link blue when you scroll to that section
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - 150)) { // 150px offset for header
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('text-secondary', 'font-bold');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('text-secondary', 'font-bold');
-                }
-            });
-        });
-    </script>
+    <script src="assets/js/data/profile.js"></script>
+    <script src="assets/js/layout.js"></script>
 </body>
-
 </html>
