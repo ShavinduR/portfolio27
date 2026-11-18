@@ -47,18 +47,18 @@
       <nav class="site-nav fixed inset-x-0 top-0 z-50 border-b border-transparent backdrop-blur-xl transition-colors duration-300" aria-label="Primary">
         <div class="container-x h-full flex items-center justify-between">
           ${logo}
-          <div class="hidden md:flex items-center gap-8 text-sm font-medium">${navLinks}</div>
+          <div class="hidden lg:flex items-center gap-8 text-sm font-medium">${navLinks}</div>
           <div class="flex items-center gap-2">
             <a href="${profile.cv}" download class="hidden sm:inline-flex btn btn-ghost !py-2.5 !px-4 text-xs">
               CV <i class="fas fa-arrow-down text-accent" aria-hidden="true"></i>
             </a>
             ${themeBtn()}
-            <button type="button" data-menu-toggle class="icon-btn md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <button type="button" data-menu-toggle class="icon-btn lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
               <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
           </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-bg">
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-line bg-bg">
           <div class="container-x py-4">${mobileLinks}</div>
         </div>
       </nav>`;

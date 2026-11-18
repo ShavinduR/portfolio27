@@ -49,6 +49,7 @@ window.SITE.nav = [
   { id: 'home', label: 'Home' },
   { id: 'skills', label: 'Expertise' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
   { id: 'design', label: 'Creative' },
   { id: 'contact', label: 'Contact' },
 ];

@@ -25,6 +25,7 @@ tailwind.config = {
         muted: token('muted'),
         accent: token('accent'),
         'accent-fg': token('accent-fg'),
+        gold: token('gold'),
         // Legacy aliases so un-migrated pages keep rendering
         primary: '#0A0A0B',
         secondary: token('accent'),

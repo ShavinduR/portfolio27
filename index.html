@@ -7,7 +7,7 @@
     <meta name="description" content="Portfolio of W.S.R. Rathnayaka (Shavindu Rashmika) — Creative Technologist, Social Media Manager and MERN Stack Web Developer from Sri Lanka, building premium digital experiences.">
     <meta name="keywords" content="Shavindu Rashmika, W.S.R. Rathnayaka, Creative Technologist, MERN Stack Developer Sri Lanka, React Developer, Social Media Manager, UI/UX">
     <meta name="author" content="W.S.R. Rathnayaka (Shavindu Rashmika)">
-    <meta name="theme-color" content="#0A0A0B">
+    <meta name="theme-color" content="#070709">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Shavindu Rashmika | Creative Technologist">
     <meta property="og:description" content="Social Media Manager &amp; Web Developer building premium digital experiences.">
@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body data-page="home" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
@@ -82,150 +83,143 @@
         </div>
     </section>
 
-    <section id="skills" class="py-24 bg-surface transition-colors">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-heading font-bold mb-4">Core Expertise</h2>
-                <div class="w-20 h-1.5 bg-accent mx-auto rounded-full mb-6"></div>
+    <!-- ============================ EXPERTISE ============================ -->
+    <section id="skills" class="section border-t border-line">
+        <div class="container-x">
+            <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-end mb-14">
+                <div>
+                    <span class="eyebrow">Expertise</span>
+                    <h2 class="section-title mt-5">Engineering meets<br>visual craft.</h2>
+                </div>
+                <p class="text-muted leading-relaxed max-w-xl lg:justify-self-end">
+                    I work across the whole digital experience. I build production MERN apps with real-time features, run social and brand strategy, and handle the photography, film and 3D that bring a brand to life.
+                </p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 rounded-[2rem] bg-elevated border border-line hover:shadow-2xl transition duration-300">
-                    <div class="w-14 h-14 bg-secondary/10 flex items-center justify-center rounded-2xl mb-6 text-secondary text-2xl">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 font-heading">Development</h3>
-                    <ul class="space-y-3 text-muted font-medium">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> HTML5, CSS3, JS (React)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Node.js & MongoDB</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Tailwind CSS & GitHub</li>
-                    </ul>
-                </div>
-
-                <div class="p-8 rounded-[2rem] bg-surface border border-line hover:shadow-2xl transition duration-300">
-                    <div class="w-14 h-14 bg-accent/10 flex items-center justify-center rounded-2xl mb-6 text-accent text-2xl">
-                        <i class="fas fa-pen-nib"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 font-heading">UI/UX & Branding</h3>
-                    <ul class="space-y-3 text-muted font-medium">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Figma & Adobe XD</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Photoshop & Illustrator</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Concept & Strategy Dev</li>
-                    </ul>
-                </div>
-
-                <div class="p-8 rounded-[2rem] bg-elevated border border-line hover:shadow-2xl transition duration-300">
-                    <div class="w-14 h-14 bg-red-500/10 flex items-center justify-center rounded-2xl mb-6 text-red-500 text-2xl">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 font-heading">Multimedia</h3>
-                    <ul class="space-y-3 text-muted font-medium">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Premiere Pro & After Effects</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> Maya & Blender (3D)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-accent text-xs"></i> FL Studio & Protools</li>
-                    </ul>
-                </div>
-            </div>
+            <div data-render="expertise" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"></div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 bg-bg">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-heading font-bold mb-16 text-center">Selected Works</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 font-body">
-                <a href="https://shavindur.github.io/GEM-CITY/" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fab fa-github text-3xl text-secondary"></i>
-                        <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Landing Page</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">GEM-CITY <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-muted leading-relaxed mb-4">Designed and developed an interactive landing page focused on visual storytelling, combining clean UI, smooth animations, and responsive design.</p>
-                </a>
-
-                <a href="https://ilikemediacorporate.com" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fas fa-bullhorn text-3xl text-secondary"></i>
-                        <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Corporate Site</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">Ilikemedia Corporate <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-muted leading-relaxed mb-4">Designed and developed a corporate website with a strong focus on brand credibility, user experience, and clear service communication.</p>
-                </a>
-
-                <a href="https://www.peakmomentsbyrumesh.com/" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fas fa-camera-retro text-3xl text-secondary"></i>
-                        <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Portfolio Site</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">Peak Moments <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-muted leading-relaxed mb-4">Official photography studio website highlighting visual storytelling through immersive layouts and optimized image presentation.</p>
-                </a>
-
-                <a href="https://peakmomentslifestyle.com/" target="_blank" rel="noopener noreferrer" class="group block bg-surface p-10 rounded-3xl shadow-sm hover:shadow-xl border border-line transition duration-300">
-                    <div class="flex justify-between items-start mb-6">
-                        <i class="fas fa-leaf text-3xl text-secondary"></i>
-                        <span class="bg-secondary/10 text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase">Lifestyle Blog</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2 group-hover:text-secondary transition">Peak Moments Lifestyle <i class="fas fa-external-link-alt text-sm opacity-50"></i></h3>
-                    <p class="text-muted leading-relaxed mb-4">Lifestyle-focused platform with emphasis on content flow, visual consistency, and mobile-first responsiveness.</p>
-                </a>
+    <!-- ============================= PROJECTS ============================ -->
+    <section id="projects" class="section border-t border-line">
+        <div class="container-x">
+            <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-end mb-12">
+                <div>
+                    <span class="eyebrow">Selected work</span>
+                    <h2 class="section-title mt-5">Projects that<br>ship &amp; perform.</h2>
+                </div>
+                <p class="text-muted leading-relaxed max-w-xl lg:justify-self-end">
+                    Live websites for real clients, then the full-stack platforms where I push further into real-time systems, commerce and mobile.
+                </p>
             </div>
+            <div data-render="projects"></div>
+            <noscript><p class="text-muted">Enable JavaScript to view projects.</p></noscript>
         </div>
     </section>
 
-    <section id="design" class="py-24 bg-surface">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-6xl font-heading font-bold mb-16 text-center">Creative Design</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-body">
-                <a href="logo.html" class="group relative h-96 overflow-hidden rounded-[2rem] shadow-lg">
-                    <img src="images/home page/Logo.png" alt="Logo Design portfolio" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 flex flex-col justify-end p-8">
-                        <h4 class="text-white text-2xl font-bold">Logo Design</h4>
+    <!-- ============================ EXPERIENCE =========================== -->
+    <section id="experience" class="section border-t border-line">
+        <div class="container-x grid lg:grid-cols-[1fr_1.6fr] gap-14">
+            <div class="lg:sticky lg:top-28 self-start">
+                <span class="eyebrow">Experience</span>
+                <h2 class="section-title mt-5">Where I've<br>built &amp; learned.</h2>
+                <p class="mt-6 text-muted leading-relaxed max-w-md">
+                    Client work in digital media and photography, years of freelance design, and a start in banking operations.
+                </p>
+                <p class="mt-12 mb-4 group-label">Education</p>
+                <div data-render="education" class="space-y-4"></div>
+                <a href="MYCV.pdf" download class="btn btn-ghost mt-8">Download full CV <i class="fas fa-arrow-down text-accent" aria-hidden="true"></i></a>
+            </div>
+            <div data-render="experience"></div>
+        </div>
+    </section>
+
+    <!-- ============================= CREATIVE ============================ -->
+    <section id="design" class="section border-t border-line">
+        <div class="container-x">
+            <div class="grid lg:grid-cols-[1fr_1.4fr] gap-10 items-end mb-14">
+                <div>
+                    <span class="eyebrow">Creative</span>
+                    <h2 class="section-title mt-5">Design &amp; brand<br>studio work.</h2>
+                </div>
+                <p class="text-muted leading-relaxed max-w-xl lg:justify-self-end">
+                    Logos, brand systems, social campaigns and merchandise made for clients across retail, hospitality and tech.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <a href="logo.html" class="group relative block h-[26rem] overflow-hidden rounded-[1.5rem] border border-line reveal">
+                    <img src="images/home page/Logo.png" alt="Logo design work" loading="lazy" class="w-full h-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-7 flex items-end justify-between gap-4">
+                        <div>
+                            <p class="text-[11px] font-semibold tracking-[.18em] uppercase text-white/60">Identity</p>
+                            <h3 class="mt-2 font-heading font-bold text-2xl text-white">Logo Design</h3>
+                        </div>
+                        <span class="w-10 h-10 shrink-0 rounded-full border border-white/25 text-white grid place-items-center transition group-hover:bg-white group-hover:text-black"><i class="fa-solid fa-arrow-right text-xs -rotate-45" aria-hidden="true"></i></span>
                     </div>
                 </a>
-                <a href="branding.html" class="group relative h-96 overflow-hidden rounded-[2rem] shadow-lg">
-                    <img src="images/home page/branding 2.jpg" alt="Branding Design portfolio" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 flex flex-col justify-end p-8">
-                        <h4 class="text-white text-2xl font-bold">Branding</h4>
+                <a href="branding.html" class="group relative block h-[26rem] overflow-hidden rounded-[1.5rem] border border-line reveal">
+                    <img src="images/home page/branding 2.jpg" alt="Branding work" loading="lazy" class="w-full h-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-7 flex items-end justify-between gap-4">
+                        <div>
+                            <p class="text-[11px] font-semibold tracking-[.18em] uppercase text-white/60">Brand systems</p>
+                            <h3 class="mt-2 font-heading font-bold text-2xl text-white">Branding</h3>
+                        </div>
+                        <span class="w-10 h-10 shrink-0 rounded-full border border-white/25 text-white grid place-items-center transition group-hover:bg-white group-hover:text-black"><i class="fa-solid fa-arrow-right text-xs -rotate-45" aria-hidden="true"></i></span>
                     </div>
                 </a>
-                <a href="social.html" class="group relative h-96 overflow-hidden rounded-[2rem] shadow-lg">
-                    <img src="images/home page/social.jpg" alt="Social Media Design portfolio" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 flex flex-col justify-end p-8">
-                        <h4 class="text-white text-2xl font-bold">Social Media</h4>
+                <a href="social.html" class="group relative block h-[26rem] overflow-hidden rounded-[1.5rem] border border-line reveal">
+                    <img src="images/home page/social.jpg" alt="Social media design work" loading="lazy" class="w-full h-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-7 flex items-end justify-between gap-4">
+                        <div>
+                            <p class="text-[11px] font-semibold tracking-[.18em] uppercase text-white/60">Campaigns</p>
+                            <h3 class="mt-2 font-heading font-bold text-2xl text-white">Social Media</h3>
+                        </div>
+                        <span class="w-10 h-10 shrink-0 rounded-full border border-white/25 text-white grid place-items-center transition group-hover:bg-white group-hover:text-black"><i class="fa-solid fa-arrow-right text-xs -rotate-45" aria-hidden="true"></i></span>
                     </div>
                 </a>
-                <a href="merch.html" class="group relative h-96 overflow-hidden rounded-[2rem] shadow-lg">
-                    <img src="images/home page/merch.jpg" alt="Merch Design portfolio" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" >
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 flex flex-col justify-end p-8">
-                        <h4 class="text-white text-2xl font-bold">Merch Design</h4>
+                <a href="merch.html" class="group relative block h-[26rem] overflow-hidden rounded-[1.5rem] border border-line reveal">
+                    <img src="images/home page/merch.jpg" alt="Merchandise design work" loading="lazy" class="w-full h-full object-cover transition duration-[1.2s] ease-out group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-x-0 bottom-0 p-7 flex items-end justify-between gap-4">
+                        <div>
+                            <p class="text-[11px] font-semibold tracking-[.18em] uppercase text-white/60">Apparel</p>
+                            <h3 class="mt-2 font-heading font-bold text-2xl text-white">Merch Design</h3>
+                        </div>
+                        <span class="w-10 h-10 shrink-0 rounded-full border border-white/25 text-white grid place-items-center transition group-hover:bg-white group-hover:text-black"><i class="fa-solid fa-arrow-right text-xs -rotate-45" aria-hidden="true"></i></span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="photography" class="py-24 bg-surface overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <h2 class="text-4xl md:text-6xl font-heading font-bold">Wildlife Moments</h2>
-            <a href="wildlife.html" class="text-secondary font-bold hover:underline font-body mt-4 md:mt-0">View Gallery →</a>
+    <section id="photography" class="section !pt-0 overflow-hidden">
+        <div class="container-x mb-10 flex flex-col sm:flex-row justify-between sm:items-end gap-4">
+            <div>
+                <span class="eyebrow">Through the lens</span>
+                <h2 class="font-heading font-bold text-3xl md:text-4xl mt-4 tracking-tight">Wildlife moments</h2>
+            </div>
+            <a href="wildlife.html" class="btn btn-ghost self-start sm:self-auto">View gallery <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></a>
         </div>
-        
-        <div class="relative w-full overflow-hidden">
-            <div class="flex animate-infinite-scroll gap-6 w-[max-content] hover:[animation-play-state:paused]">
-                <div class="flex gap-6">
-                    <img src="images/wildlife/Elephant udawalawa.jpg" alt="Elephant wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                    <img src="images/wildlife/Peacock 1.jpg" alt="Peacock wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                    <img src="images/wildlife/Deer.jpg" alt="Deer wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                    <img src="images/wildlife/Lizard.jpg" alt="Squirrel wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                </div>
-                <div class="flex gap-6" aria-hidden="true">
-                    <img src="images/wildlife/Elephant udawalawa.jpg" alt="Elephant wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                    <img src="images/wildlife/Peacock 1.jpg" alt="Peacock wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                    <img src="images/wildlife/Deer.jpg" alt="Deer wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                    <img src="images/wildlife/Lizard.jpg" alt="Squirrel wildlife photography" class="w-80 md:w-96 h-96 object-cover rounded-3xl shadow-xl" loading="lazy">
-                </div>
+        <div class="relative w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+            <div class="flex animate-infinite-scroll gap-5 w-[max-content] hover:[animation-play-state:paused]">
+                    <div class="flex gap-5">
+                        <img src="images/wildlife/Elephant udawalawa.jpg" alt="Wildlife photograph — Elephant udawalawa" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Peacock 1.jpg" alt="Wildlife photograph — Peacock 1" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Deer.jpg" alt="Wildlife photograph — Deer" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Lizard.jpg" alt="Wildlife photograph — Lizard" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Hummigbird.jpg" alt="Wildlife photograph — Hummigbird" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/udawalawa elephants.jpg" alt="Wildlife photograph — udawalawa elephants" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                    </div>
+                    <div class="flex gap-5" aria-hidden="true">
+                        <img src="images/wildlife/Elephant udawalawa.jpg" alt="" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Peacock 1.jpg" alt="" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Deer.jpg" alt="" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Lizard.jpg" alt="" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/Hummigbird.jpg" alt="" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                        <img src="images/wildlife/udawalawa elephants.jpg" alt="" class="w-72 md:w-[22rem] h-[26rem] object-cover rounded-[1.5rem] border border-line" loading="lazy">
+                    </div>
             </div>
         </div>
     </section>
@@ -262,6 +256,10 @@
     <footer data-layout="footer" id="contact"></footer>
 
     <script src="assets/js/data/profile.js"></script>
+    <script src="assets/js/data/projects.js"></script>
+    <script src="assets/js/data/experience.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/sections.js"></script>
     <script src="assets/js/layout.js"></script>
 </body>
 </html>
