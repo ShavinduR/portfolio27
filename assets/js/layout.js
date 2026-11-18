@@ -142,6 +142,12 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ------------------------------------------------------------ Scroll-spy */
+  // Sub-pages mark their parent section: <body data-nav="design">
+  const parent = document.body.dataset.nav;
+  if (!isHome && parent) {
+    document.querySelectorAll(`[data-nav="${parent}"]`).forEach((l) => l.setAttribute('aria-current', 'page'));
+  }
+
   if (isHome && 'IntersectionObserver' in window) {
     const links = document.querySelectorAll('[data-nav]');
     const spy = new IntersectionObserver(

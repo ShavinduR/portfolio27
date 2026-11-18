@@ -3,269 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Social Media | Shavindu Portfolio</title>
+    <title>Social Media Design | Shavindu Rashmika</title>
+    <meta name="description" content="Scroll-stopping social media post designs for retail and lifestyle brands by Shavindu Rashmika.">
+    <meta name="theme-color" content="#070709">
+
     <script src="assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/tailwind.config.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-body flex flex-col min-h-screen">
+<body data-page="gallery" data-gallery="social" data-nav="design" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
 
-    <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl z-50 border-b dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold font-heading text-primary dark:text-white tracking-tighter cursor-default">
-                portfolio<span class="text-accent">.</span>social
-            </div>
-            <a href="index.html#design" class="flex items-center gap-2 border-2 border-gray-200 dark:border-gray-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-accent dark:hover:border-accent transition duration-300">
-                <i class="fas fa-arrow-left text-accent"></i>
-                <span>Back</span>
-            </a>
-        </div>
-    </nav>
+    <header data-layout="nav"></header>
 
-    <section class="pt-32 pb-12 text-center px-6">
-        <span class="bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase mb-4 inline-block">Content Creation</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">Social Media Design</h1>
-        <p class="text-gray-500 max-w-2xl mx-auto text-lg">Engaging posts designed to stop the scroll.</p>
-    </section>
+    <main id="main" data-render="gallery"></main>
 
-    <!--section class="py-12 px-6 max-w-7xl mx-auto">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Food & Beverages</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 1">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 2">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 3">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 4">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
-            </div>
-        </div>
-    </section-->
+    <footer data-layout="footer" id="contact"></footer>
 
-    <section class="py-12 px-6 max-w-7xl mx-auto">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Tech & Gadgets</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/dart board.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="100 Pcs Paper Cup Cake">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/පැය ගාණක් වුනත් සැපට වාඩි වෙලා ඉන්න!.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Motivational social media post with Sinhala text encouraging relaxation and comfort despite long hours, featuring warm and inviting aesthetic tones">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/100 Pcs Paper Cup Cake.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="100 Pcs Paper Cup Cake">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/KTS-1655 radio.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="KTS-1655 Radio">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-            
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Pen Laser Pointer.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Pen Laser Pointer">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-            
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Portable Folding Stool.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Portable Folding Stool">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Paint Roller.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Paint Roller">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Video Making Kit.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Video Making Kit">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/WiFi Smart Camera.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="WiFi Smart Camera">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/1.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 1">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/3.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 3">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/4.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 4">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/5.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 5">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/7.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 7">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/8.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 8">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/9.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 9">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/15.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 15">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/17.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 17">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!--section class="py-12 px-6 max-w-7xl mx-auto mb-20">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Promotional & Branding</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 1">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 2">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 3">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 4">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-        </div>
-    </section-->
-
-    <footer id="contact" class="bg-gray-900 text-white border-t border-gray-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4">
-                    <h2 class="text-3xl font-heading font-bold">shavindu<span class="text-accent">.</span>designer</h2>
-                    <p class="text-gray-400 leading-relaxed text-sm max-w-lg">
-                        Creating digital experiences that blend aesthetic design with strong functionality. Specializing in graphic design, web development, and photography.
-                    </p>
-                    <p class="text-xs text-gray-600">© 2026 Shavindu Rashmika. All Rights Reserved.</p>
-                </div>
-                <div class="flex flex-col md:items-end gap-6">
-                    <a href="https://wa.me/94711098429" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1EBE57] text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">
-                        <i class="fab fa-whatsapp text-2xl group-hover:rotate-12 transition duration-300"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                    <div class="flex gap-4">
-                         <a href="https://github.com/ShavinduR/ShavinduR" target="_blank" rel="noopener noreferrer" title="Visit GitHub" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition border border-gray-700"><i class="fab fa-github"></i></a>
-                         <a href="https://www.linkedin.com/in/shavindu-rashmika-rathnayake" target="_blank" rel="noopener noreferrer" title="Visit LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition border border-gray-700"><i class="fab fa-linkedin-in"></i></a>
-                         <a href="https://www.facebook.com/share/1DWMwvZ1x4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Visit Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition border border-gray-700"><i class="fab fa-facebook-f"></i></a>
-                         <a href="https://discord.com/users/1043745550467616788" target="_blank" rel="noopener noreferrer" title="Visit Discord" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#5865F2] hover:text-white transition border border-gray-700"><i class="fab fa-discord"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script src="assets/js/data/profile.js"></script>
+    <script src="assets/js/data/galleries.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/gallery-page.js"></script>
+    <script src="assets/js/layout.js"></script>
 </body>
 </html>

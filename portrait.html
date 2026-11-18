@@ -3,131 +3,34 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Portrait & Lifestyle | Shavindu Portfolio</title>
-    
-    <meta name="description" content="Portrait and Lifestyle photography portfolio by Shavindu Rashmika. capturing authentic moments, weddings, and studio portraits in Sri Lanka.">
-    
+    <title>Portrait & Lifestyle Photography | Shavindu Rashmika</title>
+    <meta name="description" content="Portrait and lifestyle photography across Sri Lanka by Shavindu Rashmika. Book a session on WhatsApp.">
+    <meta name="theme-color" content="#070709">
+
     <script src="assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="assets/js/tailwind.config.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-body flex flex-col min-h-screen transition-colors duration-300">
+<body data-page="gallery" data-gallery="portrait" data-nav="design" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
 
-    <nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-950/90 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold font-heading text-primary dark:text-white tracking-tighter cursor-default">
-                portfolio<span class="text-accent">.</span>portrait
-            </div>
-            <a href="index.html#portrait" class="flex items-center gap-2 border-2 border-gray-200 dark:border-gray-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-accent dark:hover:border-accent transition duration-300">
-                <i class="fas fa-arrow-left text-accent"></i>
-                <span>Back</span>
-            </a>
-        </div>
-    </nav>
+    <header data-layout="nav"></header>
 
-    <section class="pt-32 pb-12 text-center px-6">
-        <span class="bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase mb-4 inline-block">Studio & Weddings</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">Portrait & Lifestyle</h1>
-        <p class="text-gray-500 max-w-2xl mx-auto text-lg">Capturing authentic emotions and timeless stories through the lens.</p>
-    </section>
+    <main id="main" data-render="gallery"></main>
 
-    <section class="py-12 px-6 max-w-7xl mx-auto mb-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-            <div class="group relative overflow-hidden rounded-[2rem] h-[500px] shadow-lg">
-                <img src="portrait/Balangoda.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Portrait Photography">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
-                    <div>
-                        <span class="text-accent text-xs font-bold uppercase tracking-wider mb-1 block">Outdoor</span>
-                        <p class="text-white font-heading font-bold text-2xl">Natural Light</p>
-                    </div>
-                </div>
-            </div>
+    <footer data-layout="footer" id="contact"></footer>
 
-            <div class="group relative overflow-hidden rounded-[2rem] h-[500px] shadow-lg">
-                <img src="portrait/Ella .jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Wedding Photography">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
-                    <div>
-                        <span class="text-accent text-xs font-bold uppercase tracking-wider mb-1 block">Wedding</span>
-                        <p class="text-white font-heading font-bold text-2xl">The Big Day</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-[2rem] h-[500px] shadow-lg">
-                <img src="portrait/King coconut.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Studio Photography">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
-                    <div>
-                        <span class="text-accent text-xs font-bold uppercase tracking-wider mb-1 block">Studio</span>
-                        <p class="text-white font-heading font-bold text-2xl">Fashion Editorial</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-[2rem] h-[500px] shadow-lg">
-                <img src="portrait/Kalawana 2.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Lifestyle Photography">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
-                    <div>
-                        <span class="text-accent text-xs font-bold uppercase tracking-wider mb-1 block">Lifestyle</span>
-                        <p class="text-white font-heading font-bold text-2xl">Urban Life</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-[2rem] h-[500px] shadow-lg">
-                <img src="portrait/" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Event Photography">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
-                    <div>
-                        <span class="text-accent text-xs font-bold uppercase tracking-wider mb-1 block">Events</span>
-                        <p class="text-white font-heading font-bold text-2xl">Graduation Glory</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-[2rem] h-[500px] shadow-lg">
-                <img src="images/portrait6.jpg" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Creative Photography">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-8">
-                    <div>
-                        <span class="text-accent text-xs font-bold uppercase tracking-wider mb-1 block">Creative</span>
-                        <p class="text-white font-heading font-bold text-2xl">Artistic Vision</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        
-        <div class="text-center mt-12">
-            <p class="text-gray-500 mb-6">Interested in booking a session?</p>
-            <a href="https://wa.me/94711098429" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-secondary text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition transform hover:-translate-y-1">
-                <i class="fab fa-whatsapp text-xl"></i>
-                Book Now
-            </a>
-        </div>
-    </section>
-
-    <footer id="contact" class="bg-gray-900 text-white border-t border-gray-800 mt-auto font-body">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4">
-                    <h2 class="text-3xl font-heading font-bold">shavindu<span class="text-accent">.</span>designer</h2>
-                    <p class="text-gray-400 leading-relaxed text-sm max-w-lg">
-                        Creating digital experiences that blend aesthetic design with strong functionality. Specializing in graphic design, web development, and photography.
-                    </p>
-                    <p class="text-xs text-gray-600">© 2026 Shavindu Rashmika. All Rights Reserved.</p>
-                </div>
-                <div class="flex flex-col md:items-end gap-6">
-                    <div class="flex gap-4">
-                         <a href="https://github.com/ShavinduR/ShavinduR" target="_blank" rel="noopener" title="GitHub Profile" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition border border-gray-700"><i class="fab fa-github"></i></a>
-                         <a href="https://www.linkedin.com/in/shavindu-rashmika-rathnayake" target="_blank" rel="noopener" title="LinkedIn Profile" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition border border-gray-700"><i class="fab fa-linkedin-in"></i></a>
-                         <a href="https://www.facebook.com/share/1DWMwvZ1x4/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Facebook Profile" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition border border-gray-700"><i class="fab fa-facebook-f"></i></a>
-                         <a href="https://discord.com/users/1043745550467616788" target="_blank" rel="noopener" title="Discord Profile" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#5865F2] hover:text-white transition border border-gray-700"><i class="fab fa-discord"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script src="assets/js/data/profile.js"></script>
+    <script src="assets/js/data/galleries.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/gallery-page.js"></script>
+    <script src="assets/js/layout.js"></script>
 </body>
 </html>
