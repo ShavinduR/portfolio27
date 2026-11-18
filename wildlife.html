@@ -7,29 +7,178 @@
     <meta name="description" content="Sri Lankan wildlife photography by Shavindu Rashmika, from Udawalawe elephants to garden birds.">
     <meta name="theme-color" content="#070709">
 
-    <script src="assets/js/theme.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/tailwind.config.js"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shavindu Rashmika">
+    <meta property="og:title" content="Wildlife Photography | Shavindu Rashmika">
+    <meta property="og:description" content="Sri Lankan wildlife photography by Shavindu Rashmika, from Udawalawe elephants to garden birds.">
+    <meta property="og:image" content="og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <script src="assets/js/theme.js"></script>
+    <link rel="preload" href="assets/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body data-page="gallery" data-gallery="wildlife" data-nav="design" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
 
     <header data-layout="nav"></header>
 
-    <main id="main" data-render="gallery"></main>
+    <main id="main" data-render="gallery" data-build="np9ap3"><!--render-->
+    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)] pb-12">
+      <a href="index.html#design" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Creative
+      </a>
+      <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-end">
+        <div>
+          <span class="eyebrow">Through the lens</span>
+          <h1 class="mt-5 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,6.5vw,5rem)]">Wildlife Moments<span class="text-accent">.</span></h1>
+        </div>
+        <p class="text-muted leading-relaxed max-w-md lg:justify-self-end">Capturing the beauty of Sri Lankan wildlife, from Udawalawe’s herds to the garden at dawn.</p>
+      </div>
+      <nav class="creative-tabs mt-12" aria-label="Creative galleries">
+        <a href="logo.html" >Logo Design</a><a href="branding.html" >Branding</a><a href="social.html" >Social Media</a><a href="merch.html" >Merch</a><a href="wildlife.html" aria-current="page">Wildlife</a><a href="portrait.html" >Portrait</a>
+      </nav>
+    </section>
+
+    <section class="container-x pb-24">
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-5">
+          
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="0" data-title="Cow &amp; Friend" aria-label="View larger: Cow &amp; Friend">
+        <img src="assets/img/wildlife/cow-friend.webp" srcset="assets/img/wildlife/cow-friend-800.webp 800w, assets/img/wildlife/cow-friend.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1141" alt="Cow &amp; Friend — wildlife photograph" fetchpriority="high" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Cow &amp; Friend</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="1" data-title="Wild Deer" aria-label="View larger: Wild Deer">
+        <img src="assets/img/wildlife/deer.webp" srcset="assets/img/wildlife/deer-800.webp 800w, assets/img/wildlife/deer.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Wild Deer — wildlife photograph"  decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Wild Deer</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="2" data-title="Udawalawe Tusker" aria-label="View larger: Udawalawe Tusker">
+        <img src="assets/img/wildlife/elephant-udawalawa.webp" srcset="assets/img/wildlife/elephant-udawalawa-800.webp 800w, assets/img/wildlife/elephant-udawalawa.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Udawalawe Tusker — wildlife photograph"  decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Udawalawe Tusker</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="3" data-title="Termite Mound 1" aria-label="View larger: Termite Mound 1">
+        <img src="assets/img/wildlife/hubaha-1.webp" srcset="assets/img/wildlife/hubaha-1-800.webp 800w, assets/img/wildlife/hubaha-1.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="1920" alt="Termite Mound 1 — wildlife photograph"  decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Termite Mound 1</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="4" data-title="Termite Mound 2" aria-label="View larger: Termite Mound 2">
+        <img src="assets/img/wildlife/hubaha-2.webp" srcset="assets/img/wildlife/hubaha-2-800.webp 800w, assets/img/wildlife/hubaha-2.webp 1440w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1440" height="1920" alt="Termite Mound 2 — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Termite Mound 2</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="5" data-title="Little Sunbird" aria-label="View larger: Little Sunbird">
+        <img src="assets/img/wildlife/hummigbird.webp" srcset="assets/img/wildlife/hummigbird-800.webp 800w, assets/img/wildlife/hummigbird.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Little Sunbird — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Little Sunbird</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="6" data-title="King Coconut" aria-label="View larger: King Coconut">
+        <img src="assets/img/wildlife/king-coconut.webp" srcset="assets/img/wildlife/king-coconut-800.webp 800w, assets/img/wildlife/king-coconut.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="King Coconut — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">King Coconut</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="7" data-title="White Crane" aria-label="View larger: White Crane">
+        <img src="assets/img/wildlife/koka.webp" srcset="assets/img/wildlife/koka-800.webp 800w, assets/img/wildlife/koka.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="White Crane — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">White Crane</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="8" data-title="Garden Lizard" aria-label="View larger: Garden Lizard">
+        <img src="assets/img/wildlife/lizard.webp" srcset="assets/img/wildlife/lizard-800.webp 800w, assets/img/wildlife/lizard.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="1920" alt="Garden Lizard — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Garden Lizard</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="9" data-title="Monitor Lizard 1" aria-label="View larger: Monitor Lizard 1">
+        <img src="assets/img/wildlife/monitor-1.webp" srcset="assets/img/wildlife/monitor-1-800.webp 800w, assets/img/wildlife/monitor-1.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1440" alt="Monitor Lizard 1 — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Monitor Lizard 1</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="10" data-title="Monitor Lizard 2" aria-label="View larger: Monitor Lizard 2">
+        <img src="assets/img/wildlife/monitor-2.webp" srcset="assets/img/wildlife/monitor-2-800.webp 800w, assets/img/wildlife/monitor-2.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1081" alt="Monitor Lizard 2 — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Monitor Lizard 2</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="11" data-title="Peacock Portrait" aria-label="View larger: Peacock Portrait">
+        <img src="assets/img/wildlife/peacock-1.webp" srcset="assets/img/wildlife/peacock-1-800.webp 800w, assets/img/wildlife/peacock-1.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Peacock Portrait — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Peacock Portrait</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="12" data-title="Dancing Colors" aria-label="View larger: Dancing Colors">
+        <img src="assets/img/wildlife/peacock-2.webp" srcset="assets/img/wildlife/peacock-2-800.webp 800w, assets/img/wildlife/peacock-2.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1283" alt="Dancing Colors — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Dancing Colors</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="13" data-title="Ranwala Scenery" aria-label="View larger: Ranwala Scenery">
+        <img src="assets/img/wildlife/ranwala.webp" srcset="assets/img/wildlife/ranwala-800.webp 800w, assets/img/wildlife/ranwala.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1434" alt="Ranwala Scenery — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Ranwala Scenery</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="14" data-title="Squirrel Pose 1" aria-label="View larger: Squirrel Pose 1">
+        <img src="assets/img/wildlife/squirrel-1.webp" srcset="assets/img/wildlife/squirrel-1-800.webp 800w, assets/img/wildlife/squirrel-1.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1222" alt="Squirrel Pose 1 — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Squirrel Pose 1</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="15" data-title="Squirrel Pose 2" aria-label="View larger: Squirrel Pose 2">
+        <img src="assets/img/wildlife/squirrel-2.webp" srcset="assets/img/wildlife/squirrel-2-800.webp 800w, assets/img/wildlife/squirrel-2.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Squirrel Pose 2 — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Squirrel Pose 2</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="16" data-title="Squirrel Pose 3" aria-label="View larger: Squirrel Pose 3">
+        <img src="assets/img/wildlife/squirrel-3.webp" srcset="assets/img/wildlife/squirrel-3-800.webp 800w, assets/img/wildlife/squirrel-3.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1204" alt="Squirrel Pose 3 — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Squirrel Pose 3</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="17" data-title="Udawalawe Herd" aria-label="View larger: Udawalawe Herd">
+        <img src="assets/img/wildlife/udawalawa-elephants.webp" srcset="assets/img/wildlife/udawalawa-elephants-800.webp 800w, assets/img/wildlife/udawalawa-elephants.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Udawalawe Herd — wildlife photograph" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Udawalawe Herd</figcaption>
+            </figure>
+        </div></section>
+
+    <section class="container-x pb-24">
+      <a href="portrait.html" class="g-next group">
+        <span class="project-index">Next gallery</span>
+        <span class="flex items-center justify-between gap-6 mt-3">
+          <span class="font-heading font-extrabold text-3xl md:text-5xl tracking-tight">Portrait</span>
+          <span class="icon-btn !w-14 !h-14 shrink-0 transition group-hover:bg-accent group-hover:text-accent-fg group-hover:border-accent">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </span>
+        </span>
+      </a>
+    </section><!--/render--></main>
 
     <footer data-layout="footer" id="contact"></footer>
 
     <script src="assets/js/data/profile.js"></script>
     <script src="assets/js/data/galleries.js"></script>
+    <script src="assets/js/data/images.js"></script>
     <script src="assets/js/components.js"></script>
+    <script src="assets/js/render.js"></script>
     <script src="assets/js/gallery-page.js"></script>
     <script src="assets/js/layout.js"></script>
 </body>

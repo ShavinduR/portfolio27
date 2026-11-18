@@ -12,6 +12,19 @@ window.UI = (function () {
 
   const pad = (n) => String(n).padStart(2, '0');
 
+  /**
+   * Responsive <img> attributes from the generated manifest (data/images.js):
+   * width/height (prevents layout shift) + srcset with the -800 variant.
+   */
+  function imgAttrs(src, sizes = '(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw') {
+    const dims = (window.SITE.images || {})[src];
+    if (!dims) return `src="${esc(src)}"`;
+    const [w, h] = dims;
+    const small = src.replace(/\.webp$/, '-800.webp');
+    const srcset = w > 800 ? ` srcset="${esc(small)} 800w, ${esc(src)} ${w}w" sizes="${sizes}"` : '';
+    return `src="${esc(src)}"${srcset} width="${w}" height="${h}"`;
+  }
+
   /* ------------------------------------------------ Wireframe placeholders */
   const L = (w, extra = '') => `<i class="ph-line ${extra}" style="width:${w}%"></i>`;
   const B = (cls = '') => `<i class="ph-block ${cls}"></i>`;
@@ -68,7 +81,7 @@ window.UI = (function () {
     const ph = p.placeholder || {};
     if (p.image) {
       return `<div class="ph ph-${size}" style="--h:${ph.hue ?? 40}">
-        <img src="${esc(p.image)}" alt="${esc(p.title)} screenshot" loading="lazy" class="ph-img">
+        <img ${imgAttrs(p.image, '(min-width: 1024px) 50vw, 100vw')} alt="${esc(p.title)} screenshot" loading="lazy" decoding="async" class="ph-img">
       </div>`;
     }
     const layout = layouts[ph.layout] || layouts.site;
@@ -167,5 +180,5 @@ window.UI = (function () {
       </article>`;
   }
 
-  return { esc, domain, pad, thumb, projectCard, linkBtns, timelineItem, educationCard, expertiseCard };
+  return { esc, domain, pad, imgAttrs, thumb, projectCard, linkBtns, timelineItem, educationCard, expertiseCard };
 })();

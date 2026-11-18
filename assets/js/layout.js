@@ -92,7 +92,7 @@
             </div>
             <div>
               <p class="text-muted mb-1">Phone</p>
-              ${profile.contact.phones.map((p) => `<a href="tel:${p.replace(/\s/g, '')}" class="block font-medium hover:text-accent transition">${p}</a>`).join('')}
+              ${profile.contact.phones.map((p) => `<a href="tel:${p.replace(/\s/g, '')}" class="block py-1 font-medium hover:text-accent transition">${p}</a>`).join('')}
             </div>
             <div>
               <p class="text-muted mb-1">Based in</p>
@@ -169,6 +169,10 @@
 
   /* --------------------------------------------------------- Reveal on view */
   const reveals = document.querySelectorAll('.reveal');
+  // Anything already on screen at load shows instantly — no fade, no LCP delay.
+  reveals.forEach((el) => {
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible', 'no-anim');
+  });
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(
       (entries) =>

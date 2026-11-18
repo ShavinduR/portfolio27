@@ -7,29 +7,125 @@
     <meta name="description" content="Portrait and lifestyle photography across Sri Lanka by Shavindu Rashmika. Book a session on WhatsApp.">
     <meta name="theme-color" content="#070709">
 
-    <script src="assets/js/theme.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/tailwind.config.js"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shavindu Rashmika">
+    <meta property="og:title" content="Portrait &amp; Lifestyle Photography | Shavindu Rashmika">
+    <meta property="og:description" content="Portrait and lifestyle photography across Sri Lanka by Shavindu Rashmika. Book a session on WhatsApp.">
+    <meta property="og:image" content="og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="site.webmanifest">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/components.css">
+    <script src="assets/js/theme.js"></script>
+    <link rel="preload" href="assets/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body data-page="gallery" data-gallery="portrait" data-nav="design" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
 
     <header data-layout="nav"></header>
 
-    <main id="main" data-render="gallery"></main>
+    <main id="main" data-render="gallery" data-build="14rs320"><!--render-->
+    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)] pb-12">
+      <a href="index.html#design" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Creative
+      </a>
+      <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-end">
+        <div>
+          <span class="eyebrow">On location</span>
+          <h1 class="mt-5 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,6.5vw,5rem)]">Portrait &amp; Lifestyle<span class="text-accent">.</span></h1>
+        </div>
+        <p class="text-muted leading-relaxed max-w-md lg:justify-self-end">People and places across Sri Lanka, from the tea country to the hills of Ella.</p>
+      </div>
+      <nav class="creative-tabs mt-12" aria-label="Creative galleries">
+        <a href="logo.html" >Logo Design</a><a href="branding.html" >Branding</a><a href="social.html" >Social Media</a><a href="merch.html" >Merch</a><a href="wildlife.html" >Wildlife</a><a href="portrait.html" aria-current="page">Portrait</a>
+      </nav>
+    </section>
+
+    <section class="container-x pb-24">
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-5">
+          
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="0" data-title="Balangoda" aria-label="View larger: Balangoda">
+        <img src="assets/img/portrait/balangoda.webp" srcset="assets/img/portrait/balangoda-800.webp 800w, assets/img/portrait/balangoda.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1164" alt="Portrait photograph — Balangoda" fetchpriority="high" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Balangoda</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="1" data-title="Ella" aria-label="View larger: Ella">
+        <img src="assets/img/portrait/ella.webp" srcset="assets/img/portrait/ella-800.webp 800w, assets/img/portrait/ella.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1305" alt="Portrait photograph — Ella"  decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Ella</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="2" data-title="Hanthana" aria-label="View larger: Hanthana">
+        <img src="assets/img/portrait/hanthana.webp" srcset="assets/img/portrait/hanthana-800.webp 800w, assets/img/portrait/hanthana.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Portrait photograph — Hanthana"  decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Hanthana</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="3" data-title="Hortanplace" aria-label="View larger: Hortanplace">
+        <img src="assets/img/portrait/hortanplace.webp" srcset="assets/img/portrait/hortanplace-800.webp 800w, assets/img/portrait/hortanplace.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Portrait photograph — Hortanplace"  decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Hortanplace</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="4" data-title="Kalawana 1" aria-label="View larger: Kalawana 1">
+        <img src="assets/img/portrait/kalawana-1.webp" srcset="assets/img/portrait/kalawana-1-800.webp 800w, assets/img/portrait/kalawana-1.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1076" alt="Portrait photograph — Kalawana 1" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Kalawana 1</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid ">
+              <button type="button" class="lb-trigger g-frame" data-lb="5" data-title="Kalawana 2" aria-label="View larger: Kalawana 2">
+        <img src="assets/img/portrait/kalawana-2.webp" srcset="assets/img/portrait/kalawana-2-800.webp 800w, assets/img/portrait/kalawana-2.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1076" alt="Portrait photograph — Kalawana 2" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Kalawana 2</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="6" data-title="King coconut" aria-label="View larger: King coconut">
+        <img src="assets/img/portrait/king-coconut.webp" srcset="assets/img/portrait/king-coconut-800.webp 800w, assets/img/portrait/king-coconut.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1280" alt="Portrait photograph — King coconut" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">King coconut</figcaption>
+            </figure>
+            <figure class="g-tile mb-5 break-inside-avoid reveal">
+              <button type="button" class="lb-trigger g-frame" data-lb="7" data-title="Wewelwaththa" aria-label="View larger: Wewelwaththa">
+        <img src="assets/img/portrait/wewelwaththa.webp" srcset="assets/img/portrait/wewelwaththa-800.webp 800w, assets/img/portrait/wewelwaththa.webp 1920w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1920" height="1440" alt="Portrait photograph — Wewelwaththa" loading="lazy" decoding="async" class="w-full h-auto">
+      </button>
+              <figcaption class="g-caption">Wewelwaththa</figcaption>
+            </figure>
+        </div></section><section class="container-x pb-24">
+        <div class="g-cta reveal">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl tracking-tight">Interested in booking a session?</h2>
+          <p class="mt-4 text-muted max-w-lg mx-auto">Weddings, portraits and events. Message me on WhatsApp to check availability.</p>
+          <a href="https://wa.me/94711098429" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-8">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Book on WhatsApp
+          </a>
+        </div></section>
+
+    <section class="container-x pb-24">
+      <a href="logo.html" class="g-next group">
+        <span class="project-index">Next gallery</span>
+        <span class="flex items-center justify-between gap-6 mt-3">
+          <span class="font-heading font-extrabold text-3xl md:text-5xl tracking-tight">Logo Design</span>
+          <span class="icon-btn !w-14 !h-14 shrink-0 transition group-hover:bg-accent group-hover:text-accent-fg group-hover:border-accent">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </span>
+        </span>
+      </a>
+    </section><!--/render--></main>
 
     <footer data-layout="footer" id="contact"></footer>
 
     <script src="assets/js/data/profile.js"></script>
     <script src="assets/js/data/galleries.js"></script>
+    <script src="assets/js/data/images.js"></script>
     <script src="assets/js/components.js"></script>
+    <script src="assets/js/render.js"></script>
     <script src="assets/js/gallery-page.js"></script>
     <script src="assets/js/layout.js"></script>
 </body>

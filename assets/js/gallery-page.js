@@ -1,157 +1,26 @@
 /*
  * Creative gallery pages — logo.html, branding.html, social.html, merch.html,
- * wildlife.html, portrait.html. Each page sets <body data-gallery="<id>"> and
- * this script renders window.SITE.galleries[<id>] into [data-render="gallery"],
- * then wires up the lightbox.
+ * wildlife.html, portrait.html. Each page sets <body data-gallery="<id>">.
+ * Markup comes from RENDER.gallery() (render.js) — baked into the HTML by
+ * `npm run build`, re-rendered here only if the data has changed since.
+ * This file adds the behaviour: the lightbox.
  */
 (function () {
-  const { galleries = {}, creativeNav = [], profile } = window.SITE;
+  const { galleries = {}, profile } = window.SITE;
   const UI = window.UI;
-  const esc = UI.esc;
   const id = document.body.dataset.gallery;
   const g = galleries[id];
   const root = document.querySelector('[data-render="gallery"]');
   if (!root || !g) return;
 
-  /* --------------------------------------------------------- Image helper */
-  let lbIndex = 0;
-  const lbItems = [];
-  // Every gallery image is a button that opens the lightbox.
-  const pic = (it, imgClass = '', extra = '') => {
-    const i = lbIndex++;
-    lbItems.push(it);
-    return `<button type="button" class="lb-trigger ${extra}" data-lb="${i}" aria-label="View larger: ${esc(it.title || it.alt)}">
-        <img src="${esc(it.src)}" alt="${esc(it.alt)}" loading="lazy" decoding="async" class="${imgClass}">
-      </button>`;
-  };
+  // Prerendered at build time; re-render only if the data changed since then.
+  window.RENDER.hydrate(root, window.RENDER.gallery(id));
 
-  const blockTitle = (t) => (t ? `<p class="group-label mb-8">${esc(t)}</p>` : '');
-
-  /* ------------------------------------------------------------- Blocks */
-  const blocks = {
-    features: (b) => `
-      <div class="space-y-20 md:space-y-28">
-        ${b.items.map((it, i) => `
-          <article class="grid md:grid-cols-2 gap-10 md:gap-16 items-center reveal">
-            <div class="${i % 2 ? 'md:order-2' : ''}">
-              ${pic(it, 'w-full aspect-[4/3] object-contain p-8 md:p-12', 'g-frame g-frame-light')}
-            </div>
-            <div class="${i % 2 ? 'md:order-1' : ''}">
-              <span class="project-index">${UI.pad(i + 1)}</span>
-              <p class="project-kicker !text-accent">${esc(it.kicker)}</p>
-              <h2 class="mt-3 font-heading font-bold text-3xl md:text-4xl tracking-tight">${esc(it.title)}</h2>
-              <p class="mt-5 text-muted leading-relaxed">${esc(it.text)}</p>
-            </div>
-          </article>`).join('')}
-      </div>`,
-
-    cases: (b) => b.items.map((c, i) => `
-      <article class="g-case reveal" id="${esc(c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'))}">
-        <header class="flex flex-wrap items-end justify-between gap-4 mb-8">
-          <div>
-            <span class="project-index">${UI.pad(i + 1)} / ${UI.pad(b.items.length)}</span>
-            <h2 class="mt-3 font-heading font-extrabold text-4xl md:text-5xl tracking-tight">${esc(c.name)}</h2>
-          </div>
-          <p class="project-kicker !mt-0 !text-accent">${esc(c.kicker)}</p>
-        </header>
-        ${pic(c.hero, 'w-full aspect-[16/9] md:aspect-[21/9] object-cover', 'g-frame')}
-        <div class="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 mt-10">
-          <div>
-            <p class="text-muted leading-relaxed text-lg">${esc(c.text)}</p>
-            ${c.palette ? `
-              <p class="group-label mt-10 mb-5">Colour palette</p>
-              <ul class="flex flex-wrap gap-6">
-                ${c.palette.map((hex) => `
-                  <li class="text-center">
-                    <span class="g-swatch" style="background:${esc(hex)}"></span>
-                    <span class="block mt-2 text-[11px] font-medium tracking-wider text-muted">${esc(hex)}</span>
-                  </li>`).join('')}
-              </ul>` : ''}
-          </div>
-          <div class="grid grid-cols-2 gap-4">
-            ${c.images.map((it) => pic(it, 'w-full aspect-square object-cover', 'g-frame')).join('')}
-          </div>
-        </div>
-      </article>`).join(''),
-
-    grid: (b) => {
-      const cols = {
-        square: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5',
-        contain: 'grid-cols-2 md:grid-cols-3 gap-4 md:gap-5',
-        product: 'sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12',
-      }[b.variant] || 'grid-cols-2 md:grid-cols-3 gap-5';
-      return `${blockTitle(b.title)}
-        <div class="grid ${cols}">
-          ${b.items.map((it) => {
-            if (b.variant === 'product')
-              return `<figure class="reveal">
-                  ${pic(it, 'w-full aspect-[4/3] object-cover', 'g-frame')}
-                  <figcaption class="mt-5">
-                    ${it.tag ? `<p class="project-kicker !mt-0">${esc(it.tag)}</p>` : ''}
-                    <p class="mt-2 font-heading font-bold text-lg">${esc(it.title)}</p>
-                    ${it.text ? `<p class="text-sm text-muted mt-1">${esc(it.text)}</p>` : ''}
-                  </figcaption>
-                </figure>`;
-            if (b.variant === 'contain')
-              return `<div class="reveal">${pic(it, 'w-full aspect-[4/3] object-contain p-6', 'g-frame g-frame-light')}</div>`;
-            return `<div class="reveal">${pic(it, 'w-full aspect-square object-cover', 'g-frame')}</div>`;
-          }).join('')}
-        </div>`;
-    },
-
-    masonry: (b) => `${blockTitle(b.title)}
-      <div class="columns-1 sm:columns-2 lg:columns-3 gap-5">
-        ${b.items.map((it) => `
-          <figure class="g-tile mb-5 break-inside-avoid reveal">
-            ${pic(it, 'w-full h-auto', 'g-frame')}
-            ${it.title ? `<figcaption class="g-caption">${it.tag ? `<span>${esc(it.tag)}</span>` : ''}${esc(it.title)}</figcaption>` : ''}
-          </figure>`).join('')}
-      </div>`,
-
-    cta: (b) => `
-      <div class="g-cta reveal">
-        <h2 class="font-heading font-bold text-3xl md:text-4xl tracking-tight">${esc(b.title)}</h2>
-        <p class="mt-4 text-muted max-w-lg mx-auto">${esc(b.text)}</p>
-        <a href="${esc(b.href)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-8">
-          <i class="fab fa-whatsapp" aria-hidden="true"></i> ${esc(b.label)}
-        </a>
-      </div>`,
-  };
-
-  /* --------------------------------------------------------------- Page */
-  const idx = creativeNav.findIndex((n) => n.id === id);
-  const next = creativeNav[(idx + 1) % creativeNav.length];
-
-  root.innerHTML = `
-    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)] pb-12">
-      <a href="index.html#design" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
-        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Creative
-      </a>
-      <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-end">
-        <div>
-          <span class="eyebrow">${esc(g.eyebrow)}</span>
-          <h1 class="mt-5 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,6.5vw,5rem)]">${esc(g.title)}<span class="text-accent">.</span></h1>
-        </div>
-        <p class="text-muted leading-relaxed max-w-md lg:justify-self-end">${esc(g.intro)}</p>
-      </div>
-      <nav class="creative-tabs mt-12" aria-label="Creative galleries">
-        ${creativeNav.map((n) => `<a href="${esc(n.href)}" ${n.id === id ? 'aria-current="page"' : ''}>${esc(n.label)}</a>`).join('')}
-      </nav>
-    </section>
-
-    ${g.blocks.map((b) => `<section class="container-x pb-24">${(blocks[b.type] || (() => ''))(b)}</section>`).join('')}
-
-    <section class="container-x pb-24">
-      <a href="${esc(next.href)}" class="g-next group">
-        <span class="project-index">Next gallery</span>
-        <span class="flex items-center justify-between gap-6 mt-3">
-          <span class="font-heading font-extrabold text-3xl md:text-5xl tracking-tight">${esc(next.label)}</span>
-          <span class="icon-btn !w-14 !h-14 shrink-0 transition group-hover:bg-accent group-hover:text-accent-fg group-hover:border-accent">
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-          </span>
-        </span>
-      </a>
-    </section>`;
+  // Lightbox items come straight from the rendered DOM.
+  const lbItems = [...root.querySelectorAll('[data-lb]')].map((b) => {
+    const im = b.querySelector('img');
+    return { src: im.getAttribute('src'), alt: im.alt, title: b.dataset.title };
+  });
 
   /* ----------------------------------------------------------- Lightbox */
   const lb = document.createElement('div');

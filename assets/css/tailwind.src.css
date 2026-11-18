@@ -1,0 +1,13 @@
+/*
+ * CSS entry point — compiled to assets/css/site.css by `npm run build:css`.
+ * Edit the imported files, then rebuild. Pages link only site.css.
+ * Order matters: the design system first, Tailwind utilities last so they win.
+ */
+@import './fonts.css';
+@import './icons.css';
+@import './main.css';
+@import './components.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

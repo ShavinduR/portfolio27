@@ -15,7 +15,7 @@ window.SITE.profile = {
   summary:
     'I design and engineer full-stack products on the MERN stack, run digital media strategy for brands, and bring ideas to life through photography, video and 3D.',
   cv: 'MYCV.pdf',
-  portrait: 'images/home page/Me.png',
+  portrait: 'assets/img/home/shavindu-portrait.webp',
   contact: {
     email: 'shavindu.rashmika928@gmail.com',
     phones: ['+94 74 23 27 807', '+94 71 10 98 429'],
