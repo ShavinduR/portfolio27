@@ -24,7 +24,7 @@ assets/
     profile.js             Name, contact, socials, nav links
     projects.js            Projects, in display order
     experience.js          Experience, education, expertise
-    galleries.js           Creative gallery pages
+    galleries.js           Creative gallery pages and client work
     images.js              AUTO-GENERATED image sizes (don't edit)
   js/
     components.js          UI building blocks (cards, placeholders, timeline)
@@ -83,9 +83,22 @@ Icons come from a Font Awesome subset containing only the icons in use. To use a
 | `npm run prerender` | Re-bake rendered sections into the HTML |
 | `npm run serve` | Local preview on port 8000 |
 
-## Before going live
+### Add client work images (Tranquil Rest, Space Billiards, Madu Fashion)
+These folders are already wired into the Branding, Logo and Social pages:
 
-- **Share previews:** `og:image` currently uses the relative path `og-image.jpg`. Facebook, LinkedIn and WhatsApp need an absolute URL, so once the domain is known, replace it with `https://your-domain/og-image.jpg` in each HTML file. Add a `sitemap.xml` and a `<link rel="canonical">` at the same time.
+```
+assets/img/branding/tranquil-rest/
+assets/img/social/space-billiards/
+assets/img/social/madu-fashion/
+```
+
+Each folder has a `README.md` listing the exact file names to use. Drop the images in (`.jpg`, `.png` or `.webp`), then run `npm run images`. Until a file exists, its slot shows an elegant "coming soon" tile instead of a broken image.
+
+## Deployment (GitHub Pages)
+
+Live at **https://shavindur.github.io/portfolio27/**. The site URL lives in `assets/js/data/profile.js` (`url`). It's used for canonical links, share tags and `sitemap.xml`, which `npm run build` regenerates. `.nojekyll` makes GitHub Pages serve files as-is.
+
+`404.html` uses `<base href="/portfolio27/">` so it works at any missing URL. **If the site moves** (for example to a custom domain), update that line, `url` in `profile.js`, and the absolute URLs in the page `<head>`s.
 
 ## Credits
 

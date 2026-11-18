@@ -9,7 +9,8 @@
  *
  * `data-build` is a hash of the rendered HTML. In the browser, RENDER.hydrate()
  * renders again and compares hashes — if the data changed after the last build,
- * the page re-renders itself, so content is never stale. Re-run this after
+ * the page re-renders itself, so content is never stale. Also writes sitemap.xml.
+ * Re-run this after
  * editing anything in assets/js/data/ to keep the fast path.
  */
 import { readFile, writeFile, readdir } from 'node:fs/promises';
@@ -62,3 +63,23 @@ for (const page of pages) {
   }
 }
 console.log(`Prerendered ${total} section(s) across ${pages.length} pages.`);
+
+/* ------------------------------------------------------------- sitemap.xml */
+// Built from the site URL in profile.js, every indexable page and every case study.
+const SITE_URL = ctx.window.SITE.profile.url.replace(/\/?$/, '/');
+const today = new Date().toISOString().slice(0, 10);
+const urls = [
+  ['', '1.0'],
+  ...pages
+    .filter((p) => !['index.html', '404.html', 'project.html'].includes(p))
+    .sort()
+    .map((p) => [p, '0.7']),
+  ...ctx.window.SITE.projects.map((p) => [`project.html?slug=${encodeURIComponent(p.slug)}`, '0.8']),
+];
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(([path, pr]) => `  <url><loc>${SITE_URL}${path.replace(/&/g, '&amp;')}</loc><lastmod>${today}</lastmod><priority>${pr}</priority></url>`).join('\n')}
+</urlset>
+`;
+await writeFile(join(ROOT, 'sitemap.xml'), xml);
+console.log(`sitemap.xml: ${urls.length} URLs`);

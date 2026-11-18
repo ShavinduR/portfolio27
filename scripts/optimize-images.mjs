@@ -2,7 +2,8 @@
 /**
  * Image pipeline — run with `npm run images`.
  *
- * 1. Finds every .jpg / .jpeg / .png / .jfif under assets/img/.
+ * 1. Finds every .jpg / .jpeg / .png / .jfif under assets/img/
+ *    (a .webp added directly is kept as-is and just gets its -800 variant).
  * 2. Writes   <name>.webp      (long edge ≤ 2000px)
  *    and      <name>-800.webp  (width ≤ 800px, used on small screens via srcset)
  * 3. Deletes the original (pass --keep to keep it).
@@ -95,7 +96,16 @@ ${entries.join('\n')}
   console.log(`\nManifest: ${entries.length} images → assets/js/data/images.js`);
 }
 
-const sources = (await walk(IMG_DIR)).filter((f) => SOURCE.test(f));
+// WebP files dropped in directly just need their small variant.
+const all = await walk(IMG_DIR);
+for (const f of all.filter((f) => f.endsWith('.webp') && !f.endsWith(`-${SMALL}.webp`))) {
+  const small = f.replace(/\.webp$/, `-${SMALL}.webp`);
+  if (all.includes(small)) continue;
+  await sharp(f).resize({ width: SMALL, withoutEnlargement: true }).webp({ quality: 80, effort: 5 }).toFile(small);
+  console.log(`  ${posix(f)}  + ${SMALL}px variant`);
+}
+
+const sources = all.filter((f) => SOURCE.test(f));
 console.log(sources.length ? `Optimising ${sources.length} image(s)…` : 'No new images to optimise.');
 const results = [];
 for (const f of sources) results.push(await convert(f));

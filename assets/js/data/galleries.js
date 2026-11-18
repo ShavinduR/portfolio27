@@ -4,11 +4,14 @@
  *
  * Block types
  *   features  alternating image/text rows          { items: [{ src, alt, title, kicker, text }] }
- *   cases     brand case studies                   { items: [{ name, kicker, text, hero, palette?, images }] }
+ *   cases     brand case studies                   { items: [{ name, kicker, text, hero, images }] }
+ *   client    client campaign (text + post grid)   { name, kicker, text, services: [], items }
  *   grid      image grid                           { title?, variant: 'square'|'contain'|'product', items }
  *   masonry   natural-ratio photo wall             { items: [{ src, alt, title?, tag? }] }
  *   cta       closing call to action               { title, text, label, href }
- * Every image opens in the lightbox.
+ * Every image opens in the lightbox. An image that does not exist yet (not in
+ * data/images.js) shows an elegant "coming soon" tile until you add the file
+ * and run `npm run images`.
  */
 window.SITE = window.SITE || {};
 
@@ -19,7 +22,7 @@ window.SITE.creativeNav = [
   { id: 'social', label: 'Social Media', href: 'social.html' },
   { id: 'merch', label: 'Merch', href: 'merch.html' },
   { id: 'wildlife', label: 'Wildlife', href: 'wildlife.html' },
-  { id: 'portrait', label: 'Portrait', href: 'portrait.html' },
+  { id: 'portrait', label: 'Lifestyle & Portraits', href: 'portrait.html' },
 ];
 
 window.SITE.galleries = {
@@ -31,6 +34,13 @@ window.SITE.galleries = {
       {
         type: 'features',
         items: [
+          {
+            src: 'assets/img/branding/tranquil-rest/tranquil-rest-logo.webp',
+            alt: 'Tranquil Rest Kosnathota logo — dark green mark with a river motif',
+            title: 'Tranquil Rest Kosnathota',
+            kicker: 'Riverside Guest House Identity',
+            text: 'Complete brand identity for a riverside guest house in Kosnathota. A custom dark-green logo with a flowing river motif anchors the brand, carried through professional green and yellow visiting cards with a modern dual Call / WhatsApp layout that makes booking effortless.',
+          },
           {
             src: 'assets/img/logo/d2d.webp',
             alt: 'Day To Day Deals logo',
@@ -64,7 +74,11 @@ window.SITE.galleries = {
             title: 'Day To Day Deals (alternate)',
           },
           { src: 'assets/img/logo/s1.webp', alt: 'Logo concept logo', title: 'Logo concept' },
-          { src: 'assets/img/logo/d2d-mark.webp', alt: 'Day To Day Deals (mark) logo', title: 'Day To Day Deals (mark)' },
+          {
+            src: 'assets/img/logo/d2d-mark.webp',
+            alt: 'Day To Day Deals (mark) logo',
+            title: 'Day To Day Deals (mark)',
+          },
         ],
       },
     ],
@@ -78,6 +92,38 @@ window.SITE.galleries = {
         type: 'cases',
         items: [
           {
+            name: 'Tranquil Rest',
+            kicker: 'Riverside Guest House · Kosnathota',
+            text: 'Complete brand identity for a riverside guest house in Kosnathota. A custom dark-green logo with a flowing river motif anchors the brand, carried through professional green and yellow visiting cards with a modern dual Call / WhatsApp layout that makes booking effortless.',
+            hero: {
+              src: 'assets/img/branding/tranquil-rest/tranquil-rest-brand-hero.webp',
+              alt: 'Tranquil Rest Kosnathota brand identity — key visual',
+              title: 'Tranquil Rest — brand identity',
+            },
+            images: [
+              {
+                src: 'assets/img/branding/tranquil-rest/tranquil-rest-logo.webp',
+                alt: 'Tranquil Rest logo with river motif',
+                title: 'Logo',
+              },
+              {
+                src: 'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-front.webp',
+                alt: 'Tranquil Rest green and yellow visiting card — front',
+                title: 'Visiting card — front',
+              },
+              {
+                src: 'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-back.webp',
+                alt: 'Tranquil Rest visiting card — back, with Call and WhatsApp details',
+                title: 'Visiting card — back',
+              },
+              {
+                src: 'assets/img/branding/tranquil-rest/tranquil-rest-brand-mockup.webp',
+                alt: 'Tranquil Rest brand applied to guest-house stationery',
+                title: 'Brand in use',
+              },
+            ],
+          },
+          {
             name: 'APEX',
             kicker: 'Computer Store',
             text: 'A bold visual identity for a modern computer store. The branding focuses on speed, technology, and reliability, using a sharp geometric logo and a dark, premium color palette to appeal to tech enthusiasts and professionals.',
@@ -88,7 +134,6 @@ window.SITE.galleries = {
               { src: 'assets/img/brand/apex/6.webp', alt: 'APEX brand identity — application 3' },
               { src: 'assets/img/brand/apex/5.webp', alt: 'APEX brand identity — application 4' },
             ],
-            palette: ['#1A1A1A', '#D4AF37', '#F5F5F5'],
           },
           {
             name: 'Herba',
@@ -106,11 +151,23 @@ window.SITE.galleries = {
             name: 'Nature Glow',
             kicker: 'Organic Skincare Identity',
             text: "Nature Glow represents the essence of organic beauty. This branding project for a herbal skincare line emphasizes purity and earthiness. We utilized a soft, natural color palette and elegant typography to communicate the product's organic origin and gentle healing properties, appealing to health-conscious consumers.",
-            hero: { src: 'assets/img/brand/nature-glow/3.webp', alt: 'Nature Glow brand identity — key visual' },
+            hero: {
+              src: 'assets/img/brand/nature-glow/3.webp',
+              alt: 'Nature Glow brand identity — key visual',
+            },
             images: [
-              { src: 'assets/img/brand/nature-glow/1.webp', alt: 'Nature Glow brand identity — application 1' },
-              { src: 'assets/img/brand/nature-glow/2.webp', alt: 'Nature Glow brand identity — application 2' },
-              { src: 'assets/img/brand/nature-glow/4.webp', alt: 'Nature Glow brand identity — application 3' },
+              {
+                src: 'assets/img/brand/nature-glow/1.webp',
+                alt: 'Nature Glow brand identity — application 1',
+              },
+              {
+                src: 'assets/img/brand/nature-glow/2.webp',
+                alt: 'Nature Glow brand identity — application 2',
+              },
+              {
+                src: 'assets/img/brand/nature-glow/4.webp',
+                alt: 'Nature Glow brand identity — application 3',
+              },
             ],
           },
           {
@@ -124,7 +181,6 @@ window.SITE.galleries = {
               { src: 'assets/img/brand/salon-roo/3.webp', alt: 'Salon Roo brand identity — application 3' },
               { src: 'assets/img/brand/salon-roo/5.webp', alt: 'Salon Roo brand identity — application 4' },
             ],
-            palette: ['#3B82F6', '#1E293B', '#FFFFFF'],
           },
           {
             name: 'SS Cafe',
@@ -145,11 +201,75 @@ window.SITE.galleries = {
   social: {
     title: 'Social Media Design',
     eyebrow: 'Content creation',
-    intro: 'Scroll-stopping posts for retail and lifestyle brands, made to sell.',
+    intro:
+      'Social media strategy, content and campaigns for hospitality, retail and lifestyle brands, made to stop the scroll and sell.',
     blocks: [
       {
+        type: 'client',
+        name: 'Space Billiards',
+        kicker: 'Billiards Lounge · Social Media',
+        text: 'Designed the social media posts and interactive video content, and ran the digital media strategy and promotional campaigns that built the lounge’s online presence.',
+        services: [
+          'Social media posts',
+          'Interactive video content',
+          'Digital media strategy',
+          'Promotional campaigns',
+        ],
+        items: [
+          {
+            src: 'assets/img/social/space-billiards/space-billiards-post-1.webp',
+            alt: 'Space Billiards social media post design',
+            title: 'Space Billiards — social post',
+          },
+          {
+            src: 'assets/img/social/space-billiards/space-billiards-post-2.webp',
+            alt: 'Space Billiards social media post design',
+            title: 'Space Billiards — social post',
+          },
+          {
+            src: 'assets/img/social/space-billiards/space-billiards-campaign-1.webp',
+            alt: 'Space Billiards promotional campaign creative',
+            title: 'Space Billiards — promotional campaign',
+          },
+          {
+            src: 'assets/img/social/space-billiards/space-billiards-video-cover-1.webp',
+            alt: 'Cover frame from Space Billiards video content',
+            title: 'Space Billiards — video content',
+          },
+        ],
+      },
+      {
+        type: 'client',
+        name: 'Madu Fashion',
+        kicker: 'Kids’ Apparel · Social Media',
+        text: 'Developed social media marketing assets, digital product catalogues and targeted Facebook and Instagram ad creatives for a children’s clothing brand.',
+        services: ['Social media marketing', 'Digital product catalogues', 'Facebook & Instagram ads'],
+        items: [
+          {
+            src: 'assets/img/social/madu-fashion/madu-fashion-post-1.webp',
+            alt: 'Madu Fashion social media post for kids’ clothing',
+            title: 'Madu Fashion — social post',
+          },
+          {
+            src: 'assets/img/social/madu-fashion/madu-fashion-post-2.webp',
+            alt: 'Madu Fashion social media post for kids’ clothing',
+            title: 'Madu Fashion — social post',
+          },
+          {
+            src: 'assets/img/social/madu-fashion/madu-fashion-catalog-1.webp',
+            alt: 'Page from the Madu Fashion digital product catalogue',
+            title: 'Madu Fashion — product catalogue',
+          },
+          {
+            src: 'assets/img/social/madu-fashion/madu-fashion-ad-1.webp',
+            alt: 'Madu Fashion Facebook and Instagram ad creative',
+            title: 'Madu Fashion — ad creative',
+          },
+        ],
+      },
+      {
         type: 'grid',
-        title: 'Tech & gadgets',
+        title: 'More work · Tech & gadgets',
         variant: 'square',
         items: [
           {
@@ -221,143 +341,103 @@ window.SITE.galleries = {
         items: [
           {
             src: 'assets/img/merch/1.webp',
-            alt: 'Black streetwear t-shirt with bold typography',
-            title: 'Urban Streetwear',
-            text: 'Bold typography design',
-            tag: 'Graphic Tees',
+            alt: 'T-shirt design, front and back — calligraphy print on the front, swirling galaxy on the back',
+            title: 'Ink & Cosmos',
           },
           {
             src: 'assets/img/merch/2.webp',
-            alt: 'Grey pullover hoodie mockup',
-            title: 'Winter Essentials',
-            text: 'Heavyweight cotton blend',
-            tag: 'Premium Hoodies',
+            alt: 'T-shirt design, front and back — synthwave dinosaur and sunset',
+            title: 'Retrowave Rex',
           },
           {
             src: 'assets/img/merch/3.webp',
-            alt: 'Navy blue snapback cap with embroidery',
-            title: 'Signature Snapback',
-            text: '3D Embroidered logo',
-            tag: 'Headwear',
+            alt: 'T-shirt design, front and back — French bulldog against a sunset',
+            title: 'Golden Hour',
           },
           {
             src: 'assets/img/merch/4.webp',
-            alt: 'White t-shirt with abstract colorful illustration',
-            title: 'Abstract Vision',
-            text: 'Vibrant screen print',
-            tag: 'Art Series',
+            alt: 'T-shirt design, front and back — cat in sunglasses, red illustrated cat on the back',
+            title: 'Neon Cat',
           },
           {
             src: 'assets/img/merch/5.webp',
-            alt: 'Oversized beige t-shirt mockup',
-            title: 'Relaxed Collection',
-            text: 'Drop shoulder cut',
-            tag: 'Oversized Fit',
+            alt: 'T-shirt design, front and back — moon rising over crashing waves',
+            title: 'Moonlit Wave',
           },
           {
             src: 'assets/img/merch/6.webp',
-            alt: 'Vintage wash black t-shirt',
-            title: 'Retro Wash',
-            text: 'Distressed finish',
-            tag: 'Vintage Style',
+            alt: 'T-shirt design, front and back — vivid anime-inspired character art',
+            title: 'Anime Spirit',
           },
           {
             src: 'assets/img/merch/7.webp',
-            alt: 'Long sleeve t-shirt with sleeve print',
-            title: 'Layering Piece',
-            text: 'Sleeve detail print',
-            tag: 'Long Sleeve',
+            alt: 'T-shirt design, front and back — red oni mask on a white tee',
+            title: 'Oni',
           },
           {
             src: 'assets/img/merch/8.webp',
-            alt: 'Minimalist olive green pocket tee',
-            title: 'Pocket Tee',
-            text: 'Subtle branding',
-            tag: 'Basics',
+            alt: 'T-shirt design, front and back — mountain and Japanese wave art on a white tee',
+            title: 'Fuji & Wave',
           },
           {
             src: 'assets/img/merch/9.webp',
-            alt: 'Sporty performance fabric t-shirt',
-            title: 'Performance Pro',
-            text: 'Breathable fabric',
-            tag: 'Active Wear',
+            alt: 'T-shirt design, front and back — red sun on the front, red ink burst on the back',
+            title: 'Red Sun',
           },
           {
             src: 'assets/img/merch/10.webp',
-            alt: 'Tie-dye pattern t-shirt design',
-            title: 'Tie-Dye Custom',
-            text: 'Hand-dyed effect',
-            tag: 'Summer Vibe',
+            alt: 'T-shirt design, front and back — Anubis line art with a golden back print',
+            title: 'Anubis',
           },
           {
             src: 'assets/img/merch/11.webp',
-            alt: 'Black zip-up hoodie',
-            title: 'Zip-Up Hoodie',
-            text: 'Versatile daily wear',
-            tag: 'Outerwear',
+            alt: 'T-shirt design, front and back — flowing monochrome line art',
+            title: 'Smoke Lines',
           },
           {
             src: 'assets/img/merch/12.webp',
-            alt: 'Bucket hat with logo patch',
-            title: 'Festival Bucket',
-            text: 'Woven logo patch',
-            tag: 'Accessories',
+            alt: 'T-shirt design, front and back — detailed feathered headdress illustration',
+            title: 'Feather Crown',
           },
           {
             src: 'assets/img/merch/13.webp',
-            alt: 'Striped casual t-shirt',
-            title: 'Classic Stripes',
-            text: 'Timeless design',
-            tag: 'Patterns',
+            alt: 'T-shirt design, front and back — astronaut drifting through space',
+            title: 'Astronaut',
           },
           {
             src: 'assets/img/merch/14.webp',
-            alt: 'Polo shirt with embroidered chest logo',
-            title: 'Elite Polo',
-            text: 'Refined embroidery',
-            tag: 'Smart Casual',
+            alt: 'T-shirt design, front and back — streetwear gorilla illustration',
+            title: 'Street Gorilla',
           },
           {
             src: 'assets/img/merch/15.webp',
-            alt: 'T-shirt with large back print design',
-            title: 'Back Print Tee',
-            text: 'High-impact graphics',
-            tag: 'Statement Piece',
+            alt: 'T-shirt design, front and back — crescent moon and astronaut on the moon',
+            title: 'Lunar',
           },
           {
             src: 'assets/img/merch/16.webp',
-            alt: 'Pastel colored crewneck sweatshirt',
-            title: 'Soft Crewneck',
-            text: 'Premium fleece lining',
-            tag: 'Fleece',
+            alt: 'T-shirt design, front and back — classical marble statue with gold accents',
+            title: 'Marble',
           },
           {
             src: 'assets/img/merch/17.webp',
-            alt: 'Ringer t-shirt with contrasting trims',
-            title: 'Ringer Tee',
-            text: 'Contrast trim details',
-            tag: 'Retro Fit',
+            alt: 'T-shirt design, front and back — golden samurai oni mask',
+            title: 'Golden Oni',
           },
           {
             src: 'assets/img/merch/18.webp',
-            alt: 'Winter beanie hat',
-            title: 'Knit Beanie',
-            text: 'Warm wool blend',
-            tag: 'Winter Gear',
+            alt: 'T-shirt design, front and back — typographic chest print with a red bonsai back print',
+            title: 'Whatever',
           },
           {
             src: 'assets/img/merch/19.webp',
-            alt: 'Charcoal V-neck t-shirt',
-            title: 'Sharp V-Neck',
-            text: 'Fitted silhouette',
-            tag: 'Modern Cut',
+            alt: 'T-shirt design, front and back — samurai and red bonsai sunset',
+            title: 'Bonsai Sunset',
           },
           {
             src: 'assets/img/merch/20.webp',
-            alt: 'Summer tank top with logo',
-            title: 'Logo Tank',
-            text: 'Lightweight cotton',
-            tag: 'Summer Essentials',
+            alt: 'T-shirt design, front and back — banner print on the front, anime-inspired back print',
+            title: 'Wanted',
           },
         ],
       },
@@ -376,7 +456,11 @@ window.SITE.galleries = {
             alt: 'Cow & Friend — wildlife photograph',
             title: 'Cow & Friend',
           },
-          { src: 'assets/img/wildlife/deer.webp', alt: 'Wild Deer — wildlife photograph', title: 'Wild Deer' },
+          {
+            src: 'assets/img/wildlife/deer.webp',
+            alt: 'Wild Deer — wildlife photograph',
+            title: 'Wild Deer',
+          },
           {
             src: 'assets/img/wildlife/elephant-udawalawa.webp',
             alt: 'Udawalawe Tusker — wildlife photograph',
@@ -402,7 +486,11 @@ window.SITE.galleries = {
             alt: 'King Coconut — wildlife photograph',
             title: 'King Coconut',
           },
-          { src: 'assets/img/wildlife/koka.webp', alt: 'White Crane — wildlife photograph', title: 'White Crane' },
+          {
+            src: 'assets/img/wildlife/koka.webp',
+            alt: 'White Crane — wildlife photograph',
+            title: 'White Crane',
+          },
           {
             src: 'assets/img/wildlife/lizard.webp',
             alt: 'Garden Lizard — wildlife photograph',
@@ -458,9 +546,10 @@ window.SITE.galleries = {
     ],
   },
   portrait: {
-    title: 'Portrait & Lifestyle',
-    eyebrow: 'On location',
-    intro: 'People and places across Sri Lanka, from the tea country to the hills of Ella.',
+    title: 'Lifestyle & Portraits',
+    eyebrow: 'Photography',
+    intro:
+      'People and places across Sri Lanka, from the tea country to the hills of Ella, captured with a quiet, editorial eye.',
     blocks: [
       {
         type: 'masonry',
@@ -471,7 +560,11 @@ window.SITE.galleries = {
             title: 'Balangoda',
           },
           { src: 'assets/img/portrait/ella.webp', alt: 'Portrait photograph — Ella', title: 'Ella' },
-          { src: 'assets/img/portrait/hanthana.webp', alt: 'Portrait photograph — Hanthana', title: 'Hanthana' },
+          {
+            src: 'assets/img/portrait/hanthana.webp',
+            alt: 'Portrait photograph — Hanthana',
+            title: 'Hanthana',
+          },
           {
             src: 'assets/img/portrait/hortanplace.webp',
             alt: 'Portrait photograph — Hortanplace',

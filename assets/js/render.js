@@ -82,6 +82,14 @@ window.RENDER = (function () {
     let n = 0; // running image index → lightbox order
     const reveal = () => (n >= NO_REVEAL ? 'reveal' : '');
     const pic = (it, imgClass = '', extra = '', sizes) => {
+      // Not uploaded yet → an elegant "coming soon" tile (not part of the lightbox).
+      if (!(SITE.images || {})[it.src]) {
+        const ratio = (imgClass.match(/aspect-\S+/g) || ['aspect-[4/3]']).join(' ');
+        return `<div class="${extra} g-pending ${ratio}" role="img" aria-label="${esc(it.alt)} (image coming soon)">
+          <span class="g-pending-label">${esc(it.title || 'Coming soon')}</span>
+          <span class="g-pending-sub">Coming soon</span>
+        </div>`;
+      }
       const i = n++;
       return `<button type="button" class="lb-trigger ${extra}" data-lb="${i}" data-title="${esc(it.title || '')}" aria-label="View larger: ${esc(it.title || it.alt)}">
         <img ${UI.imgAttrs(it.src, sizes)} alt="${esc(it.alt)}" ${i === 0 ? 'fetchpriority="high"' : i < EAGER ? '' : 'loading="lazy"'} decoding="async" class="${imgClass}">
@@ -124,15 +132,6 @@ window.RENDER = (function () {
           <div class="grid lg:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 mt-10">
             <div>
               <p class="text-muted leading-relaxed text-lg">${esc(c.text)}</p>
-              ${c.palette ? `
-                <p class="group-label mt-10 mb-5">Colour palette</p>
-                <ul class="flex flex-wrap gap-6">
-                  ${c.palette.map((hex) => `
-                    <li class="text-center">
-                      <span class="g-swatch" style="background:${esc(hex)}"></span>
-                      <span class="block mt-2 text-[11px] font-medium tracking-wider text-muted">${esc(hex)}</span>
-                    </li>`).join('')}
-                </ul>` : ''}
             </div>
             <div class="grid grid-cols-2 gap-4">
               ${c.images.map((it) => pic(it, 'w-full aspect-square object-cover', 'g-frame', '(min-width: 1024px) 25vw, 50vw')).join('')}
@@ -154,20 +153,46 @@ window.RENDER = (function () {
           <div class="grid ${cols}">
             ${b.items.map((it) => {
               const cls = reveal();
-              if (b.variant === 'product')
+              if (b.variant === 'product') {
+                const no = UI.pad(b.items.indexOf(it) + 1);
                 return `<figure class="${cls}">
                     ${pic(it, 'w-full aspect-[4/3] object-cover', 'g-frame', sizes)}
-                    <figcaption class="mt-5">
-                      ${it.tag ? `<p class="project-kicker !mt-0">${esc(it.tag)}</p>` : ''}
-                      <p class="mt-2 font-heading font-bold text-lg">${esc(it.title)}</p>
-                      ${it.text ? `<p class="text-sm text-muted mt-1">${esc(it.text)}</p>` : ''}
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. ${no}</span>
+                      <span class="font-heading font-semibold">${esc(it.title)}</span>
                     </figcaption>
                   </figure>`;
+              }
               if (b.variant === 'contain')
                 return `<div class="${cls}">${pic(it, 'w-full aspect-[4/3] object-contain p-6', 'g-frame g-frame-light', sizes)}</div>`;
               return `<div class="${cls}">${pic(it, 'w-full aspect-square object-cover', 'g-frame', sizes)}</div>`;
             }).join('')}
           </div>`;
+      },
+
+      client: (b) => {
+        const cls = reveal();
+        return `
+        <article class="g-client ${cls}">
+          <header class="flex flex-wrap items-end justify-between gap-4 mb-10">
+            <div>
+              <span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>
+              <h2 class="mt-5 font-heading font-extrabold text-4xl md:text-5xl tracking-tight">${esc(b.name)}</h2>
+            </div>
+            <p class="project-kicker !mt-0 !text-accent">${esc(b.kicker)}</p>
+          </header>
+          <div class="grid lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-16 items-start">
+            <div>
+              <p class="text-muted leading-relaxed text-lg">${esc(b.text)}</p>
+              ${b.services && b.services.length ? `
+                <p class="group-label mt-10 mb-5">Scope</p>
+                <ul class="flex flex-wrap gap-2">${b.services.map((x) => `<li class="chip">${esc(x)}</li>`).join('')}</ul>` : ''}
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              ${b.items.map((it) => pic(it, 'w-full aspect-square object-cover', 'g-frame', '(min-width: 1024px) 28vw, 50vw')).join('')}
+            </div>
+          </div>
+        </article>`;
       },
 
       masonry: (b) => `${blockTitle(b.title)}
