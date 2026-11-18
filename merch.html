@@ -3,337 +3,238 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Merchandise | Shavindu Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { heading: ['"Playfair Display"', 'serif'], body: ['Inter', 'sans-serif'] },
-                    colors: { primary: '#0f172a', accent: '#f59e0b', secondary: '#3b82f6', whatsapp: '#25D366' }
-                }
-            }
-        }
-    </script>
+    <title>Merchandise & Apparel | Shavindu Rashmika</title>
+    <meta name="description" content="Merchandise and apparel design by Shavindu Rashmika: tees, hoodies, headwear and more.">
+    <meta name="theme-color" content="#070709">
+
+    <link rel="canonical" href="https://shavindur.github.io/portfolio27/merch.html">
+    <meta property="og:url" content="https://shavindur.github.io/portfolio27/merch.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shavindu Rashmika">
+    <meta property="og:title" content="Merchandise & Apparel | Shavindu Rashmika">
+    <meta property="og:description" content="Merchandise and apparel design by Shavindu Rashmika: tees, hoodies, headwear and more.">
+    <meta property="og:image" content="https://shavindur.github.io/portfolio27/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Shavindu Rashmika — Creative Technologist, Social Media Manager &amp; Web Developer">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="site.webmanifest">
+
+    <script src="assets/js/theme.js"></script>
+    <link rel="preload" href="assets/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-body flex flex-col min-h-screen">
+<body data-page="gallery" data-gallery="merch" data-nav="design" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
 
-    <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl z-50 border-b dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold font-heading text-primary dark:text-white tracking-tighter italic cursor-default">
-                portfolio<span class="text-accent">.</span>merchandise
-            </div>
-            <a href="index.html#design" class="flex items-center gap-2 border-2 border-gray-200 dark:border-gray-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-accent dark:hover:border-accent transition duration-300">
-                <i class="fas fa-arrow-left text-accent"></i>
-                <span>Back</span>
-            </a>
+    <header data-layout="nav"></header>
+
+    <main id="main" data-render="gallery" data-build="6fmqw3"><!--render-->
+    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)] pb-12">
+      <a href="index.html#design" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Creative
+      </a>
+      <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-end">
+        <div>
+          <span class="eyebrow">Product design</span>
+          <h1 class="mt-5 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,6.5vw,5rem)]">Merchandise &amp; Apparel<span class="text-accent">.</span></h1>
         </div>
-    </nav>
-
-    <section class="pt-32 pb-12 text-center px-6">
-        <span class="bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase mb-4 inline-block">Product Design</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">Merchandise & Apparel</h1>
-        <p class="text-gray-500 max-w-2xl mx-auto text-lg">Turning brands into wearable art and lifestyle products.</p>
+        <p class="text-muted leading-relaxed max-w-md lg:justify-self-end">Turning brands into wearable art and lifestyle products.</p>
+      </div>
+      <nav class="creative-tabs mt-12" aria-label="Creative galleries">
+        <a href="logo.html" >Logo Design</a><a href="branding.html" >Branding</a><a href="social.html" >Social Media</a><a href="merch.html" aria-current="page">Merch</a><a href="wildlife.html" >Wildlife</a><a href="portrait.html" >Lifestyle &amp; Portraits</a>
+      </nav>
     </section>
 
-    <section class="py-12 px-6 max-w-7xl mx-auto">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Apparel Collection</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/1.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Black streetwear t-shirt with bold typography">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Graphic Tees</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Urban Streetwear</h3>
-    <p class="text-gray-500 text-sm mt-1">Bold typography design</p>
-</div>
+    <section class="container-x pb-24"><p class="group-label mb-8">Apparel collection</p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+            <figure class="">
+                    <button type="button" class="lb-trigger g-frame" data-lb="0" data-title="Ink &amp; Cosmos" aria-label="View larger: Ink &amp; Cosmos">
+        <img src="assets/img/merch/1.webp" srcset="assets/img/merch/1-800.webp 800w, assets/img/merch/1.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — calligraphy print on the front, swirling galaxy on the back" fetchpriority="high" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 01</span>
+                      <span class="font-heading font-semibold">Ink &amp; Cosmos</span>
+                    </figcaption>
+                  </figure><figure class="">
+                    <button type="button" class="lb-trigger g-frame" data-lb="1" data-title="Retrowave Rex" aria-label="View larger: Retrowave Rex">
+        <img src="assets/img/merch/2.webp" srcset="assets/img/merch/2-800.webp 800w, assets/img/merch/2.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — synthwave dinosaur and sunset"  decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 02</span>
+                      <span class="font-heading font-semibold">Retrowave Rex</span>
+                    </figcaption>
+                  </figure><figure class="">
+                    <button type="button" class="lb-trigger g-frame" data-lb="2" data-title="Golden Hour" aria-label="View larger: Golden Hour">
+        <img src="assets/img/merch/3.webp" srcset="assets/img/merch/3-800.webp 800w, assets/img/merch/3.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — French bulldog against a sunset"  decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 03</span>
+                      <span class="font-heading font-semibold">Golden Hour</span>
+                    </figcaption>
+                  </figure><figure class="">
+                    <button type="button" class="lb-trigger g-frame" data-lb="3" data-title="Neon Cat" aria-label="View larger: Neon Cat">
+        <img src="assets/img/merch/4.webp" srcset="assets/img/merch/4-800.webp 800w, assets/img/merch/4.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — cat in sunglasses, red illustrated cat on the back"  decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 04</span>
+                      <span class="font-heading font-semibold">Neon Cat</span>
+                    </figcaption>
+                  </figure><figure class="">
+                    <button type="button" class="lb-trigger g-frame" data-lb="4" data-title="Moonlit Wave" aria-label="View larger: Moonlit Wave">
+        <img src="assets/img/merch/5.webp" srcset="assets/img/merch/5-800.webp 800w, assets/img/merch/5.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — moon rising over crashing waves" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 05</span>
+                      <span class="font-heading font-semibold">Moonlit Wave</span>
+                    </figcaption>
+                  </figure><figure class="">
+                    <button type="button" class="lb-trigger g-frame" data-lb="5" data-title="Anime Spirit" aria-label="View larger: Anime Spirit">
+        <img src="assets/img/merch/6.webp" srcset="assets/img/merch/6-800.webp 800w, assets/img/merch/6.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — vivid anime-inspired character art" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 06</span>
+                      <span class="font-heading font-semibold">Anime Spirit</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="6" data-title="Oni" aria-label="View larger: Oni">
+        <img src="assets/img/merch/7.webp" srcset="assets/img/merch/7-800.webp 800w, assets/img/merch/7.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — red oni mask on a white tee" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 07</span>
+                      <span class="font-heading font-semibold">Oni</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="7" data-title="Fuji &amp; Wave" aria-label="View larger: Fuji &amp; Wave">
+        <img src="assets/img/merch/8.webp" srcset="assets/img/merch/8-800.webp 800w, assets/img/merch/8.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — mountain and Japanese wave art on a white tee" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 08</span>
+                      <span class="font-heading font-semibold">Fuji &amp; Wave</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="8" data-title="Red Sun" aria-label="View larger: Red Sun">
+        <img src="assets/img/merch/9.webp" srcset="assets/img/merch/9-800.webp 800w, assets/img/merch/9.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — red sun on the front, red ink burst on the back" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 09</span>
+                      <span class="font-heading font-semibold">Red Sun</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="9" data-title="Anubis" aria-label="View larger: Anubis">
+        <img src="assets/img/merch/10.webp" srcset="assets/img/merch/10-800.webp 800w, assets/img/merch/10.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — Anubis line art with a golden back print" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 10</span>
+                      <span class="font-heading font-semibold">Anubis</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="10" data-title="Smoke Lines" aria-label="View larger: Smoke Lines">
+        <img src="assets/img/merch/11.webp" srcset="assets/img/merch/11-800.webp 800w, assets/img/merch/11.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — flowing monochrome line art" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 11</span>
+                      <span class="font-heading font-semibold">Smoke Lines</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="11" data-title="Feather Crown" aria-label="View larger: Feather Crown">
+        <img src="assets/img/merch/12.webp" srcset="assets/img/merch/12-800.webp 800w, assets/img/merch/12.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — detailed feathered headdress illustration" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 12</span>
+                      <span class="font-heading font-semibold">Feather Crown</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="12" data-title="Astronaut" aria-label="View larger: Astronaut">
+        <img src="assets/img/merch/13.webp" srcset="assets/img/merch/13-800.webp 800w, assets/img/merch/13.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — astronaut drifting through space" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 13</span>
+                      <span class="font-heading font-semibold">Astronaut</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="13" data-title="Street Gorilla" aria-label="View larger: Street Gorilla">
+        <img src="assets/img/merch/14.webp" srcset="assets/img/merch/14-800.webp 800w, assets/img/merch/14.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — streetwear gorilla illustration" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 14</span>
+                      <span class="font-heading font-semibold">Street Gorilla</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="14" data-title="Lunar" aria-label="View larger: Lunar">
+        <img src="assets/img/merch/15.webp" srcset="assets/img/merch/15-800.webp 800w, assets/img/merch/15.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — crescent moon and astronaut on the moon" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 15</span>
+                      <span class="font-heading font-semibold">Lunar</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="15" data-title="Marble" aria-label="View larger: Marble">
+        <img src="assets/img/merch/16.webp" srcset="assets/img/merch/16-800.webp 800w, assets/img/merch/16.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — classical marble statue with gold accents" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 16</span>
+                      <span class="font-heading font-semibold">Marble</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="16" data-title="Golden Oni" aria-label="View larger: Golden Oni">
+        <img src="assets/img/merch/17.webp" srcset="assets/img/merch/17-800.webp 800w, assets/img/merch/17.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — golden samurai oni mask" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 17</span>
+                      <span class="font-heading font-semibold">Golden Oni</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="17" data-title="Whatever" aria-label="View larger: Whatever">
+        <img src="assets/img/merch/18.webp" srcset="assets/img/merch/18-800.webp 800w, assets/img/merch/18.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — typographic chest print with a red bonsai back print" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 18</span>
+                      <span class="font-heading font-semibold">Whatever</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="18" data-title="Bonsai Sunset" aria-label="View larger: Bonsai Sunset">
+        <img src="assets/img/merch/19.webp" srcset="assets/img/merch/19-800.webp 800w, assets/img/merch/19.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — samurai and red bonsai sunset" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 19</span>
+                      <span class="font-heading font-semibold">Bonsai Sunset</span>
+                    </figcaption>
+                  </figure><figure class="reveal">
+                    <button type="button" class="lb-trigger g-frame" data-lb="19" data-title="Wanted" aria-label="View larger: Wanted">
+        <img src="assets/img/merch/20.webp" srcset="assets/img/merch/20-800.webp 800w, assets/img/merch/20.webp 1280w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1280" height="905" alt="T-shirt design, front and back — banner print on the front, anime-inspired back print" loading="lazy" decoding="async" class="w-full aspect-[4/3] object-cover">
+      </button>
+                    <figcaption class="mt-4 flex items-baseline gap-3">
+                      <span class="project-index">No. 20</span>
+                      <span class="font-heading font-semibold">Wanted</span>
+                    </figcaption>
+                  </figure>
+          </div></section>
 
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/2.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Grey pullover hoodie mockup">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Premium Hoodies</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Winter Essentials</h3>
-    <p class="text-gray-500 text-sm mt-1">Heavyweight cotton blend</p>
-</div>
+    <section class="container-x pb-24">
+      <a href="wildlife.html" class="g-next group">
+        <span class="project-index">Next gallery</span>
+        <span class="flex items-center justify-between gap-6 mt-3">
+          <span class="font-heading font-extrabold text-3xl md:text-5xl tracking-tight">Wildlife</span>
+          <span class="icon-btn !w-14 !h-14 shrink-0 transition group-hover:bg-accent group-hover:text-accent-fg group-hover:border-accent">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </span>
+        </span>
+      </a>
+    </section><!--/render--></main>
 
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/3.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Navy blue snapback cap with embroidery">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Headwear</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Signature Snapback</h3>
-    <p class="text-gray-500 text-sm mt-1">3D Embroidered logo</p>
-</div>
+    <footer data-layout="footer" id="contact"></footer>
 
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/4.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="White t-shirt with abstract colorful illustration">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Art Series</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Abstract Vision</h3>
-    <p class="text-gray-500 text-sm mt-1">Vibrant screen print</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/5.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Oversized beige t-shirt mockup">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Oversized Fit</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Relaxed Collection</h3>
-    <p class="text-gray-500 text-sm mt-1">Drop shoulder cut</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/6.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Vintage wash black t-shirt">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Vintage Style</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Retro Wash</h3>
-    <p class="text-gray-500 text-sm mt-1">Distressed finish</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/7.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Long sleeve t-shirt with sleeve print">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Long Sleeve</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Layering Piece</h3>
-    <p class="text-gray-500 text-sm mt-1">Sleeve detail print</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/8.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Minimalist olive green pocket tee">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Basics</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Pocket Tee</h3>
-    <p class="text-gray-500 text-sm mt-1">Subtle branding</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/9.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Sporty performance fabric t-shirt">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Active Wear</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Performance Pro</h3>
-    <p class="text-gray-500 text-sm mt-1">Breathable fabric</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/10.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Tie-dye pattern t-shirt design">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Summer Vibe</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Tie-Dye Custom</h3>
-    <p class="text-gray-500 text-sm mt-1">Hand-dyed effect</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/11.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Black zip-up hoodie">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Outerwear</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Zip-Up Hoodie</h3>
-    <p class="text-gray-500 text-sm mt-1">Versatile daily wear</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/12.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Bucket hat with logo patch">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Accessories</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Festival Bucket</h3>
-    <p class="text-gray-500 text-sm mt-1">Woven logo patch</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/13.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Striped casual t-shirt">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Patterns</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Classic Stripes</h3>
-    <p class="text-gray-500 text-sm mt-1">Timeless design</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/14.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Polo shirt with embroidered chest logo">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Smart Casual</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Elite Polo</h3>
-    <p class="text-gray-500 text-sm mt-1">Refined embroidery</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/15.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="T-shirt with large back print design">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Statement Piece</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Back Print Tee</h3>
-    <p class="text-gray-500 text-sm mt-1">High-impact graphics</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/16.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Pastel colored crewneck sweatshirt">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Fleece</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Soft Crewneck</h3>
-    <p class="text-gray-500 text-sm mt-1">Premium fleece lining</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/17.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Ringer t-shirt with contrasting trims">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Retro Fit</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Ringer Tee</h3>
-    <p class="text-gray-500 text-sm mt-1">Contrast trim details</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/18.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Winter beanie hat">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Winter Gear</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Knit Beanie</h3>
-    <p class="text-gray-500 text-sm mt-1">Warm wool blend</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/19.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Charcoal V-neck t-shirt">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Modern Cut</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Sharp V-Neck</h3>
-    <p class="text-gray-500 text-sm mt-1">Fitted silhouette</p>
-</div>
-
-<div class="group">
-    <div class="relative overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 aspect-[4/3] mb-4">
-        <img src="merch/20.jfif" class="w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Summer tank top with logo">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-6">
-            <span class="text-white font-bold text-lg">Summer Essentials</span>
-        </div>
-    </div>
-    <h3 class="text-xl font-bold">Logo Tank</h3>
-    <p class="text-gray-500 text-sm mt-1">Lightweight cotton</p>
-</div>
-
-        </div>
-    </section>
-    
-
-    <!--section class="py-12 px-6 max-w-7xl mx-auto mb-20">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Accessories & Gifts</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            
-            <div class="group">
-                <div class="relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-gray-800 aspect-square mb-3">
-                    <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Mug Design">
-                </div>
-                <h4 class="font-bold">Corporate Mugs</h4>
-            </div>
-
-            <div class="group">
-                <div class="relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-gray-800 aspect-square mb-3">
-                    <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Tote Bag Design">
-                </div>
-                <h4 class="font-bold">Eco Tote Bags</h4>
-            </div>
-
-            <div class="group">
-                <div class="relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-gray-800 aspect-square mb-3">
-                    <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Notebook Design">
-                </div>
-                <h4 class="font-bold">Custom Notebooks</h4>
-            </div>
-
-            <div class="group">
-                <div class="relative overflow-hidden rounded-2xl shadow-md bg-white dark:bg-gray-800 aspect-square mb-3">
-                    <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Packaging Design">
-                </div>
-                <h4 class="font-bold">Product Packaging</h4>
-            </div>
-
-        </div>
-    </section-->
-
-    <footer id="contact" class="bg-gray-900 text-white border-t border-gray-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4">
-                    <h2 class="text-3xl font-heading font-bold italic">shavindu<span class="text-accent">.</span>designer</h2>
-                    <p class="text-gray-400 leading-relaxed text-sm max-w-lg">
-                        Creating digital experiences that blend aesthetic design with strong functionality. Specializing in graphic design, web development, and photography.
-                    </p>
-                    <p class="text-xs text-gray-600">© 2026 Shavindu Rashmika. All Rights Reserved.</p>
-                </div>
-                <div class="flex flex-col md:items-end gap-6">
-                    <a href="https://wa.me/94711098429" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1EBE57] text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">
-                        <i class="fab fa-whatsapp text-2xl group-hover:rotate-12 transition duration-300"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                    <div class="flex gap-4">
-                         <a href="https://github.com/ShavinduR/ShavinduR" target="_blank" rel="noopener noreferrer" title="GitHub" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition border border-gray-700"><i class="fab fa-github"></i></a>
-                         <a href="https://www.linkedin.com/in/shavindu-rashmika-rathnayake" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition border border-gray-700"><i class="fab fa-linkedin-in"></i></a>
-                         <a href="https://www.facebook.com/share/1DWMwvZ1x4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition border border-gray-700"><i class="fab fa-facebook-f"></i></a>
-                         <a href="https://discord.com/users/1043745550467616788" target="_blank" rel="noopener noreferrer" title="Discord" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#5865F2] hover:text-white transition border border-gray-700"><i class="fab fa-discord"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script src="assets/js/data/profile.js"></script>
+    <script src="assets/js/data/galleries.js"></script>
+    <script src="assets/js/data/images.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/render.js"></script>
+    <script src="assets/js/gallery-page.js"></script>
+    <script src="assets/js/layout.js"></script>
 </body>
 </html>

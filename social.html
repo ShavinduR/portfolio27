@@ -3,277 +3,178 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Social Media | Shavindu Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { heading: ['"Playfair Display"', 'serif'], body: ['Inter', 'sans-serif'] },
-                    colors: { primary: '#0f172a', accent: '#f59e0b', secondary: '#3b82f6', whatsapp: '#25D366' }
-                }
-            }
-        }
-    </script>
+    <title>Social Media Design | Shavindu Rashmika</title>
+    <meta name="description" content="Social media strategy, content and campaigns by Shavindu Rashmika for Space Billiards, Madu Fashion and retail brands.">
+    <meta name="theme-color" content="#070709">
+
+    <link rel="canonical" href="https://shavindur.github.io/portfolio27/social.html">
+    <meta property="og:url" content="https://shavindur.github.io/portfolio27/social.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Shavindu Rashmika">
+    <meta property="og:title" content="Social Media Design | Shavindu Rashmika">
+    <meta property="og:description" content="Social media strategy, content and campaigns by Shavindu Rashmika for Space Billiards, Madu Fashion and retail brands.">
+    <meta property="og:image" content="https://shavindur.github.io/portfolio27/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Shavindu Rashmika — Creative Technologist, Social Media Manager &amp; Web Developer">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="manifest" href="site.webmanifest">
+
+    <script src="assets/js/theme.js"></script>
+    <link rel="preload" href="assets/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 font-body flex flex-col min-h-screen">
+<body data-page="gallery" data-gallery="social" data-nav="design" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
 
-    <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl z-50 border-b dark:border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold font-heading text-primary dark:text-white tracking-tighter italic cursor-default">
-                portfolio<span class="text-accent">.</span>social
-            </div>
-            <a href="index.html#design" class="flex items-center gap-2 border-2 border-gray-200 dark:border-gray-700 px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-accent dark:hover:border-accent transition duration-300">
-                <i class="fas fa-arrow-left text-accent"></i>
-                <span>Back</span>
-            </a>
+    <header data-layout="nav"></header>
+
+    <main id="main" data-render="gallery" data-build="4r4on4"><!--render-->
+    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)] pb-12">
+      <a href="index.html#design" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Creative
+      </a>
+      <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-end">
+        <div>
+          <span class="eyebrow">Content creation</span>
+          <h1 class="mt-5 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,6.5vw,5rem)]">Social Media Design<span class="text-accent">.</span></h1>
         </div>
-    </nav>
-
-    <section class="pt-32 pb-12 text-center px-6">
-        <span class="bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase mb-4 inline-block">Content Creation</span>
-        <h1 class="text-5xl md:text-6xl font-heading font-bold mb-6">Social Media Design</h1>
-        <p class="text-gray-500 max-w-2xl mx-auto text-lg">Engaging posts designed to stop the scroll.</p>
+        <p class="text-muted leading-relaxed max-w-md lg:justify-self-end">Social media strategy, content and campaigns for hospitality, retail and lifestyle brands, made to stop the scroll and sell.</p>
+      </div>
+      <nav class="creative-tabs mt-12" aria-label="Creative galleries">
+        <a href="logo.html" >Logo Design</a><a href="branding.html" >Branding</a><a href="social.html" aria-current="page">Social Media</a><a href="merch.html" >Merch</a><a href="wildlife.html" >Wildlife</a><a href="portrait.html" >Lifestyle &amp; Portraits</a>
+      </nav>
     </section>
 
-    <!--section class="py-12 px-6 max-w-7xl mx-auto">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Food & Beverages</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
+    <section class="container-x pb-24">
+        <article class="g-client ">
+          <header class="flex flex-wrap items-end justify-between gap-4 mb-10">
+            <div>
+              <span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>
+              <h2 class="mt-5 font-heading font-extrabold text-4xl md:text-5xl tracking-tight">Space Billiards</h2>
+            </div>
+            <p class="project-kicker !mt-0 !text-accent">Billiards Lounge · Social Media</p>
+          </header>
+          <div class="grid lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-16 items-start">
+            <div>
+              <p class="text-muted leading-relaxed text-lg">Designed the social media posts and interactive video content, and ran the digital media strategy and promotional campaigns that built the lounge’s online presence.</p>
+              
+                <p class="group-label mt-10 mb-5">Scope</p>
+                <ul class="flex flex-wrap gap-2"><li class="chip">Social media posts</li><li class="chip">Interactive video content</li><li class="chip">Digital media strategy</li><li class="chip">Promotional campaigns</li></ul>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="g-frame g-pending aspect-square" role="img" aria-label="Space Billiards social media post design (image coming soon)">
+          <span class="g-pending-label">Space Billiards — social post</span>
+          <span class="g-pending-sub">Coming soon</span>
+        </div><div class="g-frame g-pending aspect-square" role="img" aria-label="Space Billiards social media post design (image coming soon)">
+          <span class="g-pending-label">Space Billiards — social post</span>
+          <span class="g-pending-sub">Coming soon</span>
+        </div><div class="g-frame g-pending aspect-square" role="img" aria-label="Space Billiards promotional campaign creative (image coming soon)">
+          <span class="g-pending-label">Space Billiards — promotional campaign</span>
+          <span class="g-pending-sub">Coming soon</span>
+        </div><div class="g-frame g-pending aspect-square" role="img" aria-label="Cover frame from Space Billiards video content (image coming soon)">
+          <span class="g-pending-label">Space Billiards — video content</span>
+          <span class="g-pending-sub">Coming soon</span>
         </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 1">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
             </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 2">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
+          </div>
+        </article></section><section class="container-x pb-24">
+        <article class="g-client ">
+          <header class="flex flex-wrap items-end justify-between gap-4 mb-10">
+            <div>
+              <span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>
+              <h2 class="mt-5 font-heading font-extrabold text-4xl md:text-5xl tracking-tight">Madu Fashion</h2>
             </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 3">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
+            <p class="project-kicker !mt-0 !text-accent">Kids’ Apparel · Social Media</p>
+          </header>
+          <div class="grid lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-16 items-start">
+            <div>
+              <p class="text-muted leading-relaxed text-lg">Developed social media marketing assets, digital product catalogues and targeted Facebook and Instagram ad creatives for a children’s clothing brand.</p>
+              
+                <p class="group-label mt-10 mb-5">Scope</p>
+                <ul class="flex flex-wrap gap-2"><li class="chip">Social media marketing</li><li class="chip">Digital product catalogues</li><li class="chip">Facebook &amp; Instagram ads</li></ul>
             </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Food Post 4">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-instagram text-white text-3xl"></i>
-                </div>
-            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="g-frame g-pending aspect-square" role="img" aria-label="Madu Fashion social media post for kids’ clothing (image coming soon)">
+          <span class="g-pending-label">Madu Fashion — social post</span>
+          <span class="g-pending-sub">Coming soon</span>
+        </div><div class="g-frame g-pending aspect-square" role="img" aria-label="Madu Fashion social media post for kids’ clothing (image coming soon)">
+          <span class="g-pending-label">Madu Fashion — social post</span>
+          <span class="g-pending-sub">Coming soon</span>
+        </div><div class="g-frame g-pending aspect-square" role="img" aria-label="Page from the Madu Fashion digital product catalogue (image coming soon)">
+          <span class="g-pending-label">Madu Fashion — product catalogue</span>
+          <span class="g-pending-sub">Coming soon</span>
+        </div><div class="g-frame g-pending aspect-square" role="img" aria-label="Madu Fashion Facebook and Instagram ad creative (image coming soon)">
+          <span class="g-pending-label">Madu Fashion — ad creative</span>
+          <span class="g-pending-sub">Coming soon</span>
         </div>
-    </section-->
-
-    <section class="py-12 px-6 max-w-7xl mx-auto">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Tech & Gadgets</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/dart board.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="100 Pcs Paper Cup Cake">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
             </div>
+          </div>
+        </article></section><section class="container-x pb-24"><p class="group-label mb-8">More work · Tech &amp; gadgets</p>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+            <div class=""><button type="button" class="lb-trigger g-frame" data-lb="0" data-title="dart board" aria-label="View larger: dart board">
+        <img src="assets/img/social/dart-board.webp" srcset="assets/img/social/dart-board-800.webp 800w, assets/img/social/dart-board.webp 1080w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1080" height="1080" alt="dart board — product social media post" fetchpriority="high" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class=""><button type="button" class="lb-trigger g-frame" data-lb="1" data-title="" aria-label="View larger: Motivational social media post with Sinhala text encouraging relaxation and comfort despite long hours, featuring warm and inviting aesthetic tones">
+        <img src="assets/img/social/sit-in-comfort-sinhala.webp" srcset="assets/img/social/sit-in-comfort-sinhala-800.webp 800w, assets/img/social/sit-in-comfort-sinhala.webp 1080w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1080" height="1080" alt="Motivational social media post with Sinhala text encouraging relaxation and comfort despite long hours, featuring warm and inviting aesthetic tones"  decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class=""><button type="button" class="lb-trigger g-frame" data-lb="2" data-title="100 Pcs Paper Cup Cake" aria-label="View larger: 100 Pcs Paper Cup Cake">
+        <img src="assets/img/social/100-pcs-paper-cup-cake.webp" width="751" height="997" alt="100 Pcs Paper Cup Cake — product social media post"  decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class=""><button type="button" class="lb-trigger g-frame" data-lb="3" data-title="KTS-1655 radio" aria-label="View larger: KTS-1655 radio">
+        <img src="assets/img/social/kts-1655-radio.webp" width="751" height="997" alt="KTS-1655 radio — product social media post"  decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class=""><button type="button" class="lb-trigger g-frame" data-lb="4" data-title="Pen Laser Pointer" aria-label="View larger: Pen Laser Pointer">
+        <img src="assets/img/social/pen-laser-pointer.webp" width="751" height="997" alt="Pen Laser Pointer — product social media post" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class=""><button type="button" class="lb-trigger g-frame" data-lb="5" data-title="Portable Folding Stool" aria-label="View larger: Portable Folding Stool">
+        <img src="assets/img/social/portable-folding-stool.webp" width="751" height="997" alt="Portable Folding Stool — product social media post" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="6" data-title="Paint Roller" aria-label="View larger: Paint Roller">
+        <img src="assets/img/social/paint-roller.webp" srcset="assets/img/social/paint-roller-800.webp 800w, assets/img/social/paint-roller.webp 1500w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1500" height="2000" alt="Paint Roller — product social media post" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="7" data-title="Video Making Kit" aria-label="View larger: Video Making Kit">
+        <img src="assets/img/social/video-making-kit.webp" srcset="assets/img/social/video-making-kit-800.webp 800w, assets/img/social/video-making-kit.webp 1503w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1503" height="2000" alt="Video Making Kit — product social media post" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="8" data-title="WiFi Smart Camera" aria-label="View larger: WiFi Smart Camera">
+        <img src="assets/img/social/wifi-smart-camera.webp" srcset="assets/img/social/wifi-smart-camera-800.webp 800w, assets/img/social/wifi-smart-camera.webp 1489w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1489" height="2000" alt="WiFi Smart Camera — product social media post" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="9" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-1.webp" srcset="assets/img/social/post-1-800.webp 800w, assets/img/social/post-1.webp 1280w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1280" height="1072" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="10" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-3.webp" srcset="assets/img/social/post-3-800.webp 800w, assets/img/social/post-3.webp 1280w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1280" height="1073" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="11" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-4.webp" srcset="assets/img/social/post-4-800.webp 800w, assets/img/social/post-4.webp 1469w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1469" height="1231" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="12" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-5.webp" srcset="assets/img/social/post-5-800.webp 800w, assets/img/social/post-5.webp 1410w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1410" height="1182" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="13" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-7.webp" srcset="assets/img/social/post-7-800.webp 800w, assets/img/social/post-7.webp 1280w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1280" height="1073" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="14" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-8.webp" srcset="assets/img/social/post-8-800.webp 800w, assets/img/social/post-8.webp 1410w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1410" height="1182" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="15" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-9.webp" srcset="assets/img/social/post-9-800.webp 800w, assets/img/social/post-9.webp 1410w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="1410" height="1182" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="16" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-15.webp" srcset="assets/img/social/post-15-800.webp 800w, assets/img/social/post-15.webp 904w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="904" height="1280" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div><div class="reveal"><button type="button" class="lb-trigger g-frame" data-lb="17" data-title="" aria-label="View larger: Social media post design">
+        <img src="assets/img/social/post-17.webp" srcset="assets/img/social/post-17-800.webp 800w, assets/img/social/post-17.webp 904w" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" width="904" height="1280" alt="Social media post design" loading="lazy" decoding="async" class="w-full aspect-square object-cover">
+      </button></div>
+          </div></section>
 
-            
+    <section class="container-x pb-24">
+      <a href="merch.html" class="g-next group">
+        <span class="project-index">Next gallery</span>
+        <span class="flex items-center justify-between gap-6 mt-3">
+          <span class="font-heading font-extrabold text-3xl md:text-5xl tracking-tight">Merch</span>
+          <span class="icon-btn !w-14 !h-14 shrink-0 transition group-hover:bg-accent group-hover:text-accent-fg group-hover:border-accent">
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </span>
+        </span>
+      </a>
+    </section><!--/render--></main>
 
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/පැය ගාණක් වුනත් සැපට වාඩි වෙලා ඉන්න!.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Motivational social media post with Sinhala text encouraging relaxation and comfort despite long hours, featuring warm and inviting aesthetic tones">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
+    <footer data-layout="footer" id="contact"></footer>
 
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/100 Pcs Paper Cup Cake.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="100 Pcs Paper Cup Cake">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/KTS-1655 radio.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="KTS-1655 Radio">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-            
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Pen Laser Pointer.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Pen Laser Pointer">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-            
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Portable Folding Stool.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Portable Folding Stool">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Paint Roller.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Paint Roller">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/Video Making Kit.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Video Making Kit">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/WiFi Smart Camera.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="WiFi Smart Camera">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/1.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 1">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/3.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 3">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/4.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 4">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/5.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 5">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/7.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 7">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/8.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 8">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/9.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 9">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/15.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 15">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="social media post/17.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Social Media Post 17">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fab fa-facebook-f text-white text-3xl"></i>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!--section class="py-12 px-6 max-w-7xl mx-auto mb-20">
-        <div class="flex items-center gap-4 mb-8">
-            <h2 class="text-3xl font-heading font-bold">Promotional & Branding</h2>
-            <div class="h-px bg-gray-200 dark:bg-gray-800 flex-grow"></div>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 1">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 2">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 3">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-2xl shadow-lg aspect-square">
-                <img src="images/branding 2.jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" alt="Promo Post 4">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    <i class="fas fa-share-nodes text-white text-3xl"></i>
-                </div>
-            </div>
-        </div>
-    </section-->
-
-    <footer id="contact" class="bg-gray-900 text-white border-t border-gray-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4">
-                    <h2 class="text-3xl font-heading font-bold italic">shavindu<span class="text-accent">.</span>designer</h2>
-                    <p class="text-gray-400 leading-relaxed text-sm max-w-lg">
-                        Creating digital experiences that blend aesthetic design with strong functionality. Specializing in graphic design, web development, and photography.
-                    </p>
-                    <p class="text-xs text-gray-600">© 2026 Shavindu Rashmika. All Rights Reserved.</p>
-                </div>
-                <div class="flex flex-col md:items-end gap-6">
-                    <a href="https://wa.me/94711098429" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1EBE57] text-white font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1">
-                        <i class="fab fa-whatsapp text-2xl group-hover:rotate-12 transition duration-300"></i>
-                        <span>Chat on WhatsApp</span>
-                    </a>
-                    <div class="flex gap-4">
-                         <a href="https://github.com/ShavinduR/ShavinduR" target="_blank" rel="noopener noreferrer" title="Visit GitHub" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-white hover:text-black transition border border-gray-700"><i class="fab fa-github"></i></a>
-                         <a href="https://www.linkedin.com/in/shavindu-rashmika-rathnayake" target="_blank" rel="noopener noreferrer" title="Visit LinkedIn" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition border border-gray-700"><i class="fab fa-linkedin-in"></i></a>
-                         <a href="https://www.facebook.com/share/1DWMwvZ1x4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" title="Visit Facebook" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition border border-gray-700"><i class="fab fa-facebook-f"></i></a>
-                         <a href="https://discord.com/users/1043745550467616788" target="_blank" rel="noopener noreferrer" title="Visit Discord" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#5865F2] hover:text-white transition border border-gray-700"><i class="fab fa-discord"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script src="assets/js/data/profile.js"></script>
+    <script src="assets/js/data/galleries.js"></script>
+    <script src="assets/js/data/images.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/render.js"></script>
+    <script src="assets/js/gallery-page.js"></script>
+    <script src="assets/js/layout.js"></script>
 </body>
 </html>

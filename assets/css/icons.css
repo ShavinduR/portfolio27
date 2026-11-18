@@ -1,0 +1,39 @@
+/*
+ * Font Awesome Free 6 — subset to the 22 icons this site uses (CC BY 4.0 icons, SIL OFL 1.1 font).
+ * https://fontawesome.com/license/free
+ * Regenerate when adding an icon: see README → "Adding an icon".
+ */
+@font-face { font-family: 'FA Solid'; font-style: normal; font-weight: 900; font-display: block;
+  src: url('../fonts/fa-solid-900-subset.woff2') format('woff2'); }
+@font-face { font-family: 'FA Brands'; font-style: normal; font-weight: 400; font-display: block;
+  src: url('../fonts/fa-brands-400-subset.woff2') format('woff2'); }
+
+.fa-solid, .fas, .fa-brands, .fab {
+  display: inline-block; font-style: normal; font-variant: normal; line-height: 1;
+  text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+.fa-solid, .fas { font-family: 'FA Solid'; font-weight: 900; }
+.fa-brands, .fab { font-family: 'FA Brands'; font-weight: 400; }
+
+.fa-arrow-down::before { content: "\f063"; }
+.fa-arrow-left::before { content: "\f060"; }
+.fa-arrow-right::before { content: "\f061"; }
+.fa-arrow-up::before { content: "\f062"; }
+.fa-arrow-up-right-from-square::before { content: "\f08e"; }
+.fa-bars::before { content: "\f0c9"; }
+.fa-bullhorn::before { content: "\f0a1"; }
+.fa-camera-retro::before { content: "\f083"; }
+.fa-cloud::before { content: "\f0c2"; }
+.fa-diamond::before { content: "\f219"; }
+.fa-discord::before { content: "\f392"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-facebook-f::before { content: "\f39e"; }
+.fa-github::before { content: "\f09b"; }
+.fa-graduation-cap::before { content: "\f19d"; }
+.fa-layer-group::before { content: "\f5fd"; }
+.fa-linkedin-in::before { content: "\f0e1"; }
+.fa-moon::before { content: "\f186"; }
+.fa-star::before { content: "\f005"; }
+.fa-sun::before { content: "\f185"; }
+.fa-whatsapp::before { content: "\f232"; }
+.fa-xmark::before { content: "\f00d"; }
