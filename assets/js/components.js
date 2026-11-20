@@ -79,13 +79,17 @@ window.UI = (function () {
   /** Screenshot when available, otherwise an elegant CSS wireframe. */
   function thumb(p, { size = 'md' } = {}) {
     const ph = p.placeholder || {};
+    const url = domain(p.links && p.links.live) || `${p.slug}.app`;
+    // Real screenshot: shown inside the same browser frame, on the tinted backdrop.
     if (p.image) {
-      return `<div class="ph ph-${size}" style="--h:${ph.hue ?? 40}">
-        <img ${imgAttrs(p.image, '(min-width: 1024px) 50vw, 100vw')} alt="${esc(p.title)} screenshot" loading="lazy" decoding="async" class="ph-img">
+      return `<div class="ph ph-${size} ph-has-shot" style="--h:${ph.hue ?? 40}">
+        <div class="ph-frame">
+          <div class="ph-bar"><span></span><span></span><span></span><em>${esc(url)}</em></div>
+          <div class="ph-shot"><img ${imgAttrs(p.image, '(min-width: 1024px) 50vw, 100vw')} alt="${esc(p.title)} — screenshot of the live site" loading="lazy" decoding="async"></div>
+        </div>
       </div>`;
     }
     const layout = layouts[ph.layout] || layouts.site;
-    const url = domain(p.links && p.links.live) || `${p.slug}.app`;
     const isMobile = ph.layout === 'mobile';
     return `
       <div class="ph ph-${size}" style="--h:${ph.hue ?? 40}" role="img" aria-label="${esc(p.title)} — preview placeholder">

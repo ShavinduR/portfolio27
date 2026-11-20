@@ -6,8 +6,8 @@
  *   group        'client' (highlighted real-world work) | 'core' (technical builds)
  *   categories   used by the filter bar on the home page
  *   links        { live, github } — omit or leave null to hide a button
- *   image        path to a screenshot. While null, an elegant CSS wireframe
- *                is drawn instead, using `placeholder` below.
+ *   image        screenshot (assets/img/projects/…), shown inside a browser frame.
+ *                While null, an elegant CSS wireframe is drawn instead.
  *   placeholder  { layout, hue, monogram }
  *                layout: 'site' | 'gallery' | 'shop' | 'auction' | 'game' | 'app' | 'mobile'
  *                hue:    0–360, tints the card's ambient glow
@@ -42,8 +42,8 @@ window.SITE.projects = [
       'Part of a three-brand web ecosystem built for the Peak Moments group',
     ],
     stack: ['Web Design', 'Responsive UI', 'SEO'],
-    links: { live: 'https://peakmoments.com' },
-    image: null,
+    links: { live: 'https://peakmomentslifestyle.com' },
+    image: 'assets/img/projects/peak-moments.webp',
     placeholder: { layout: 'gallery', hue: 38, monogram: 'PM' },
   },
   {
@@ -64,7 +64,7 @@ window.SITE.projects = [
     ],
     stack: ['UI/UX', 'Web Design', 'Responsive UI'],
     links: { live: 'https://www.peakmomentsbyrumesh.com' },
-    image: null,
+    image: 'assets/img/projects/peak-moments-by-rumesh.webp',
     placeholder: { layout: 'site', hue: 24, monogram: 'PMR' },
   },
   {
@@ -85,7 +85,7 @@ window.SITE.projects = [
     ],
     stack: ['Web Design', 'Corporate UI', 'SEO'],
     links: { live: 'https://ilikemediacorporate.com' },
-    image: null,
+    image: 'assets/img/projects/i-like-media.webp',
     placeholder: { layout: 'site', hue: 210, monogram: 'ILM' },
   },
 
@@ -110,7 +110,7 @@ window.SITE.projects = [
     ],
     stack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Socket.IO', 'Cloudflare R2', 'Render', 'Vercel'],
     links: { live: 'https://customt.vercel.app/', github: 'https://github.com/ShavinduR/customt' },
-    image: null,
+    image: 'assets/img/projects/customt.webp',
     placeholder: { layout: 'auction', hue: 262, monogram: 'CT' },
   },
   {
@@ -131,7 +131,7 @@ window.SITE.projects = [
     ],
     stack: ['React (Vite)', 'Tailwind CSS', 'MongoDB', 'Vercel'],
     links: { live: 'https://kidsla.vercel.app/' },
-    image: null,
+    image: 'assets/img/projects/kidsla.webp',
     placeholder: { layout: 'shop', hue: 330, monogram: 'KL' },
   },
   {
@@ -152,7 +152,7 @@ window.SITE.projects = [
     ],
     stack: ['React (Vite)', 'Tailwind CSS', 'SEO', 'Vercel'],
     links: { live: 'https://tranquil-rest.vercel.app/' },
-    image: null,
+    image: 'assets/img/projects/tranquil-rest.webp',
     placeholder: { layout: 'site', hue: 158, monogram: 'TR' },
   },
   {
@@ -173,7 +173,7 @@ window.SITE.projects = [
     ],
     stack: ['React', 'Node.js', 'Socket.IO', 'Vercel'],
     links: { live: 'https://srilankan-dam-game-sandy.vercel.app/' },
-    image: null,
+    image: 'assets/img/projects/sri-lankan-dam.webp',
     placeholder: { layout: 'game', hue: 14, monogram: 'දා' },
   },
   {
