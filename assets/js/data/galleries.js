@@ -45,6 +45,13 @@ window.SITE.galleries = {
             text: 'Logo for a riverside guest house in Kosnathota–Godakawela. A dark-green triangle framing a four-point star sits above three flowing lines that echo the river, paired with a serif wordmark. The symbol also works on its own.',
           },
           {
+            src: 'assets/img/brands/bizmax/bizmax-logo.webp',
+            alt: 'BizMax Solutions logo: a tilted, rounded black hash symbol with an orange square at its centre, above a rounded BizMax Solutions wordmark',
+            title: 'BizMax Solutions',
+            kicker: 'My Agency · Brand Identity',
+            text: 'Logo for BizMax Solutions, the digital growth agency I founded. A bold, tilted, rounded hash symbol frames an orange square at its centre, paired with a friendly rounded wordmark in black. The orange accent carries through the company’s website.',
+          },
+          {
             src: 'assets/img/branding/space-billiards/space-billiards-logo.webp',
             alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
             title: 'Space Billiards',
