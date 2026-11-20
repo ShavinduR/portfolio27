@@ -1,6 +1,7 @@
 /*
  * Experience, education and expertise (from CV).
  * Items render top-to-bottom in the order listed. `current: true` adds a live indicator.
+ * Optional: `logo` { src, alt } shows a badge; `links` [{ label, icon, url }] adds buttons.
  */
 window.SITE = window.SITE || {};
 
@@ -9,10 +10,18 @@ window.SITE.experience = [
     role: 'Founder',
     org: 'BizMax Solutions',
     period: '', // add dates, e.g. '2023 — Present' (and `current: true` if ongoing)
+    logo: { src: 'assets/img/brands/bizmax/bizmax-logo-badge.webp', alt: 'BizMax Solutions logo' },
     points: [
-      'Founded BizMax Solutions and lead its digital media operations.',
+      'Founded BizMax Solutions, a digital growth partner helping Sri Lankan businesses go digital with confidence.',
+      'Offers brand development, website design and digital content creation, delivered through a Deep Dive → Strategy → Launch process.',
+      'Designed and built the company website, and lead its digital media operations.',
     ],
-    tags: ['Digital Media Operations', 'Entrepreneurship'],
+    tags: ['Brand Development', 'Website Design', 'Digital Content', 'Entrepreneurship'],
+    links: [
+      { label: 'Website', icon: 'fa-solid fa-arrow-up-right-from-square', url: 'https://shavindur.github.io/BizMax/' },
+      { label: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/share/1Fo4taBaAg/' },
+      { label: 'Instagram', icon: 'fab fa-instagram', url: 'https://www.instagram.com/bizmax.solutions/' },
+    ],
   },
   {
     role: 'ICT & Digital Media Intern / Executive',

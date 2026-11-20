@@ -198,4 +198,27 @@ window.SITE.projects = [
     image: 'assets/img/projects/facet.webp',
     placeholder: { layout: 'shop', hue: 44, monogram: 'FA' },
   },
+  {
+    slug: 'bizmax',
+    title: 'BizMax Solutions',
+    kicker: 'My Company · Business Website',
+    group: 'core',
+    feature: true, // wide card: ends the grid on a full row
+    categories: [],
+    role: 'Founder · Design & Development',
+    summary:
+      'The website for my own digital agency, BizMax Solutions: a bold, conversion-focused site that presents our services and pricing and turns visitors into WhatsApp enquiries.',
+    description:
+      'BizMax Solutions is the digital growth agency I founded to help Sri Lankan businesses go digital with confidence. I designed and built its website to explain what we offer (brand development, website design and digital creation), show how we work (Deep Dive → Strategy → Launch), and make starting a project as simple as a WhatsApp message.',
+    highlights: [
+      'Home, Services and Pricing pages with a bold orange-and-black brand system',
+      '“Start Project” enquiry form with a service selector, plus a floating WhatsApp button',
+      'Clear three-step process section that explains how projects run',
+      'Fast static build, hosted on GitHub Pages',
+    ],
+    stack: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
+    links: { live: 'https://shavindur.github.io/BizMax/', github: 'https://github.com/ShavinduR/BizMax' },
+    image: 'assets/img/projects/bizmax.webp',
+    placeholder: { layout: 'site', hue: 24, monogram: 'BM' },
+  },
 ];
