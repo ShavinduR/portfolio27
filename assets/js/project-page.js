@@ -60,7 +60,9 @@
       <dl class="cs-meta py-8 border-y border-line">
         <div><dt>Role</dt><dd>${UI.esc(p.role)}</dd></div>
         <div><dt>Type</dt><dd>${isClient ? 'Client project' : 'Technical build'}</dd></div>
-        <div><dt>Platform</dt><dd>${p.categories.includes('mobile') ? 'Web & Mobile' : 'Web'}</dd></div>
+        ${p.location
+          ? `<div><dt>Based in</dt><dd>${UI.esc(p.location)}</dd></div>`
+          : `<div><dt>Platform</dt><dd>${p.categories.includes('mobile') ? 'Web & Mobile' : 'Web'}</dd></div>`}
         <div><dt>Live</dt><dd>${p.links && p.links.live ? `<a class="hover:text-accent transition" href="${UI.esc(p.links.live)}" target="_blank" rel="noopener noreferrer">${UI.esc(UI.domain(p.links.live))}</a>` : 'Private build'}</dd></div>
       </dl>
     </section>

@@ -26,17 +26,19 @@ window.SITE.experience = [
   {
     role: 'ICT & Digital Media Intern / Executive',
     org: 'Peak Moments',
-    orgDetail: 'PM · PMR · ILM',
+    orgDetail: 'PM · PMR · ILM · Polgasowita, Piliyandala',
     period: 'Dec 2025 — Present',
     current: true,
     points: [
-      'Managed social media strategy and designed and developed the three official photography brand websites.',
-      'Freelance event photography and videography with advanced post-production — editing and colour grading — for boutique weddings and corporate events.',
-      'Hands-on with high-end studio gear and professional post-production software.',
+      'Designed, built and launched the three studio websites, with galleries, booking and enquiry forms, technical SEO and WebP image optimisation.',
+      'On-location event photography and videography across weddings, lifestyle shoots and corporate events, for clients including the French Embassy, Miami Ad School, Harvard Club of Sri Lanka and Tikima Event.',
+      'Photo post-production and album design: bulk selection, colour grading and skin-tone retouching in Lightroom Classic and Photoshop, and 12×30-inch album layouts in Pixellu SmartAlbums.',
+      'Video editing of event highlights and short-form reels in DaVinci Resolve and CapCut.',
+      'Social media content scheduling and Meta ad campaigns for the studio.',
     ],
     tags: [
       'Sony Alpha A7 III', 'Canon EOS R6', 'DJI Air 3S', 'DJI Ronin',
-      'DaVinci Resolve', 'Lightroom Classic', 'Premiere Pro', 'Photoshop',
+      'Lightroom Classic', 'Photoshop', 'SmartAlbums', 'DaVinci Resolve', 'CapCut', 'Premiere Pro', 'Meta Ads',
     ],
   },
   {

@@ -55,7 +55,7 @@ window.SITE.galleries = {
             src: 'assets/img/branding/space-billiards/space-billiards-logo.webp',
             alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
             title: 'Space Billiards',
-            kicker: 'Billiards Venue Identity',
+            kicker: 'Billiards Venue Identity · Gonapola',
             text: 'Logo for a billiards venue: a player silhouette lining up a cue shot sits on top of a heavy SPACE wordmark, in a single dark colour.',
           },
           {
@@ -153,7 +153,7 @@ window.SITE.galleries = {
           },
           {
             name: 'Space Billiards',
-            kicker: 'Billiards Venue · Brand & Social',
+            kicker: 'Billiards Venue · Gonapola',
             text: 'Brand identity and social media visuals for a billiards venue. The player-silhouette logo is carried through the promotional creatives, brand visuals, 9-ball match-highlight reels and giveaways I produced for the venue.',
             hero: {
               src: 'assets/img/branding/space-billiards/space-billiards-logo.webp',

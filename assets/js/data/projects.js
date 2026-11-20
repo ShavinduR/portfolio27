@@ -3,6 +3,7 @@
  *
  * Fields
  *   slug         URL id → project.html?slug=<slug>
+ *   location     optional, e.g. 'Polgasowita, Sri Lanka' (shown on the case study)
  *   group        'client' (highlighted real-world work) | 'core' (technical builds)
  *   categories   used by the filter bar on the home page
  *   links        { live, github } — omit or leave null to hide a button
@@ -28,20 +29,22 @@ window.SITE.projects = [
   {
     slug: 'peak-moments',
     title: 'Peak Moments',
-    kicker: 'PM · Official Website',
+    kicker: 'PM · Lifestyle Photography Studio',
+    location: 'Polgasowita, Piliyandala',
     group: 'client',
     categories: ['client'],
-    role: 'Design & Development',
+    role: 'Website Design & Development',
     summary:
-      'A responsive portfolio website showcasing professional photography services — built to turn visitors into booked clients.',
+      'Portfolio website for a lifestyle photography studio in Polgasowita, Piliyandala, specialising in maternity, family, celebrations and personal branding, with a WhatsApp booking form.',
     description:
-      'The official home of Peak Moments. I designed and developed a responsive portfolio experience that puts the photography first, presenting services with clarity and guiding visitors toward enquiries — improving client acquisition for the studio.',
+      'Peak Moments is a lifestyle photography studio in Polgasowita, Piliyandala, specialising in maternity, family, celebration and personal-branding shoots. I designed, built and launched its portfolio website, with a photo gallery that lets the work lead and a WhatsApp booking form that turns visitors into enquiries.',
     highlights: [
-      'Responsive, image-led layouts that let the photography carry the brand',
-      'Clear service presentation and enquiry paths to improve client acquisition',
-      'Part of a three-brand web ecosystem built for the Peak Moments group',
+      'Portfolio website with a photo gallery for maternity, family, celebration and branding work',
+      'WhatsApp booking form that sends enquiries straight to the studio',
+      'Technical SEO and WebP image optimisation for fast, search-friendly pages',
+      'Hosted and launched the site',
     ],
-    stack: ['Web Design', 'Responsive UI', 'SEO'],
+    stack: ['Portfolio Website', 'Photo Gallery', 'WhatsApp Booking Form', 'Technical SEO', 'WebP Optimization', 'Hosting & Launch'],
     links: { live: 'https://peakmomentslifestyle.com' },
     image: 'assets/img/projects/peak-moments.webp',
     placeholder: { layout: 'gallery', hue: 38, monogram: 'PM' },
@@ -49,20 +52,22 @@ window.SITE.projects = [
   {
     slug: 'peak-moments-by-rumesh',
     title: 'Peak Moments by Rumesh',
-    kicker: 'PMR · Brand Platform',
+    kicker: 'PMR · Luxury Wedding Photography',
+    location: 'Polgasowita, Piliyandala',
     group: 'client',
     categories: ['client'],
-    role: 'UI/UX & Development',
+    role: 'Website Design & Development',
     summary:
-      'A targeted web platform for a personal photography brand, with a UI/UX flow designed to streamline customer bookings.',
+      'Portfolio website for a luxury wedding and fine art photography studio in Polgasowita, Piliyandala, with a gallery-led layout and an enquiry form for couples.',
     description:
-      'A dedicated platform for the personal photography brand of Rumesh. The focus was UI/UX: a calm, editorial presentation of the work paired with a booking journey that removes friction for prospective clients.',
+      'Peak Moments by Rumesh is a luxury wedding and fine art photography studio based in Polgasowita, Piliyandala. I designed, built and launched its portfolio website: an elegant, gallery-led experience for cultural and destination weddings, with an enquiry form that makes it easy for couples to get in touch.',
     highlights: [
-      'Personal-brand storytelling through an editorial, portfolio-first layout',
-      'Booking-focused user journey designed to streamline customer enquiries',
-      'Optimised image presentation for fast, immersive browsing',
+      'Portfolio website with wedding photo galleries',
+      'Enquiry form that makes it easy for couples to book',
+      'Technical SEO and WebP image optimisation for fast, search-friendly pages',
+      'Hosted and launched the site',
     ],
-    stack: ['UI/UX', 'Web Design', 'Responsive UI'],
+    stack: ['Portfolio Website', 'Photo Gallery', 'Enquiry Form', 'Technical SEO', 'WebP Optimization', 'Hosting & Launch'],
     links: { live: 'https://www.peakmomentsbyrumesh.com' },
     image: 'assets/img/projects/peak-moments-by-rumesh.webp',
     placeholder: { layout: 'site', hue: 24, monogram: 'PMR' },
@@ -70,20 +75,22 @@ window.SITE.projects = [
   {
     slug: 'i-like-media',
     title: 'I Like Media',
-    kicker: 'ILM · Digital Platform',
+    kicker: 'ILM · Corporate & Event Photography',
+    location: 'Colombo, Sri Lanka',
     group: 'client',
     categories: ['client'],
-    role: 'Design & Development',
+    role: 'Website Design & Development',
     summary:
-      'A dynamic website presenting commercial media and corporate photography services with a strong, credible brand voice.',
+      'Corporate portfolio website for a Colombo agency covering corporate, fashion and luxury events, with categorised event galleries and a quote request form.',
     description:
-      'The digital platform for I Like Media, the commercial arm of the group. The site communicates corporate media and photography services with credibility, structured service content and a polished visual identity.',
+      'I Like Media is a corporate, fashion and luxury event photography agency positioned for Colombo’s corporate events, operated by the same Polgasowita studio as Peak Moments. I designed, built and launched its corporate portfolio website, with event galleries organised by category and a quote / enquiry form for corporate clients.',
     highlights: [
-      'Corporate-grade presentation focused on brand credibility',
-      'Structured service pages for commercial media and corporate photography',
-      'Consistent design language shared across the Peak Moments brands',
+      'Corporate portfolio website with categorised event galleries',
+      'Quote / enquiry form for corporate and event clients',
+      'Technical SEO for fast, search-friendly pages',
+      'Hosted and launched the site',
     ],
-    stack: ['Web Design', 'Corporate UI', 'SEO'],
+    stack: ['Corporate Portfolio Website', 'Categorized Event Galleries', 'Quote / Enquiry Form', 'Technical SEO', 'Hosting & Launch'],
     links: { live: 'https://ilikemediacorporate.com' },
     image: 'assets/img/projects/i-like-media.webp',
     placeholder: { layout: 'site', hue: 210, monogram: 'ILM' },
