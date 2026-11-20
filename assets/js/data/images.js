@@ -85,6 +85,7 @@ window.SITE.images = {
   'assets/img/portrait/king-coconut.webp': [1920, 1280],
   'assets/img/portrait/wewelwaththa.webp': [1920, 1440],
   'assets/img/projects/customt.webp': [1440, 900],
+  'assets/img/projects/facet.webp': [1440, 900],
   'assets/img/projects/i-like-media.webp': [1440, 900],
   'assets/img/projects/kidsla.webp': [1440, 900],
   'assets/img/projects/peak-moments-by-rumesh.webp': [1440, 900],
