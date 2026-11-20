@@ -11,7 +11,7 @@
   const R = window.RENDER;
   const mount = (name) => document.querySelector(`[data-render="${name}"]`);
 
-  ['expertise', 'projects', 'experience', 'education'].forEach((name) => R.hydrate(mount(name), R[name]()));
+  ['clients', 'expertise', 'projects', 'experience', 'education'].forEach((name) => R.hydrate(mount(name), R[name]()));
 
   /* --------------------------------------------------------- Project filters */
   const pr = mount('projects');

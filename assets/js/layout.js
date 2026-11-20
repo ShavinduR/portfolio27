@@ -49,7 +49,7 @@
           ${logo}
           <div class="hidden lg:flex items-center gap-8 text-sm font-medium">${navLinks}</div>
           <div class="flex items-center gap-2">
-            <a href="${profile.cv}" download class="hidden sm:inline-flex btn btn-ghost !py-2.5 !px-4 text-xs">
+            <a href="${profile.cv}" download="Shavindu-Rashmika-CV.pdf" class="hidden sm:inline-flex btn btn-ghost !py-2.5 !px-4 text-xs">
               CV <i class="fas fa-arrow-down text-accent" aria-hidden="true"></i>
             </a>
             ${themeBtn()}

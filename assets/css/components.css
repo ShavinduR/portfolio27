@@ -303,6 +303,25 @@
 }
 
 /* =========================================================================
+   Client logo strip — one-colour marks that blend into the page
+   ========================================================================= */
+.client-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem 1.5rem; flex: 1; align-items: center; }
+@media (min-width: 768px) { .client-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.client-logo { display: grid; place-items: center; height: 5.25rem; padding: .25rem; border-radius: .75rem; }
+.client-logo img {
+  width: auto; height: auto; max-width: min(100%, 8.5rem); max-height: 3.4rem; object-fit: contain;
+  /* Dark theme: invert + screen turns each logo's light background black, then invisible */
+  filter: grayscale(1) invert(1) contrast(1.15); mix-blend-mode: screen; opacity: .62;
+  transition: opacity .3s ease;
+}
+:root:not(.dark) .client-logo img { filter: grayscale(1) brightness(1.08) contrast(1.15); mix-blend-mode: multiply; opacity: .7; }
+.client-logo.is-tall img { max-height: 5rem; }
+/* Transparent logos: tint instead of invert */
+.client-logo.is-knockout img { filter: grayscale(1) brightness(1.5); mix-blend-mode: normal; }
+:root:not(.dark) .client-logo.is-knockout img { filter: grayscale(1) brightness(.45); mix-blend-mode: normal; }
+.client-logo:hover img, .client-logo:focus-visible img { opacity: 1; }
+
+/* =========================================================================
    Expertise
    ========================================================================= */
 .expertise-card {

@@ -64,6 +64,11 @@ window.RENDER = (function () {
       <p class="sr-only" aria-live="polite" data-filter-status></p>`;
   }
 
+  const clients = () => (SITE.clients || []).map((c) => `
+      <li><a href="${esc(c.href)}" class="client-logo${c.knockout ? ' is-knockout' : ''}${c.tall ? ' is-tall' : ''}" title="${esc(c.name)}">
+        <img ${UI.imgAttrs(c.logo, '160px')} alt="${esc(c.name)} logo" loading="lazy" decoding="async">
+      </a></li>`).join('');
+
   const experience = () => `<ol class="timeline">${(SITE.experience || []).map(UI.timelineItem).join('')}</ol>`;
   const education = () => (SITE.education || []).map(UI.educationCard).join('');
 
@@ -270,5 +275,5 @@ window.RENDER = (function () {
     </section>`;
   }
 
-  return { hash, hydrate, expertise, projects, experience, education, gallery };
+  return { hash, hydrate, clients, expertise, projects, experience, education, gallery };
 })();
