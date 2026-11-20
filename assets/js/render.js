@@ -82,6 +82,11 @@ window.RENDER = (function () {
     let n = 0; // running image index → lightbox order
     const reveal = () => (n >= NO_REVEAL ? 'reveal' : '');
     const pic = (it, imgClass = '', extra = '', sizes) => {
+      // Logos (fit: 'contain') are shown whole on a white tile instead of cropped.
+      if (it.fit === 'contain') {
+        imgClass = imgClass.replace(/\bobject-cover\b/, 'object-contain').replace(/\bp-\S+/g, '') + ' p-6 md:p-10';
+        if (!extra.includes('g-frame-light')) extra += ' g-frame-light';
+      }
       // Not uploaded yet → an elegant "coming soon" tile (not part of the lightbox).
       if (!(SITE.images || {})[it.src]) {
         const ratio = (imgClass.match(/aspect-\S+/g) || ['aspect-[4/3]']).join(' ');
@@ -175,9 +180,13 @@ window.RENDER = (function () {
         return `
         <article class="g-client ${cls}">
           <header class="flex flex-wrap items-end justify-between gap-4 mb-10">
-            <div>
-              <span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>
-              <h2 class="mt-5 font-heading font-extrabold text-4xl md:text-5xl tracking-tight">${esc(b.name)}</h2>
+            <div class="flex items-center gap-5">
+              ${b.logo && (SITE.images || {})[b.logo.src] ? `
+                <span class="g-client-logo"><img ${UI.imgAttrs(b.logo.src, '96px')} alt="${esc(b.logo.alt)}" loading="lazy" decoding="async"></span>` : ''}
+              <div>
+                <span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>
+                <h2 class="mt-4 font-heading font-extrabold text-4xl md:text-5xl tracking-tight">${esc(b.name)}</h2>
+              </div>
             </div>
             <p class="project-kicker !mt-0 !text-accent">${esc(b.kicker)}</p>
           </header>

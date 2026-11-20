@@ -179,14 +179,14 @@ window.SITE.projects = [
   {
     slug: 'facet',
     title: 'FACET Fine Jewelry',
-    kicker: 'Ceylon Sapphires · Luxury E-commerce',
+    kicker: 'Experimental · Luxury E-commerce',
     group: 'core',
     categories: ['ecommerce'],
-    role: 'Design & Development',
+    role: 'Personal project · Design & Development',
     summary:
       'A dark, luxury storefront for natural Ceylon sapphires and fine jewellery from Ratnapura, with an interactive 3D ring viewer and WhatsApp-first buying.',
     description:
-      'FACET (formerly Gem City) sells hand-selected natural sapphires and fine jewellery from Sri Lanka’s City of Gems to buyers worldwide. I rebuilt the site as a premium, data-driven catalogue: every stone is one line of data that feeds the grid, search, product dialog, pre-filled WhatsApp message and SEO schema, while trust features such as live video viewing, lab reports and insured delivery answer an overseas buyer’s concerns up front.',
+      'An experimental project: FACET (formerly Gem City) is a concept storefront for hand-selected natural sapphires and fine jewellery from Sri Lanka’s City of Gems, aimed at buyers worldwide. I built the site as a premium, data-driven catalogue: every stone is one line of data that feeds the grid, search, product dialog, pre-filled WhatsApp message and SEO schema, while trust features such as live video viewing, lab reports and insured delivery answer an overseas buyer’s concerns up front.',
     highlights: [
       'Data-driven catalogue of ~80 gems and jewellery pieces with filters, search and shareable links',
       'Interactive WebGL 3D ring viewer (three.js), loaded only when it scrolls into view',
