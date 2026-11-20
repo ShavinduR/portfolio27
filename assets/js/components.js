@@ -148,10 +148,19 @@ window.UI = (function () {
           <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
             ${x.period || x.current ? `<p class="tl-period">${esc(x.period || '')}${x.current ? ' <span class="tl-live">Current</span>' : ''}</p>` : ''}
           </div>
-          <h3 class="tl-role ${x.period || x.current ? '' : '!mt-0'}">${esc(x.role)}</h3>
-          <p class="tl-org">${esc(x.org)}${x.orgDetail ? ` <span class="text-muted font-normal">· ${esc(x.orgDetail)}</span>` : ''}</p>
+          <div class="flex items-center gap-4 ${x.period || x.current ? 'mt-3' : ''}">
+            ${x.logo && (window.SITE.images || {})[x.logo.src] ? `<span class="tl-logo"><img ${imgAttrs(x.logo.src, '64px')} alt="${esc(x.logo.alt)}" loading="lazy" decoding="async"></span>` : ''}
+            <div>
+              <h3 class="tl-role !mt-0">${esc(x.role)}</h3>
+              <p class="tl-org">${esc(x.org)}${x.orgDetail ? ` <span class="text-muted font-normal">· ${esc(x.orgDetail)}</span>` : ''}</p>
+            </div>
+          </div>
           <ul class="tl-points">${x.points.map((pt) => `<li>${esc(pt)}</li>`).join('')}</ul>
           ${x.tags && x.tags.length ? `<ul class="flex flex-wrap gap-2 mt-5">${x.tags.map((t) => `<li class="chip">${esc(t)}</li>`).join('')}</ul>` : ''}
+          ${x.links && x.links.length ? `<ul class="flex flex-wrap gap-2 mt-5">${x.links.map((l) => `
+            <li><a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost !py-2.5 !px-4 text-xs">
+              <i class="${esc(l.icon)}" aria-hidden="true"></i> ${esc(l.label)}<span class="sr-only"> — ${esc(x.org)} (opens in a new tab)</span>
+            </a></li>`).join('')}</ul>` : ''}
         </div>
       </li>`;
   }
