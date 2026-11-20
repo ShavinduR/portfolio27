@@ -84,7 +84,7 @@ window.RENDER = (function () {
     const pic = (it, imgClass = '', extra = '', sizes) => {
       // Logos (fit: 'contain') are shown whole on a white tile instead of cropped.
       if (it.fit === 'contain') {
-        imgClass = imgClass.replace(/\bobject-cover\b/, 'object-contain').replace(/\bp-\S+/g, '') + ' p-6 md:p-10';
+        imgClass = imgClass.replace(/\bobject-cover\b/, 'object-contain').replace(/\bp-\S+/g, '') + (it.tight ? ' p-3 md:p-4' : ' p-6 md:p-10');
         if (!extra.includes('g-frame-light')) extra += ' g-frame-light';
       }
       // Not uploaded yet → an elegant "coming soon" tile (not part of the lightbox).

@@ -146,9 +146,9 @@ window.UI = (function () {
         <span class="tl-node ${x.current ? 'is-current' : ''}" aria-hidden="true"></span>
         <div class="tl-card">
           <div class="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
-            <p class="tl-period">${esc(x.period)}${x.current ? ' <span class="tl-live">Current</span>' : ''}</p>
+            ${x.period || x.current ? `<p class="tl-period">${esc(x.period || '')}${x.current ? ' <span class="tl-live">Current</span>' : ''}</p>` : ''}
           </div>
-          <h3 class="tl-role">${esc(x.role)}</h3>
+          <h3 class="tl-role ${x.period || x.current ? '' : '!mt-0'}">${esc(x.role)}</h3>
           <p class="tl-org">${esc(x.org)}${x.orgDetail ? ` <span class="text-muted font-normal">· ${esc(x.orgDetail)}</span>` : ''}</p>
           <ul class="tl-points">${x.points.map((pt) => `<li>${esc(pt)}</li>`).join('')}</ul>
           ${x.tags && x.tags.length ? `<ul class="flex flex-wrap gap-2 mt-5">${x.tags.map((t) => `<li class="chip">${esc(t)}</li>`).join('')}</ul>` : ''}

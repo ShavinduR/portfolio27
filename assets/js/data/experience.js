@@ -6,6 +6,15 @@ window.SITE = window.SITE || {};
 
 window.SITE.experience = [
   {
+    role: 'Founder',
+    org: 'BizMax Solutions',
+    period: '', // add dates, e.g. '2023 — Present' (and `current: true` if ongoing)
+    points: [
+      'Founded BizMax Solutions and lead its digital media operations.',
+    ],
+    tags: ['Digital Media Operations', 'Entrepreneurship'],
+  },
+  {
     role: 'ICT & Digital Media Intern / Executive',
     org: 'Peak Moments',
     orgDetail: 'PM · PMR · ILM',

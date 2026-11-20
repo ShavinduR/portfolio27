@@ -10,7 +10,8 @@
  *   grid      image grid                           { title?, variant: 'square'|'contain'|'product', items }
  *   masonry   natural-ratio photo wall             { items: [{ src, alt, title?, tag? }] }
  *   cta       closing call to action               { title, text, label, href }
- * Any image can set `fit: 'contain'` to show it whole on a white tile (logos).
+ * Any image can set `fit: 'contain'` to show it whole on a white tile (logos);
+ * add `tight: true` for wide artwork such as cards that should fill more of the tile.
  * Every image opens in the lightbox. An image that does not exist yet (not in
  * data/images.js) shows an elegant "coming soon" tile until you add the file
  * and run `npm run images`.
@@ -44,7 +45,7 @@ window.SITE.galleries = {
             text: 'Logo for a riverside guest house in Kosnathota–Godakawela. A dark-green triangle framing a four-point star sits above three flowing lines that echo the river, paired with a serif wordmark. The symbol also works on its own.',
           },
           {
-            src: 'assets/img/social/space-billiards/space-billiards-logo.webp',
+            src: 'assets/img/branding/space-billiards/space-billiards-logo.webp',
             alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
             title: 'Space Billiards',
             kicker: 'Billiards Venue Identity',
@@ -124,13 +125,17 @@ window.SITE.galleries = {
               },
               {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-front.webp',
-                alt: 'Tranquil Rest green and yellow visiting card — front',
+                alt: 'Tranquil Rest visiting card, front: cream logo mark beside the guest house name, a phone and WhatsApp number and an email address on dark green',
                 title: 'Visiting card — front',
+                fit: 'contain',
+                tight: true,
               },
               {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-back.webp',
-                alt: 'Tranquil Rest visiting card — back, with Call and WhatsApp details',
+                alt: 'Tranquil Rest visiting card, back: “Comfortable AC / Non-AC Rooms” with social icons and the reservations number on dark green',
                 title: 'Visiting card — back',
+                fit: 'contain',
+                tight: true,
               },
               {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-brand-mockup.webp',
@@ -144,29 +149,29 @@ window.SITE.galleries = {
             kicker: 'Billiards Venue · Brand & Social',
             text: 'Brand identity and social media visuals for a billiards venue. The player-silhouette logo is carried through the promotional creatives, brand visuals, 9-ball match-highlight reels and giveaways I produced for the venue.',
             hero: {
-              src: 'assets/img/social/space-billiards/space-billiards-logo.webp',
+              src: 'assets/img/branding/space-billiards/space-billiards-logo.webp',
               alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
               title: 'Space Billiards — brand identity',
               fit: 'contain',
             },
             images: [
               {
-                src: 'assets/img/social/space-billiards/space-billiards-promo-1.webp',
+                src: 'assets/img/branding/space-billiards/space-billiards-promo-1.webp',
                 alt: 'Space Billiards promotional social media creative',
                 title: 'Promotional creative',
               },
               {
-                src: 'assets/img/social/space-billiards/space-billiards-promo-2.webp',
+                src: 'assets/img/branding/space-billiards/space-billiards-promo-2.webp',
                 alt: 'Space Billiards brand visual for social media',
                 title: 'Brand visual',
               },
               {
-                src: 'assets/img/social/space-billiards/space-billiards-reel-cover-1.webp',
+                src: 'assets/img/branding/space-billiards/space-billiards-reel-cover-1.webp',
                 alt: 'Cover frame from a Space Billiards 9-ball match highlights reel',
                 title: '9-ball match highlights',
               },
               {
-                src: 'assets/img/social/space-billiards/space-billiards-giveaway-1.webp',
+                src: 'assets/img/branding/space-billiards/space-billiards-giveaway-1.webp',
                 alt: 'Space Billiards interactive social media giveaway post',
                 title: 'Social media giveaway',
               },
@@ -250,57 +255,11 @@ window.SITE.galleries = {
   social: {
     title: 'Social Media Design',
     eyebrow: 'Content creation',
-    intro:
-      'Social media marketing, content production and campaigns for hospitality, retail and lifestyle brands, made to stop the scroll and sell.',
+    intro: 'Scroll-stopping social media posts for retail and lifestyle brands, made to sell.',
     blocks: [
       {
-        type: 'client',
-        name: 'Space Billiards',
-        kicker: 'Social Media Marketing & Content Production',
-        text: 'Managed the digital presence and community growth for Space Billiards, focusing on high-engagement video content and interactive campaigns to attract local players and build brand awareness.',
-        deliverables: [
-          'Planned and executed social media content calendars, promotional creatives and brand visuals.',
-          'Filmed and edited 9-ball pool match highlights and short-form reels to showcase the venue’s atmosphere.',
-          'Designed and managed interactive social media giveaways to boost audience engagement and drive foot traffic.',
-        ],
-        services: ['Social Media Management', 'Video Production', 'Graphic Design', 'Campaign Strategy'],
-        pages: [
-          { label: 'Facebook', icon: 'fab fa-facebook-f', url: '' },
-          { label: 'Instagram', icon: 'fab fa-instagram', url: '' },
-          { label: 'TikTok', icon: 'fab fa-tiktok', url: '' },
-        ],
-        items: [
-          {
-            src: 'assets/img/social/space-billiards/space-billiards-promo-1.webp',
-            alt: 'Space Billiards promotional social media creative',
-            title: 'Promotional creative',
-          },
-          {
-            src: 'assets/img/social/space-billiards/space-billiards-promo-2.webp',
-            alt: 'Space Billiards brand visual for social media',
-            title: 'Brand visual',
-          },
-          {
-            src: 'assets/img/social/space-billiards/space-billiards-reel-cover-1.webp',
-            alt: 'Cover frame from a Space Billiards 9-ball match highlights reel',
-            title: '9-ball match highlights',
-          },
-          {
-            src: 'assets/img/social/space-billiards/space-billiards-giveaway-1.webp',
-            alt: 'Space Billiards interactive social media giveaway post',
-            title: 'Social media giveaway',
-          },
-        ],
-        logo: {
-          src: 'assets/img/social/space-billiards/space-billiards-logo.webp',
-          alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
-          title: 'Space Billiards — logo',
-          fit: 'contain',
-        },
-      },
-      {
         type: 'grid',
-        title: 'More work · Tech & gadgets',
+        title: 'Tech & gadgets',
         variant: 'square',
         items: [
           {

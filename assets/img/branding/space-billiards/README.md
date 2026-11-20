@@ -1,4 +1,4 @@
-# Space Billiards — Social Media Marketing & Content Production (Social page)
+# Space Billiards — brand & social media visuals (Branding + Logo pages)
 
 Drop the images for this project here using **exactly these base names** (`.jpg`, `.png` or `.webp`):
 
