@@ -43,7 +43,7 @@ window.SITE.experience = [
   {
     role: 'Trainee Banker',
     org: 'People’s Bank',
-    orgDetail: 'Palledbadda',
+    orgDetail: 'Pallebedda',
     period: '2020 — 2021',
     points: [
       'Supported daily banking operations and improved workflow efficiency using digital tools.',
