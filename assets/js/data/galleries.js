@@ -5,7 +5,8 @@
  * Block types
  *   features  alternating image/text rows          { items: [{ src, alt, title, kicker, text }] }
  *   cases     brand case studies                   { items: [{ name, kicker, text, hero, images }] }
- *   client    client campaign (text + post grid)   { name, kicker, text, services: [], items }
+ *   client    client campaign (text + post grid)   { name, kicker, text, deliverables?: [], services: [],
+ *                                                    pages?: [{ label, icon, url }], items }
  *   grid      image grid                           { title?, variant: 'square'|'contain'|'product', items }
  *   masonry   natural-ratio photo wall             { items: [{ src, alt, title?, tag? }] }
  *   cta       closing call to action               { title, text, label, href }
@@ -202,68 +203,83 @@ window.SITE.galleries = {
     title: 'Social Media Design',
     eyebrow: 'Content creation',
     intro:
-      'Social media strategy, content and campaigns for hospitality, retail and lifestyle brands, made to stop the scroll and sell.',
+      'Social media marketing, content production and campaigns for hospitality, retail and lifestyle brands, made to stop the scroll and sell.',
     blocks: [
       {
         type: 'client',
         name: 'Space Billiards',
-        kicker: 'Billiards Lounge · Social Media',
-        text: 'Designed the social media posts and interactive video content, and ran the digital media strategy and promotional campaigns that built the lounge’s online presence.',
-        services: [
-          'Social media posts',
-          'Interactive video content',
-          'Digital media strategy',
-          'Promotional campaigns',
+        kicker: 'Social Media Marketing & Content Production',
+        text: 'Managed the digital presence and community growth for Space Billiards, focusing on high-engagement video content and interactive campaigns to attract local players and build brand awareness.',
+        deliverables: [
+          'Planned and executed social media content calendars, promotional creatives and brand visuals.',
+          'Filmed and edited 9-ball pool match highlights and short-form reels to showcase the venue’s atmosphere.',
+          'Designed and managed interactive social media giveaways to boost audience engagement and drive foot traffic.',
+        ],
+        services: ['Social Media Management', 'Video Production', 'Graphic Design', 'Campaign Strategy'],
+        pages: [
+          { label: 'Facebook', icon: 'fab fa-facebook-f', url: '' },
+          { label: 'Instagram', icon: 'fab fa-instagram', url: '' },
+          { label: 'TikTok', icon: 'fab fa-tiktok', url: '' },
         ],
         items: [
           {
-            src: 'assets/img/social/space-billiards/space-billiards-post-1.webp',
-            alt: 'Space Billiards social media post design',
-            title: 'Space Billiards — social post',
+            src: 'assets/img/social/space-billiards/space-billiards-promo-1.webp',
+            alt: 'Space Billiards promotional social media creative',
+            title: 'Promotional creative',
           },
           {
-            src: 'assets/img/social/space-billiards/space-billiards-post-2.webp',
-            alt: 'Space Billiards social media post design',
-            title: 'Space Billiards — social post',
+            src: 'assets/img/social/space-billiards/space-billiards-promo-2.webp',
+            alt: 'Space Billiards brand visual for social media',
+            title: 'Brand visual',
           },
           {
-            src: 'assets/img/social/space-billiards/space-billiards-campaign-1.webp',
-            alt: 'Space Billiards promotional campaign creative',
-            title: 'Space Billiards — promotional campaign',
+            src: 'assets/img/social/space-billiards/space-billiards-reel-cover-1.webp',
+            alt: 'Cover frame from a Space Billiards 9-ball match highlights reel',
+            title: '9-ball match highlights',
           },
           {
-            src: 'assets/img/social/space-billiards/space-billiards-video-cover-1.webp',
-            alt: 'Cover frame from Space Billiards video content',
-            title: 'Space Billiards — video content',
+            src: 'assets/img/social/space-billiards/space-billiards-giveaway-1.webp',
+            alt: 'Space Billiards interactive social media giveaway post',
+            title: 'Social media giveaway',
           },
         ],
       },
       {
         type: 'client',
         name: 'Madu Fashion',
-        kicker: 'Kids’ Apparel · Social Media',
-        text: 'Developed social media marketing assets, digital product catalogues and targeted Facebook and Instagram ad creatives for a children’s clothing brand.',
-        services: ['Social media marketing', 'Digital product catalogues', 'Facebook & Instagram ads'],
+        kicker: 'Branding & Social Media Marketing',
+        text: 'Developed a cohesive visual identity and social media strategy for Madu Fashion, an apparel brand offering children’s clothing and adult T-shirts, aimed at increasing product visibility and online enquiries.',
+        deliverables: [
+          'Designed brand-aligned product showcases, promotional banners and social media posts for both the kids’ and adult clothing lines.',
+          'Managed content planning, scheduling and page optimisation to grow audience reach and customer trust.',
+          'Created clear, conversion-focused visuals that highlight fabric quality, styles and seasonal offers.',
+        ],
+        services: ['Brand Identity', 'Social Media Marketing', 'Graphic Design', 'Content Strategy'],
+        pages: [
+          { label: 'Facebook', icon: 'fab fa-facebook-f', url: '' },
+          { label: 'Instagram', icon: 'fab fa-instagram', url: '' },
+          { label: 'TikTok', icon: 'fab fa-tiktok', url: '' },
+        ],
         items: [
           {
-            src: 'assets/img/social/madu-fashion/madu-fashion-post-1.webp',
-            alt: 'Madu Fashion social media post for kids’ clothing',
-            title: 'Madu Fashion — social post',
+            src: 'assets/img/social/madu-fashion/madu-fashion-kids-1.webp',
+            alt: 'Madu Fashion kids’ clothing product showcase',
+            title: 'Kids’ collection showcase',
           },
           {
-            src: 'assets/img/social/madu-fashion/madu-fashion-post-2.webp',
-            alt: 'Madu Fashion social media post for kids’ clothing',
-            title: 'Madu Fashion — social post',
+            src: 'assets/img/social/madu-fashion/madu-fashion-adult-1.webp',
+            alt: 'Madu Fashion adult T-shirt product showcase',
+            title: 'Adult T-shirt showcase',
           },
           {
-            src: 'assets/img/social/madu-fashion/madu-fashion-catalog-1.webp',
-            alt: 'Page from the Madu Fashion digital product catalogue',
-            title: 'Madu Fashion — product catalogue',
+            src: 'assets/img/social/madu-fashion/madu-fashion-banner-1.webp',
+            alt: 'Madu Fashion promotional banner',
+            title: 'Promotional banner',
           },
           {
-            src: 'assets/img/social/madu-fashion/madu-fashion-ad-1.webp',
-            alt: 'Madu Fashion Facebook and Instagram ad creative',
-            title: 'Madu Fashion — ad creative',
+            src: 'assets/img/social/madu-fashion/madu-fashion-offer-1.webp',
+            alt: 'Madu Fashion seasonal offer social media post',
+            title: 'Seasonal offer post',
           },
         ],
       },
