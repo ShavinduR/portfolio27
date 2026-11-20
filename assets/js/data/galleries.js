@@ -5,11 +5,12 @@
  * Block types
  *   features  alternating image/text rows          { items: [{ src, alt, title, kicker, text }] }
  *   cases     brand case studies                   { items: [{ name, kicker, text, hero, images }] }
- *   client    client campaign (text + post grid)   { name, kicker, text, deliverables?: [], services: [],
+ *   client    client campaign (text + post grid)   { name, kicker, logo?, text, deliverables?: [], services: [],
  *                                                    pages?: [{ label, icon, url }], items }
  *   grid      image grid                           { title?, variant: 'square'|'contain'|'product', items }
  *   masonry   natural-ratio photo wall             { items: [{ src, alt, title?, tag? }] }
  *   cta       closing call to action               { title, text, label, href }
+ * Any image can set `fit: 'contain'` to show it whole on a white tile (logos).
  * Every image opens in the lightbox. An image that does not exist yet (not in
  * data/images.js) shows an elegant "coming soon" tile until you add the file
  * and run `npm run images`.
@@ -37,10 +38,17 @@ window.SITE.galleries = {
         items: [
           {
             src: 'assets/img/branding/tranquil-rest/tranquil-rest-logo.webp',
-            alt: 'Tranquil Rest Kosnathota logo — dark green mark with a river motif',
+            alt: 'Tranquil Rest Kosnathota–Godakawela logo: green triangle with a four-point star above flowing river lines',
             title: 'Tranquil Rest Kosnathota',
             kicker: 'Riverside Guest House Identity',
-            text: 'Complete brand identity for a riverside guest house in Kosnathota. A custom dark-green logo with a flowing river motif anchors the brand, carried through professional green and yellow visiting cards with a modern dual Call / WhatsApp layout that makes booking effortless.',
+            text: 'Logo for a riverside guest house in Kosnathota–Godakawela. A dark-green triangle framing a four-point star sits above three flowing lines that echo the river, paired with a serif wordmark. The symbol also works on its own.',
+          },
+          {
+            src: 'assets/img/social/space-billiards/space-billiards-logo.webp',
+            alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
+            title: 'Space Billiards',
+            kicker: 'Billiards Venue Identity',
+            text: 'Logo for a billiards venue: a player silhouette lining up a cue shot sits on top of a heavy SPACE wordmark, in a single dark colour.',
           },
           {
             src: 'assets/img/logo/d2d.webp',
@@ -63,6 +71,11 @@ window.SITE.galleries = {
         title: 'More concepts',
         variant: 'contain',
         items: [
+          {
+            src: 'assets/img/branding/tranquil-rest/tranquil-rest-logo-mark.webp',
+            alt: 'Tranquil Rest logo mark: green triangle and star above river lines',
+            title: 'Tranquil Rest (mark)',
+          },
           { src: 'assets/img/logo/apex.webp', alt: 'APEX Computers logo', title: 'APEX Computers' },
           { src: 'assets/img/logo/d2d.webp', alt: 'Day To Day Deals logo', title: 'Day To Day Deals' },
           { src: 'assets/img/logo/coffee.webp', alt: 'Coffee brand logo', title: 'Coffee brand' },
@@ -97,15 +110,17 @@ window.SITE.galleries = {
             kicker: 'Riverside Guest House · Kosnathota',
             text: 'Complete brand identity for a riverside guest house in Kosnathota. A custom dark-green logo with a flowing river motif anchors the brand, carried through professional green and yellow visiting cards with a modern dual Call / WhatsApp layout that makes booking effortless.',
             hero: {
-              src: 'assets/img/branding/tranquil-rest/tranquil-rest-brand-hero.webp',
-              alt: 'Tranquil Rest Kosnathota brand identity — key visual',
+              src: 'assets/img/branding/tranquil-rest/tranquil-rest-logo.webp',
+              alt: 'Tranquil Rest Kosnathota–Godakawela logo: green triangle with a four-point star above flowing river lines',
               title: 'Tranquil Rest — brand identity',
+              fit: 'contain',
             },
             images: [
               {
-                src: 'assets/img/branding/tranquil-rest/tranquil-rest-logo.webp',
-                alt: 'Tranquil Rest logo with river motif',
-                title: 'Logo',
+                src: 'assets/img/branding/tranquil-rest/tranquil-rest-logo-mark.webp',
+                alt: 'Tranquil Rest logo mark: green triangle and star above river lines',
+                title: 'Logo mark',
+                fit: 'contain',
               },
               {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-front.webp',
@@ -121,6 +136,39 @@ window.SITE.galleries = {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-brand-mockup.webp',
                 alt: 'Tranquil Rest brand applied to guest-house stationery',
                 title: 'Brand in use',
+              },
+            ],
+          },
+          {
+            name: 'Space Billiards',
+            kicker: 'Billiards Venue · Brand & Social',
+            text: 'Brand identity and social media visuals for a billiards venue. The player-silhouette logo is carried through the promotional creatives, brand visuals, 9-ball match-highlight reels and giveaways I produced for the venue.',
+            hero: {
+              src: 'assets/img/social/space-billiards/space-billiards-logo.webp',
+              alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
+              title: 'Space Billiards — brand identity',
+              fit: 'contain',
+            },
+            images: [
+              {
+                src: 'assets/img/social/space-billiards/space-billiards-promo-1.webp',
+                alt: 'Space Billiards promotional social media creative',
+                title: 'Promotional creative',
+              },
+              {
+                src: 'assets/img/social/space-billiards/space-billiards-promo-2.webp',
+                alt: 'Space Billiards brand visual for social media',
+                title: 'Brand visual',
+              },
+              {
+                src: 'assets/img/social/space-billiards/space-billiards-reel-cover-1.webp',
+                alt: 'Cover frame from a Space Billiards 9-ball match highlights reel',
+                title: '9-ball match highlights',
+              },
+              {
+                src: 'assets/img/social/space-billiards/space-billiards-giveaway-1.webp',
+                alt: 'Space Billiards interactive social media giveaway post',
+                title: 'Social media giveaway',
               },
             ],
           },
@@ -243,45 +291,12 @@ window.SITE.galleries = {
             title: 'Social media giveaway',
           },
         ],
-      },
-      {
-        type: 'client',
-        name: 'Madu Fashion',
-        kicker: 'Branding & Social Media Marketing',
-        text: 'Developed a cohesive visual identity and social media strategy for Madu Fashion, an apparel brand offering children’s clothing and adult T-shirts, aimed at increasing product visibility and online enquiries.',
-        deliverables: [
-          'Designed brand-aligned product showcases, promotional banners and social media posts for both the kids’ and adult clothing lines.',
-          'Managed content planning, scheduling and page optimisation to grow audience reach and customer trust.',
-          'Created clear, conversion-focused visuals that highlight fabric quality, styles and seasonal offers.',
-        ],
-        services: ['Brand Identity', 'Social Media Marketing', 'Graphic Design', 'Content Strategy'],
-        pages: [
-          { label: 'Facebook', icon: 'fab fa-facebook-f', url: '' },
-          { label: 'Instagram', icon: 'fab fa-instagram', url: '' },
-          { label: 'TikTok', icon: 'fab fa-tiktok', url: '' },
-        ],
-        items: [
-          {
-            src: 'assets/img/social/madu-fashion/madu-fashion-kids-1.webp',
-            alt: 'Madu Fashion kids’ clothing product showcase',
-            title: 'Kids’ collection showcase',
-          },
-          {
-            src: 'assets/img/social/madu-fashion/madu-fashion-adult-1.webp',
-            alt: 'Madu Fashion adult T-shirt product showcase',
-            title: 'Adult T-shirt showcase',
-          },
-          {
-            src: 'assets/img/social/madu-fashion/madu-fashion-banner-1.webp',
-            alt: 'Madu Fashion promotional banner',
-            title: 'Promotional banner',
-          },
-          {
-            src: 'assets/img/social/madu-fashion/madu-fashion-offer-1.webp',
-            alt: 'Madu Fashion seasonal offer social media post',
-            title: 'Seasonal offer post',
-          },
-        ],
+        logo: {
+          src: 'assets/img/social/space-billiards/space-billiards-logo.webp',
+          alt: 'Space Billiards logo: silhouette of a player lining up a cue shot above the word SPACE',
+          title: 'Space Billiards — logo',
+          fit: 'contain',
+        },
       },
       {
         type: 'grid',
