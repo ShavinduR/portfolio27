@@ -42,6 +42,20 @@ window.SITE.profile = {
 };
 
 /*
+ * Client logo strip ("Worked with") under the hero. Shown as one-colour marks
+ * that blend into the page; `href` links to the related project or case study.
+ * `tall: true` gives square/tall logos more height so all marks look balanced.
+ * `knockout: true` = a transparent logo (lettering cut out of a shape), tinted instead of inverted.
+ */
+window.SITE.clients = [
+  { name: 'Peak Moments', logo: 'assets/img/clients/peak-moments-logo-knockout.webp', href: 'project.html?slug=peak-moments', knockout: true },
+  { name: 'Peak Moments by Rumesh', logo: 'assets/img/clients/peak-moments-by-rumesh-logo-strip.webp', href: 'project.html?slug=peak-moments-by-rumesh', tall: true },
+  { name: 'I Like Media', logo: 'assets/img/clients/i-like-media-logo-strip.webp', href: 'project.html?slug=i-like-media' },
+  { name: 'Tranquil Rest Kosnathota', logo: 'assets/img/clients/tranquil-rest-logo-strip.webp', href: 'branding.html#tranquil-rest', tall: true },
+  { name: 'Space Billiards', logo: 'assets/img/clients/space-billiards-logo-strip.webp', href: 'branding.html#space-billiards' },
+];
+
+/*
  * Primary navigation. `id` is the section anchor on index.html.
  * Add an entry here once its section exists — layout.js builds the
  * desktop nav, mobile menu, and footer links from this list.
