@@ -71,7 +71,16 @@ Put the file in the right `assets/img/<gallery>/` folder, add an entry to `galle
 Colours are CSS variables at the top of `assets/css/main.css` (dark and light themes). Fonts and spacing live in `tailwind.config.js`. Run `npm run build:css` afterwards, or `npm run watch:css` while working.
 
 ### Adding an icon
-Icons come from a Font Awesome subset containing only the icons in use. To use a new one, add its class (e.g. `fa-solid fa-phone`). Then regenerate `assets/css/icons.css` and the subset fonts with `pyftsubset` from the full Font Awesome Free package: look up the icon's codepoint in Font Awesome's `all.css` and add it to the `--unicodes` list.
+Icons come from Font Awesome Free, subset to only the icons in use. To use a new one, add its class anywhere (for example `<i class="fa-solid fa-phone"></i>`), then run:
+
+```bash
+npm run icons
+```
+
+This needs Python's `fonttools` package once: `pip install fonttools brotli`.
+
+### Add social page links (Space Billiards, Madu Fashion)
+In `assets/js/data/galleries.js`, find the client's `pages` list and fill in each `url`. A link only appears once its `url` is filled in. Then run `npm run build`.
 
 ## Commands
 
@@ -79,6 +88,7 @@ Icons come from a Font Awesome subset containing only the icons in use. To use a
 |---|---|
 | `npm run build` | Prerender HTML and build CSS |
 | `npm run images` | Optimise new images, then build |
+| `npm run icons` | Rebuild the icon subset after using a new icon |
 | `npm run build:css` / `watch:css` | Build CSS only, or rebuild on every change |
 | `npm run prerender` | Re-bake rendered sections into the HTML |
 | `npm run serve` | Local preview on port 8000 |

@@ -184,9 +184,18 @@ window.RENDER = (function () {
           <div class="grid lg:grid-cols-[1fr_1.35fr] gap-10 lg:gap-16 items-start">
             <div>
               <p class="text-muted leading-relaxed text-lg">${esc(b.text)}</p>
+              ${b.deliverables && b.deliverables.length ? `
+                <p class="group-label mt-10 mb-4">Key deliverables</p>
+                <ul class="cs-highlights">${b.deliverables.map((d) => `<li><i class="fa-solid fa-diamond" aria-hidden="true"></i><span>${esc(d)}</span></li>`).join('')}</ul>` : ''}
               ${b.services && b.services.length ? `
-                <p class="group-label mt-10 mb-5">Scope</p>
+                <p class="group-label mt-10 mb-5">Skills</p>
                 <ul class="flex flex-wrap gap-2">${b.services.map((x) => `<li class="chip">${esc(x)}</li>`).join('')}</ul>` : ''}
+              ${(b.pages || []).some((x) => x.url) ? `
+                <p class="group-label mt-10 mb-5">Live pages</p>
+                <ul class="flex flex-wrap gap-2">${b.pages.filter((x) => x.url).map((x) => `
+                  <li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost !py-2.5 !px-4 text-xs">
+                    <i class="${esc(x.icon)}" aria-hidden="true"></i> ${esc(x.label)}<span class="sr-only"> — ${esc(b.name)} (opens in a new tab)</span>
+                  </a></li>`).join('')}</ul>` : ''}
             </div>
             <div class="grid grid-cols-2 gap-4">
               ${b.items.map((it) => pic(it, 'w-full aspect-square object-cover', 'g-frame', '(min-width: 1024px) 28vw, 50vw')).join('')}

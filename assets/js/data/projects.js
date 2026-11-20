@@ -6,8 +6,8 @@
  *   group        'client' (highlighted real-world work) | 'core' (technical builds)
  *   categories   used by the filter bar on the home page
  *   links        { live, github } — omit or leave null to hide a button
- *   image        path to a screenshot. While null, an elegant CSS wireframe
- *                is drawn instead, using `placeholder` below.
+ *   image        screenshot (assets/img/projects/…), shown inside a browser frame.
+ *                While null, an elegant CSS wireframe is drawn instead.
  *   placeholder  { layout, hue, monogram }
  *                layout: 'site' | 'gallery' | 'shop' | 'auction' | 'game' | 'app' | 'mobile'
  *                hue:    0–360, tints the card's ambient glow
@@ -42,8 +42,8 @@ window.SITE.projects = [
       'Part of a three-brand web ecosystem built for the Peak Moments group',
     ],
     stack: ['Web Design', 'Responsive UI', 'SEO'],
-    links: { live: 'https://peakmoments.com' },
-    image: null,
+    links: { live: 'https://peakmomentslifestyle.com' },
+    image: 'assets/img/projects/peak-moments.webp',
     placeholder: { layout: 'gallery', hue: 38, monogram: 'PM' },
   },
   {
@@ -64,7 +64,7 @@ window.SITE.projects = [
     ],
     stack: ['UI/UX', 'Web Design', 'Responsive UI'],
     links: { live: 'https://www.peakmomentsbyrumesh.com' },
-    image: null,
+    image: 'assets/img/projects/peak-moments-by-rumesh.webp',
     placeholder: { layout: 'site', hue: 24, monogram: 'PMR' },
   },
   {
@@ -85,7 +85,7 @@ window.SITE.projects = [
     ],
     stack: ['Web Design', 'Corporate UI', 'SEO'],
     links: { live: 'https://ilikemediacorporate.com' },
-    image: null,
+    image: 'assets/img/projects/i-like-media.webp',
     placeholder: { layout: 'site', hue: 210, monogram: 'ILM' },
   },
 
@@ -110,7 +110,7 @@ window.SITE.projects = [
     ],
     stack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'Socket.IO', 'Cloudflare R2', 'Render', 'Vercel'],
     links: { live: 'https://customt.vercel.app/', github: 'https://github.com/ShavinduR/customt' },
-    image: null,
+    image: 'assets/img/projects/customt.webp',
     placeholder: { layout: 'auction', hue: 262, monogram: 'CT' },
   },
   {
@@ -131,7 +131,7 @@ window.SITE.projects = [
     ],
     stack: ['React (Vite)', 'Tailwind CSS', 'MongoDB', 'Vercel'],
     links: { live: 'https://kidsla.vercel.app/' },
-    image: null,
+    image: 'assets/img/projects/kidsla.webp',
     placeholder: { layout: 'shop', hue: 330, monogram: 'KL' },
   },
   {
@@ -152,7 +152,7 @@ window.SITE.projects = [
     ],
     stack: ['React (Vite)', 'Tailwind CSS', 'SEO', 'Vercel'],
     links: { live: 'https://tranquil-rest.vercel.app/' },
-    image: null,
+    image: 'assets/img/projects/tranquil-rest.webp',
     placeholder: { layout: 'site', hue: 158, monogram: 'TR' },
   },
   {
@@ -173,28 +173,29 @@ window.SITE.projects = [
     ],
     stack: ['React', 'Node.js', 'Socket.IO', 'Vercel'],
     links: { live: 'https://srilankan-dam-game-sandy.vercel.app/' },
-    image: null,
+    image: 'assets/img/projects/sri-lankan-dam.webp',
     placeholder: { layout: 'game', hue: 14, monogram: 'දා' },
   },
   {
-    slug: 'medilink-eacydine',
-    title: 'MediLink & EacyDine',
-    kicker: 'Mobile Health · Restaurant Management',
+    slug: 'facet',
+    title: 'FACET Fine Jewelry',
+    kicker: 'Ceylon Sapphires · Luxury E-commerce',
     group: 'core',
-    categories: ['fullstack', 'mobile'],
-    role: 'Full-stack & Mobile Engineering',
+    categories: ['ecommerce'],
+    role: 'Design & Development',
     summary:
-      'A full-stack MERN restaurant management system (EacyDine) and a bilingual mobile health assistant app (MediLink).',
+      'A dark, luxury storefront for natural Ceylon sapphires and fine jewellery from Ratnapura, with an interactive 3D ring viewer and WhatsApp-first buying.',
     description:
-      'Two complementary builds. EacyDine is a full-stack restaurant management system on the MERN stack. MediLink is a bilingual mobile health assistant built with React Native and Expo.',
+      'FACET (formerly Gem City) sells hand-selected natural sapphires and fine jewellery from Sri Lanka’s City of Gems to buyers worldwide. I rebuilt the site as a premium, data-driven catalogue: every stone is one line of data that feeds the grid, search, product dialog, pre-filled WhatsApp message and SEO schema, while trust features such as live video viewing, lab reports and insured delivery answer an overseas buyer’s concerns up front.',
     highlights: [
-      'EacyDine — end-to-end restaurant management on the MERN stack',
-      'MediLink — bilingual mobile health assistant',
-      'Cross-platform mobile delivery with React Native and Expo',
+      'Data-driven catalogue of ~80 gems and jewellery pieces with filters, search and shareable links',
+      'Interactive WebGL 3D ring viewer (three.js), loaded only when it scrolls into view',
+      'Multi-currency pricing (LKR, USD, GBP, EUR, AUD) and WhatsApp-first inquiry flow',
+      'Dark luxury design system with WCAG AA contrast, self-hosted fonts and a journal of SEO articles',
     ],
-    stack: ['MongoDB', 'Express.js', 'React', 'Node.js', 'React Native', 'Expo'],
-    links: {},
-    image: null,
-    placeholder: { layout: 'mobile', hue: 188, monogram: 'ML' },
+    stack: ['HTML', 'CSS', 'JavaScript (ES modules)', 'three.js', 'WebP pipeline', 'Vercel'],
+    links: { live: 'https://facet-seven-xi.vercel.app/', github: 'https://github.com/ShavinduR/GEM-CITY' },
+    image: 'assets/img/projects/facet.webp',
+    placeholder: { layout: 'shop', hue: 44, monogram: 'FA' },
   },
 ];
