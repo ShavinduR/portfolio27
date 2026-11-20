@@ -1,14 +1,12 @@
 # Tranquil Rest Kosnathota — brand identity (Branding + Logo pages)
 
-Drop the images for this project here using **exactly these base names** (any of the listed formats):
+Already added: logo, logo mark, visiting card (front and back).
 
-| File name | Format |
+Still to add — drop it here using **exactly this base name** (`.jpg`, `.png` or `.webp`):
+
+| File name | Shows |
 |---|---|
-| `tranquil-rest-logo` | `.jpg` / `.png` / `.webp` |
-| `tranquil-rest-brand-hero` | `.jpg` / `.png` / `.webp` |
-| `tranquil-rest-visiting-card-front` | `.jpg` / `.png` / `.webp` |
-| `tranquil-rest-visiting-card-back` | `.jpg` / `.png` / `.webp` |
-| `tranquil-rest-brand-mockup` | `.jpg` / `.png` / `.webp` |
+| `tranquil-rest-brand-mockup` | The brand in use (e.g. cards, signage or stationery photographed or mocked up) |
 
 Then run:
 
@@ -16,6 +14,4 @@ Then run:
 npm run images
 ```
 
-This converts them to WebP, creates the small-screen versions and rebuilds the pages. Until a file exists, the site shows an elegant "coming soon" tile in its place.
-
-Recommended: square (1:1) images for social posts, at least 1200px wide. Brand hero images look best at 21:9 or 16:9.
+Until the file exists, the site shows an elegant "coming soon" tile in its place.

@@ -39,6 +39,8 @@ window.SITE.images = {
   'assets/img/brand/ssccafe/9.webp': [1024, 1536],
   'assets/img/branding/tranquil-rest/tranquil-rest-logo-mark.webp': [1600, 2000],
   'assets/img/branding/tranquil-rest/tranquil-rest-logo.webp': [1890, 1890],
+  'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-back.webp': [2000, 1000],
+  'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-front.webp': [2000, 1000],
   'assets/img/home/1.webp': [2000, 1667],
   'assets/img/home/2.webp': [2000, 1667],
   'assets/img/home/3.webp': [2000, 1667],

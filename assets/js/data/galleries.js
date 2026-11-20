@@ -10,7 +10,8 @@
  *   grid      image grid                           { title?, variant: 'square'|'contain'|'product', items }
  *   masonry   natural-ratio photo wall             { items: [{ src, alt, title?, tag? }] }
  *   cta       closing call to action               { title, text, label, href }
- * Any image can set `fit: 'contain'` to show it whole on a white tile (logos).
+ * Any image can set `fit: 'contain'` to show it whole on a white tile (logos);
+ * add `tight: true` for wide artwork such as cards that should fill more of the tile.
  * Every image opens in the lightbox. An image that does not exist yet (not in
  * data/images.js) shows an elegant "coming soon" tile until you add the file
  * and run `npm run images`.
@@ -124,13 +125,17 @@ window.SITE.galleries = {
               },
               {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-front.webp',
-                alt: 'Tranquil Rest green and yellow visiting card — front',
+                alt: 'Tranquil Rest visiting card, front: cream logo mark beside the guest house name, a phone and WhatsApp number and an email address on dark green',
                 title: 'Visiting card — front',
+                fit: 'contain',
+                tight: true,
               },
               {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-visiting-card-back.webp',
-                alt: 'Tranquil Rest visiting card — back, with Call and WhatsApp details',
+                alt: 'Tranquil Rest visiting card, back: “Comfortable AC / Non-AC Rooms” with social icons and the reservations number on dark green',
                 title: 'Visiting card — back',
+                fit: 'contain',
+                tight: true,
               },
               {
                 src: 'assets/img/branding/tranquil-rest/tranquil-rest-brand-mockup.webp',
@@ -265,9 +270,9 @@ window.SITE.galleries = {
         ],
         services: ['Social Media Management', 'Video Production', 'Graphic Design', 'Campaign Strategy'],
         pages: [
-          { label: 'Facebook', icon: 'fab fa-facebook-f', url: '' },
-          { label: 'Instagram', icon: 'fab fa-instagram', url: '' },
-          { label: 'TikTok', icon: 'fab fa-tiktok', url: '' },
+          { label: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/share/1CJ28pqZRX/' },
+          { label: 'Instagram', icon: 'fab fa-instagram', url: 'https://www.instagram.com/space_billiards/' },
+          { label: 'TikTok', icon: 'fab fa-tiktok', url: 'https://www.tiktok.com/@spaceventures8' },
         ],
         items: [
           {
