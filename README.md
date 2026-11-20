@@ -79,26 +79,12 @@ npm run icons
 
 This needs Python's `fonttools` package once: `pip install fonttools brotli`.
 
-### Add social page links (Space Billiards)
-In `assets/js/data/galleries.js`, find the client's `pages` list and fill in each `url`. A link only appears once its `url` is filled in. Then run `npm run build`.
-
-## Commands
-
-| Command | What it does |
-|---|---|
-| `npm run build` | Prerender HTML and build CSS |
-| `npm run images` | Optimise new images, then build |
-| `npm run icons` | Rebuild the icon subset after using a new icon |
-| `npm run build:css` / `watch:css` | Build CSS only, or rebuild on every change |
-| `npm run prerender` | Re-bake rendered sections into the HTML |
-| `npm run serve` | Local preview on port 8000 |
-
 ### Add client work images (Tranquil Rest, Space Billiards)
-These folders are already wired into the Branding, Logo and Social pages:
+These folders are already wired into the Branding and Logo pages:
 
 ```
 assets/img/branding/tranquil-rest/
-assets/img/social/space-billiards/
+assets/img/branding/space-billiards/
 ```
 
 Each folder has a `README.md` listing the exact file names to use. Drop the images in (`.jpg`, `.png` or `.webp`), then run `npm run images`. Until a file exists, its slot shows an elegant "coming soon" tile instead of a broken image.
