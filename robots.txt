@@ -1,4 +1,5 @@
+# Shavindu Rashmika — portfolio
 User-agent: *
 Allow: /
 
-Sitemap: https://shavindur.github.io/portfolio27/sitemap.xml
+Sitemap: https://shavinduportfolio27.vercel.app/sitemap.xml

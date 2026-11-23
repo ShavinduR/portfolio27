@@ -2,9 +2,10 @@
   "name": "shavindu-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Portfolio of W.S.R. Rathnayaka (Shavindu Rashmika) \u2014 static site, no runtime build required.",
+  "description": "Portfolio of W.S.R. Rathnayaka (Shavindu Rashmika) — static site, no runtime build required.",
   "scripts": {
     "build": "npm run prerender && npm run build:css",
+    "build:vercel": "npm run build && node scripts/dist.mjs",
     "prerender": "node scripts/prerender.mjs",
     "build:css": "tailwindcss -i assets/css/tailwind.src.css -o assets/css/site.css --minify",
     "watch:css": "tailwindcss -i assets/css/tailwind.src.css -o assets/css/site.css --watch",

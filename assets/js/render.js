@@ -36,48 +36,199 @@ window.RENDER = (function () {
   /* ============================================================ Home page */
   const expertise = () => (SITE.expertise || []).map(UI.expertiseCard).join('');
 
+  /** Featured case studies ("Selected work"). */
+  const work = () => {
+    const list = SITE.caseStudies || [];
+    return list.map((cs, i) => UI.caseCard(cs, i, list.length)).join('');
+  };
+
+  /** Web builds: compact cards, client sites first, then personal builds. */
   function projects() {
     const list = SITE.projects || [];
-    const filters = SITE.projectFilters || [];
-    const counts = Object.fromEntries(
-      filters.map((f) => [f.id, f.id === 'all' ? list.length : list.filter((p) => p.categories.includes(f.id)).length])
-    );
-    return `
-      <div class="filter-bar" role="toolbar" aria-label="Filter projects">
-        ${filters
-          .filter((f) => counts[f.id] > 0)
-          .map((f, i) => `<button type="button" class="filter-btn" data-filter="${f.id}" aria-pressed="${i === 0}">
-              ${f.label}<span>${counts[f.id]}</span></button>`)
-          .join('')}
-      </div>
-      <div class="project-grid" data-grid>
-        ${list
-          .map((p, i) => {
-            const prev = list[i - 1];
-            const label = !prev || prev.group !== p.group
-              ? `<p class="group-label">${p.group === 'client' ? 'Highlighted · Client work' : 'Technical builds'}</p>`
-              : '';
-            return label + UI.projectCard(p, i);
-          })
-          .join('')}
-      </div>
-      <p class="sr-only" aria-live="polite" data-filter-status></p>`;
+    return list
+      .map((p, i) => {
+        const prev = list[i - 1];
+        const label = !prev || prev.group !== p.group
+          ? `<p class="group-label">${p.group === 'client' ? 'Client websites' : 'Personal builds'}</p>`
+          : '';
+        return label + UI.projectCard(p, i, { compact: true });
+      })
+      .join('');
   }
 
+  /** Testimonials — empty string while there are none (section stays hidden). */
+  const testimonials = () => (SITE.testimonials || []).map(UI.testimonialCard).join('');
+
   const clients = () => (SITE.clients || []).map((c) => `
-      <li><a href="${esc(c.href)}" class="client-logo${c.knockout ? ' is-knockout' : ''}${c.tall ? ' is-tall' : ''}" title="${esc(c.name)}">
+      <li><a href="${esc(c.href)}" class="client-logo${c.knockout ? ' is-knockout' : ''}${c.tall ? ' is-tall' : ''}${c.boost ? ' is-boost' : ''}" title="${esc(c.name)}">
         <img ${UI.imgAttrs(c.logo, '160px')} alt="${esc(c.name)} logo" loading="lazy" decoding="async">
       </a></li>`).join('');
 
   const experience = () => `<ol class="timeline">${(SITE.experience || []).map(UI.timelineItem).join('')}</ol>`;
   const education = () => (SITE.education || []).map(UI.educationCard).join('');
 
+  /* ===================================================== Case-study page */
+  function caseStudy(slug) {
+    const list = SITE.caseStudies || [];
+    const i = list.findIndex((c) => c.slug === slug);
+    if (i === -1) return '';
+    const cs = list[i];
+    const prev = list[(i - 1 + list.length) % list.length];
+    const next = list[(i + 1) % list.length];
+    const results = UI.publishedResults(cs);
+    const has = (src) => Boolean((SITE.images || {})[src]);
+    const gallery = (cs.gallery || []).filter((g) => has(g.src));
+    const facts = [['Client', cs.client], ['Role', cs.role], ['Timeframe', cs.timeframe], ['Channels', cs.channels]]
+      .filter(([, v]) => v);
+    const figure = (g, sizes) => `
+      <figure class="cs-figure${g.fit === 'contain' ? ' is-contain' : ''}">
+        <img ${UI.imgAttrs(g.src, sizes)} alt="${esc(g.alt)}" loading="lazy" decoding="async">
+        ${g.title ? `<figcaption>${esc(g.title)}</figcaption>` : ''}
+      </figure>`;
+    const step = (n, label, body) => `
+      <div class="cs-step reveal">
+        <h2 class="cs-step-label"><span>${UI.pad(n)}</span>${label}</h2>
+        <div>${body}</div>
+      </div>`;
+
+    return `
+    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)]">
+      <a href="./#work" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Selected work
+      </a>
+      <p class="mt-10 project-index">Case study ${UI.pad(i + 1)} / ${UI.pad(list.length)}</p>
+      <p class="project-kicker !text-accent">${esc(cs.kicker)}</p>
+      <h1 class="mt-4 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,7vw,5.5rem)]">${esc(cs.title)}<span class="text-accent">.</span></h1>
+      <p class="mt-6 max-w-2xl text-lg text-muted leading-relaxed">${esc(cs.summary)}</p>
+      ${facts.length ? `<dl class="cs-meta mt-12 py-8 border-y border-line" style="--n:${facts.length}">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
+      ${UI.resultTiles(results, 'mt-10')}
+    </section>
+
+    ${cs.cover && has(cs.cover.src) ? `
+    <section class="container-x mt-14 animate-fade-up">
+      <div class="cs-cover${cs.cover.fit === 'contain' ? ' is-contain' : ''}" style="--h:${cs.hue ?? 80}">
+        <img ${UI.imgAttrs(cs.cover.src, '(min-width: 1280px) 1200px, 100vw')} alt="${esc(cs.cover.alt)}" fetchpriority="high" decoding="async">
+      </div>
+    </section>` : ''}
+
+    <section class="container-x section !pt-20 space-y-16 md:space-y-20">
+      ${step(1, 'The problem', `<p class="cs-lead">${esc(cs.problem)}</p>`)}
+      ${step(2, 'What I did', `<ol class="cs-actions">${(cs.actions || []).map((a) => `<li>${esc(a)}</li>`).join('')}</ol>
+        ${cs.bonus ? `<aside class="cs-bonus"><h3 class="cs-bonus-title"><i class="fa-solid fa-plus" aria-hidden="true"></i> ${esc(cs.bonus.title)}</h3><p class="mt-3 text-muted leading-relaxed">${esc(cs.bonus.text)}</p></aside>` : ''}`)}
+      ${step(3, 'The result', `<p class="cs-lead">${esc(cs.outcome)}</p>
+        ${cs.quote ? UI.testimonialCard(cs.quote).replace('reveal', 'mt-10') : ''}`)}
+    </section>
+
+    ${gallery.length ? `
+    <section class="container-x pb-20">
+      <h2 class="group-label mb-8">The work</h2>
+      <div class="cs-gallery" data-count="${gallery.length}">${gallery.map((g) => figure(g, '(min-width: 1024px) 50vw, 100vw')).join('')}</div>
+    </section>` : ''}
+
+    <section class="container-x pb-20 grid md:grid-cols-2 gap-10">
+      ${(cs.tools || []).length ? `<div>
+        <h2 class="group-label mb-5">Tools &amp; skills</h2>
+        <ul class="flex flex-wrap gap-2">${cs.tools.map((t) => `<li class="chip">${esc(t)}</li>`).join('')}</ul>
+      </div>` : ''}
+      ${(cs.links || []).length ? `<div>
+        <h2 class="group-label mb-5">See it live</h2>
+        <ul class="flex flex-wrap gap-2">${cs.links.map((l) => `
+          <li><a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost !py-2.5 !px-4 text-xs">
+            ${esc(l.label)} <i class="fa-solid fa-arrow-up-right-from-square text-accent" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span>
+          </a></li>`).join('')}</ul>
+      </div>` : ''}
+    </section>
+
+    ${list.length > 1 ? `
+    <nav class="container-x pb-24 grid sm:grid-cols-2 gap-4 cs-nav" aria-label="More case studies">
+      <a href="${UI.caseUrl(prev.slug)}">
+        <span class="project-index"><i class="fa-solid fa-arrow-left mr-2" aria-hidden="true"></i>Previous</span>
+        <span class="block mt-3 font-heading font-bold text-xl">${esc(prev.title)}</span>
+      </a>
+      <a href="${UI.caseUrl(next.slug)}" class="sm:text-right">
+        <span class="project-index">Next<i class="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i></span>
+        <span class="block mt-3 font-heading font-bold text-xl">${esc(next.title)}</span>
+      </a>
+    </nav>` : ''}`;
+  }
+
+  /* ======================================================== Project page */
+  function project(slug) {
+    const list = SITE.projects || [];
+    const i = list.findIndex((p) => p.slug === slug);
+    if (i === -1) return '';
+    const p = list[i];
+    const prev = list[(i - 1 + list.length) % list.length];
+    const next = list[(i + 1) % list.length];
+    const isClient = p.group === 'client';
+    const linkButtons = [
+      p.links && p.links.live &&
+        `<a href="${esc(p.links.live)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit the live site <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>`,
+      p.links && p.links.github &&
+        `<a href="${esc(p.links.github)}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"><i class="fa-brands fa-github" aria-hidden="true"></i> View the source code</a>`,
+    ].filter(Boolean).join('');
+
+    return `
+    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)]">
+      <a href="./#projects" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> All web builds
+      </a>
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <span class="project-index">${UI.pad(i + 1)} / ${UI.pad(list.length)}</span>
+        ${isClient ? `<span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>` : ''}
+      </div>
+      <p class="project-kicker ${isClient ? '!text-gold' : ''}">${esc(p.kicker)}</p>
+      <h1 class="mt-4 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,7vw,5.5rem)]">${esc(p.title)}<span class="text-accent">.</span></h1>
+      <p class="mt-6 max-w-2xl text-lg text-muted leading-relaxed">${esc(p.summary)}</p>
+      ${linkButtons ? `<div class="mt-8 flex flex-wrap gap-3">${linkButtons}</div>` : ''}
+    </section>
+
+    <section class="container-x mt-14 cs-hero animate-fade-up">${UI.thumb(p, { size: 'lg', eager: true })}</section>
+
+    <section class="container-x mt-14">
+      <dl class="cs-meta py-8 border-y border-line">
+        <div><dt>Role</dt><dd>${esc(p.role)}</dd></div>
+        <div><dt>Type</dt><dd>${isClient ? 'Client project' : 'Personal build'}</dd></div>
+        <div><dt>Platform</dt><dd>${p.categories.includes('mobile') ? 'Web & Mobile' : 'Web'}</dd></div>
+        <div><dt>Live</dt><dd>${p.links && p.links.live ? `<a class="hover:text-accent transition" href="${esc(p.links.live)}" target="_blank" rel="noopener noreferrer">${esc(UI.domain(p.links.live))}</a>` : 'Private build'}</dd></div>
+      </dl>
+    </section>
+
+    <section class="container-x section !pt-16 grid lg:grid-cols-[1fr_1.3fr] gap-14">
+      <div>
+        <h2 class="eyebrow">Overview</h2>
+        <p class="mt-6 text-lg leading-relaxed">${esc(p.description)}</p>
+        <h3 class="mt-10 mb-4 group-label">Stack &amp; focus</h3>
+        <ul class="flex flex-wrap gap-2">${p.stack.map((x) => `<li class="chip">${esc(x)}</li>`).join('')}</ul>
+      </div>
+      <div>
+        <h2 class="eyebrow">Highlights</h2>
+        <ul class="cs-highlights mt-4">
+          ${p.highlights.map((h) => `<li><i class="fa-solid fa-diamond" aria-hidden="true"></i><span>${esc(h)}</span></li>`).join('')}
+        </ul>
+      </div>
+    </section>
+
+    <nav class="container-x pb-24 grid sm:grid-cols-2 gap-4 cs-nav" aria-label="More web builds">
+      <a href="${UI.projectUrl(prev.slug)}">
+        <span class="project-index"><i class="fa-solid fa-arrow-left mr-2" aria-hidden="true"></i>Previous</span>
+        <span class="block mt-3 font-heading font-bold text-xl">${esc(prev.title)}</span>
+      </a>
+      <a href="${UI.projectUrl(next.slug)}" class="sm:text-right">
+        <span class="project-index">Next<i class="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i></span>
+        <span class="block mt-3 font-heading font-bold text-xl">${esc(next.title)}</span>
+      </a>
+    </nav>`;
+  }
+
   /* ======================================================= Gallery pages */
   // The first image is the LCP candidate (high priority); the rest of the first
   // row loads normally; everything below lazy-loads. Above-the-fold items skip
   // the reveal fade so they paint immediately.
-  const EAGER = 4;
   const NO_REVEAL = 6;
+  // How many images the first block shows above the fold on a desktop screen.
+  // Those load eagerly (the first with high priority); everything else lazy-loads.
+  const EAGER_BY_LAYOUT = { features: 1, cases: 1, client: 2, grid: 8 };
 
   function gallery(id) {
     const g = (SITE.galleries || {})[id];
@@ -85,6 +236,11 @@ window.RENDER = (function () {
     if (!g) return '';
 
     let n = 0; // running image index → lightbox order
+    const first = g.blocks[0] || {};
+    const EAGER = first.type === 'grid' && first.variant !== 'square' ? 3 : EAGER_BY_LAYOUT[first.type] ?? 4;
+    // Masonry fills each of its 3 columns top to bottom: the top two of every column are above the fold.
+    const perColumn = first.type === 'masonry' ? Math.ceil((first.items || []).length / 3) : 0;
+    const isEager = (i) => (perColumn ? i < (first.items || []).length && i % perColumn < 2 : i < EAGER);
     const reveal = () => (n >= NO_REVEAL ? 'reveal' : '');
     const pic = (it, imgClass = '', extra = '', sizes) => {
       // Logos (fit: 'contain') are shown whole on a white tile instead of cropped.
@@ -102,7 +258,7 @@ window.RENDER = (function () {
       }
       const i = n++;
       return `<button type="button" class="lb-trigger ${extra}" data-lb="${i}" data-title="${esc(it.title || '')}" aria-label="View larger: ${esc(it.title || it.alt)}">
-        <img ${UI.imgAttrs(it.src, sizes)} alt="${esc(it.alt)}" ${i === 0 ? 'fetchpriority="high"' : i < EAGER ? '' : 'loading="lazy"'} decoding="async" class="${imgClass}">
+        <img ${UI.imgAttrs(it.src, sizes)} alt="${esc(it.alt)}" ${i === 0 ? 'fetchpriority="high"' : isEager(i) ? '' : 'loading="lazy"'} decoding="async" class="${imgClass}">
       </button>`;
     };
     const blockTitle = (t) => (t ? `<p class="group-label mb-8">${esc(t)}</p>` : '');
@@ -245,7 +401,7 @@ window.RENDER = (function () {
 
     return `
     <section class="container-x pt-[calc(var(--nav-h)+3.5rem)] pb-12">
-      <a href="index.html#design" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+      <a href="./#design" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
         <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Creative
       </a>
       <div class="mt-10 grid lg:grid-cols-[1.3fr_1fr] gap-8 items-end">
@@ -275,5 +431,5 @@ window.RENDER = (function () {
     </section>`;
   }
 
-  return { hash, hydrate, clients, expertise, projects, experience, education, gallery };
+  return { hash, hydrate, clients, expertise, work, projects, testimonials, experience, education, gallery, caseStudy, project };
 })();
