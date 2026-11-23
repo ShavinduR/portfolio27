@@ -8,7 +8,7 @@ window.SITE.profile = {
   legalName: 'W.S.R. Rathnayaka',
   name: 'Shavindu Rashmika',
   shortName: 'shavindu',
-  url: 'https://shavindur.github.io/portfolio27/', // live site — used for share tags, canonical URLs and sitemap.xml
+  url: 'https://shavinduportfolio27.vercel.app/', // live site — used for share tags, canonical URLs and sitemap.xml
   location: 'Sri Lanka',
   headline: 'Social Media Strategist & Visual Creator',
   tagline: 'I plan the strategy, shoot the content and build the page it lands on.',

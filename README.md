@@ -108,6 +108,8 @@ Each folder has a `README.md` listing the exact file names to use. Drop the imag
 
 ### Vercel
 
+Live at **https://shavinduportfolio27.vercel.app/**.
+
 `vercel.json` makes Vercel run `npm run build:vercel`, which builds the site and
 copies only the public files (pages, `assets/`, icons, CV, sitemap) into `dist/`.
 Vercel publishes `dist/`. Build scripts, package files and notes are never deployed.
@@ -115,7 +117,7 @@ To check locally: `npm run build:vercel`, then serve the `dist/` folder.
 
 ### GitHub Pages
 
-Also works on GitHub Pages at **https://shavindur.github.io/portfolio27/**
+Also works on GitHub Pages at https://shavindur.github.io/portfolio27/
 (`.nojekyll` makes it serve files as-is).
 
 `404.html` resolves links from the site root, and switches to `/portfolio27/`
