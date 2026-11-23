@@ -104,11 +104,26 @@ assets/img/branding/space-billiards/
 
 Each folder has a `README.md` listing the exact file names to use. Drop the images in (`.jpg`, `.png` or `.webp`), then run `npm run images`. Until a file exists, its slot shows an elegant "coming soon" tile instead of a broken image.
 
-## Deployment (GitHub Pages)
+## Deployment
 
-Live at **https://shavindur.github.io/portfolio27/**. The site URL lives in `assets/js/data/profile.js` (`url`). It's used for canonical links, share tags and `sitemap.xml`, which `npm run build` regenerates. `.nojekyll` makes GitHub Pages serve files as-is.
+### Vercel
 
-`404.html` uses `<base href="/portfolio27/">` so it works at any missing URL. **If the site moves** (for example to a custom domain), update that line, `url` in `profile.js`, and the absolute URLs in the page `<head>`s.
+`vercel.json` makes Vercel run `npm run build:vercel`, which builds the site and
+copies only the public files (pages, `assets/`, icons, CV, sitemap) into `dist/`.
+Vercel publishes `dist/`. Build scripts, package files and notes are never deployed.
+To check locally: `npm run build:vercel`, then serve the `dist/` folder.
+
+### GitHub Pages
+
+Also works on GitHub Pages at **https://shavindur.github.io/portfolio27/**
+(`.nojekyll` makes it serve files as-is).
+
+`404.html` resolves links from the site root, and switches to `/portfolio27/`
+only on github.io, so it works on both hosts at any missing URL.
+
+The site URL lives in `assets/js/data/profile.js` (`url`). It's used for canonical
+links, share tags and `sitemap.xml`. When the main address changes, update it and
+the absolute URLs in the page `<head>`s, then run `npm run build`.
 
 ## Credits
 
