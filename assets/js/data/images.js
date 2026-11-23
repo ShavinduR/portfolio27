@@ -101,6 +101,7 @@ window.SITE.images = {
   'assets/img/projects/facet.webp': [1440, 900],
   'assets/img/projects/i-like-media.webp': [1440, 900],
   'assets/img/projects/kidsla.webp': [1440, 900],
+  'assets/img/projects/money-manager.webp': [1440, 900],
   'assets/img/projects/peak-moments-by-rumesh.webp': [1440, 900],
   'assets/img/projects/peak-moments.webp': [1440, 900],
   'assets/img/projects/sri-lankan-dam.webp': [1440, 900],

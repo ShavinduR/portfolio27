@@ -622,8 +622,8 @@
 }
 @media (min-width: 1024px) {
   .project-grid.is-compact { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.25rem; }
-  .project-grid.is-compact .project-card { grid-column: span 3; }
-  .project-grid.is-compact .project-card.is-client { grid-column: span 4; }
+  .project-grid.is-compact .project-card { grid-column: span 4; }          /* personal builds: 3 across */
+  .project-grid.is-compact .project-card.is-client { grid-column: span 3; } /* client sites: 4 across */
 }
 .project-card.is-compact .project-body { padding: 1.25rem 1.35rem 1.15rem; }
 .project-card.is-compact .project-kicker { margin-top: .85rem; font-size: .64rem; }
@@ -634,3 +634,9 @@
 
 /* Client strip: fine-lined logos drawn a little larger and brighter */
 .client-logo.is-boost img { max-height: 5.25rem; max-width: min(100%, 9.5rem); opacity: .85; }
+
+/* Hero skill chips that jump to the matching section */
+a.chip-link { transition: color .2s ease, border-color .2s ease, background-color .2s ease; }
+a.chip-link:hover, a.chip-link:focus-visible { color: rgb(var(--fg)); border-color: rgb(var(--accent) / .6); }
+a.chip-link i { font-size: .6rem; opacity: .45; transform: translateY(-1px); transition: opacity .2s ease, transform .2s ease; color: rgb(var(--accent)); }
+a.chip-link:hover i, a.chip-link:focus-visible i { opacity: 1; transform: translateY(1px); }

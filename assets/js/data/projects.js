@@ -82,6 +82,28 @@ window.SITE.projects = [
     placeholder: { layout: 'site', hue: 210, monogram: 'ILM' },
   },
 
+  {
+    slug: 'tranquil-rest',
+    title: 'Tranquil Rest',
+    kicker: 'TR · Booking Website',
+    group: 'client',
+    categories: ['client'],
+    role: 'Design & Development',
+    summary:
+      'The booking website for a riverside guest house in Kosnathota, with direct WhatsApp booking and a 100/100 Lighthouse SEO score.',
+    description:
+      'The official website for Tranquil Rest, a riverside guest house in Kosnathota, built as part of a full digital rebrand (see the case study for the social media and brand side). Guests browse the rooms and book directly over WhatsApp, with no third-party booking fees, and the site is tuned for search with a perfect Lighthouse SEO score.',
+    highlights: [
+      'Direct WhatsApp booking flow, so guests skip third-party booking fees',
+      '100/100 Lighthouse SEO score',
+      'Fast React + Vite build on Vercel, in the guest house’s new brand identity',
+    ],
+    stack: ['React (Vite)', 'Tailwind CSS', 'SEO', 'Vercel'],
+    links: { live: 'https://tranquil-rest.vercel.app/' },
+    image: 'assets/img/projects/tranquil-rest.webp',
+    placeholder: { layout: 'site', hue: 150, monogram: 'TR' },
+  },
+
   /* ------------------------------------------------ Core technical projects */
   {
     slug: 'customt',
@@ -105,6 +127,28 @@ window.SITE.projects = [
     links: { live: 'https://customt.vercel.app/', github: 'https://github.com/ShavinduR/customt' },
     image: 'assets/img/projects/customt.webp',
     placeholder: { layout: 'auction', hue: 262, monogram: 'CT' },
+  },
+  {
+    slug: 'money-manager',
+    title: 'Money Manager',
+    kicker: 'Personal Finance PWA · Local-first',
+    group: 'core',
+    categories: ['mobile'],
+    role: 'Personal project · Design & Development',
+    summary:
+      'An offline-first personal finance planner that logs money in and out, carries balances forward, simulates debt payoff and understands Singlish and Sinhala quick-add.',
+    description:
+      'Money Manager (Mindset Finance Planner) turns a printed four-year financial planner into an installable app that does the arithmetic for you. You log income, savings, debt payments and bills each month; it carries the balance forward, ranks your spending, tracks debts with a payoff simulator and rolls everything up into a yearly summary. It works offline and keeps every byte on your device.',
+    highlights: [
+      'Quick-add bar that understands English, Singlish and Sinhala ("ada lunch 850") with a confirmation step before saving',
+      'Debt payoff simulator: extra-payment slider, interest saved and the payment needed to hit a goal date',
+      'Yearly summary with charts, a monthly matrix and category breakdowns in LKR and other currencies',
+      'Installable offline PWA: data stays on the device in IndexedDB, with JSON export and import',
+    ],
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Recharts', 'Zustand', 'IndexedDB', 'PWA', 'Vitest'],
+    links: { live: 'https://money-manager-expences-tracker.vercel.app/', github: 'https://github.com/ShavinduR/MoneyManager-ExpencesTracker' },
+    image: 'assets/img/projects/money-manager.webp',
+    placeholder: { layout: 'app', hue: 140, monogram: 'MM' },
   },
   {
     slug: 'kidsla',

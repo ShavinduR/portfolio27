@@ -11,13 +11,6 @@
   const slug = new URLSearchParams(location.search).get('slug');
   const i = projects.findIndex((p) => p.slug === slug);
 
-  // Moved to the case studies (or retired): keep old links working.
-  const moved = { 'tranquil-rest': 'case-study.html?slug=tranquil-rest' };
-  if (i === -1 && moved[slug]) {
-    location.replace(moved[slug]);
-    return;
-  }
-
   if (i === -1) {
     document.title = `Project not found | ${profile.name}`;
     root.innerHTML = `
