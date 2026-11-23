@@ -91,7 +91,9 @@ function writeSeoBlock(html, head) {
 }
 
 /* ----------------------------------------------------- 1. Prerender mounts */
-const pages = (await readdir(ROOT)).filter((f) => f.endsWith('.html'));
+// Search-engine ownership files (e.g. google<token>.html) must be served byte-for-byte: never touch them.
+const VERIFICATION_FILE = /^google[0-9a-f]+\.html$/;
+const pages = (await readdir(ROOT)).filter((f) => f.endsWith('.html') && !VERIFICATION_FILE.test(f));
 let total = 0;
 for (const page of pages) {
   const file = join(ROOT, page);
