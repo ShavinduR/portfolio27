@@ -2,9 +2,10 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
-    <!-- GitHub Pages serves this page at ANY missing URL (e.g. /portfolio27/a/b),
-         so resolve every relative link from the site root. Update if the site moves. -->
-    <base href="/portfolio27/">
+    <!-- Works on both hosts: GitHub Pages serves the site under /portfolio27/,
+         Vercel (or a custom domain) serves it from the root. -->
+    <base href="/">
+    <script>if (location.hostname.endsWith('github.io')) document.querySelector('base').href = '/portfolio27/';</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Page not found | Shavindu Rashmika</title>
     <meta name="description" content="This page could not be found.">
