@@ -15,6 +15,20 @@ window.SITE.profile = {
   summary:
     'I plan social media strategy, then shoot, edit and design the content myself, and build the website when a brand needs one.',
   cv: 'MYCV.pdf',
+  // Search engines (scripts/seo.mjs builds every page's metadata from this)
+  seo: {
+    givenName: 'Shavindu Rashmika',
+    familyName: 'Rathnayaka',
+    alternateNames: ['W.S.R. Rathnayaka', 'Shavindu Rashmika Rathnayaka', 'Weerasooriyage Shavindu Rashmika Rathnayaka'],
+    knowsAbout: [
+      'Social Media Strategy', 'Content Creation', 'Meta Ads', 'Photography',
+      'Videography', 'Brand Identity', 'Graphic Design', 'Web Development',
+    ],
+    // Paste the content="…" value from Google Search Console / Bing Webmaster
+    // Tools (HTML tag method), then run `npm run build`.
+    googleSiteVerification: '',
+    bingSiteVerification: '',
+  },
   portrait: 'assets/img/home/shavindu-portrait.webp',
   contact: {
     email: 'shavindu.rashmika928@gmail.com',
@@ -47,11 +61,11 @@ window.SITE.profile = {
  * `boost: true` = a fine-lined logo that reads faint next to the others; drawn larger and brighter.
  */
 window.SITE.clients = [
-  { name: 'Peak Moments', logo: 'assets/img/clients/peak-moments-logo-knockout.webp', href: 'case-study.html?slug=peak-moments-group', knockout: true },
-  { name: 'Peak Moments by Rumesh', logo: 'assets/img/clients/peak-moments-by-rumesh-logo-strip.webp', href: 'case-study.html?slug=peak-moments-group', tall: true, boost: true },
-  { name: 'I Like Media', logo: 'assets/img/clients/i-like-media-logo-strip.webp', href: 'case-study.html?slug=peak-moments-group' },
-  { name: 'Tranquil Rest Kosnathota', logo: 'assets/img/clients/tranquil-rest-logo-strip.webp', href: 'case-study.html?slug=tranquil-rest', tall: true, boost: true },
-  { name: 'Space Billiards', logo: 'assets/img/clients/space-billiards-logo-strip.webp', href: 'case-study.html?slug=space-billiards' },
+  { name: 'Peak Moments', logo: 'assets/img/clients/peak-moments-logo-knockout.webp', href: 'case-studies/peak-moments-group.html', knockout: true },
+  { name: 'Peak Moments by Rumesh', logo: 'assets/img/clients/peak-moments-by-rumesh-logo-strip.webp', href: 'case-studies/peak-moments-group.html', tall: true, boost: true },
+  { name: 'I Like Media', logo: 'assets/img/clients/i-like-media-logo-strip.webp', href: 'case-studies/peak-moments-group.html' },
+  { name: 'Tranquil Rest Kosnathota', logo: 'assets/img/clients/tranquil-rest-logo-strip.webp', href: 'case-studies/tranquil-rest.html', tall: true, boost: true },
+  { name: 'Space Billiards', logo: 'assets/img/clients/space-billiards-logo-strip.webp', href: 'case-studies/space-billiards.html' },
 ];
 
 /*

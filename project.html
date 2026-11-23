@@ -1,45 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Case Study | Shavindu Rashmika</title>
-    <meta name="description" content="Web project by Shavindu Rashmika, Social Media Strategist &amp; Visual Creator.">
-    <meta name="theme-color" content="#070709">
+    <!--seo-->
+    <title>Web build | Shavindu Rashmika</title>
+    <meta name="description" content="Redirecting to the web build.">
+    <meta name="robots" content="noindex, follow">
+    <meta name="author" content="Shavindu Rashmika">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Shavindu Rashmika">
-    <meta property="og:title" content="Case Study | Shavindu Rashmika">
-    <meta property="og:description" content="Web project by Shavindu Rashmika, Social Media Strategist &amp; Visual Creator.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://shavinduportfolio27.vercel.app/project.html">
+    <meta property="og:title" content="Web build | Shavindu Rashmika">
+    <meta property="og:description" content="Redirecting to the web build.">
     <meta property="og:image" content="https://shavinduportfolio27.vercel.app/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Shavindu Rashmika — Social Media Strategist &amp; Visual Creator">
+    <meta property="og:image:alt" content="Shavindu Rashmika, Social Media Strategist &amp; Visual Creator">
+
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="manifest" href="site.webmanifest">
-
-    <script src="assets/js/theme.js"></script>
-    <link rel="preload" href="assets/fonts/montserrat-800.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/site.css">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="twitter:title" content="Web build | Shavindu Rashmika">
+    <meta name="twitter:description" content="Redirecting to the web build.">
+    <meta name="twitter:image" content="https://shavinduportfolio27.vercel.app/og-image.jpg">
+    <meta name="twitter:image:alt" content="Shavindu Rashmika, Social Media Strategist &amp; Visual Creator">
+    
+    <!--/seo-->
+    <!-- Old address (project.html?slug=…). Each page now has its own URL under projects/.
+         Vercel answers these with a permanent redirect (vercel.json); this script covers other hosts. -->
+    <script>
+      (function () {
+        var slug = new URLSearchParams(location.search).get('slug');
+        location.replace(slug && /^[a-z0-9-]+$/.test(slug) ? 'projects/' + slug + '.html' : './');
+      })();
+    </script>
 </head>
-<body data-page="project" data-nav="work" class="bg-bg text-fg font-body flex flex-col min-h-screen transition-colors duration-300">
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] btn btn-primary">Skip to content</a>
-
-    <header data-layout="nav"></header>
-
-    <main id="main" data-render="case-study"></main>
-
-    <footer data-layout="footer" id="contact"></footer>
-
-    <script src="assets/js/data/profile.js"></script>
-    <script src="assets/js/data/projects.js"></script>
-    <script src="assets/js/data/images.js"></script>
-    <script src="assets/js/components.js"></script>
-    <script src="assets/js/project-page.js"></script>
-    <script src="assets/js/layout.js"></script>
+<body>
+    <p><a href="./">Go to the portfolio of Shavindu Rashmika</a></p>
 </body>
 </html>

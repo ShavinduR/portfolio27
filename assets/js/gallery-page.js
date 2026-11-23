@@ -6,7 +6,7 @@
  * This file adds the behaviour: the lightbox.
  */
 (function () {
-  const { galleries = {}, profile } = window.SITE;
+  const { galleries = {} } = window.SITE;
   const UI = window.UI;
   const id = document.body.dataset.gallery;
   const g = galleries[id];
@@ -98,5 +98,5 @@
     x0 = null;
   });
 
-  document.title = `${g.title} | ${profile.name}`;
+  // The <title> is set at build time (scripts/seo.mjs); don't overwrite it here.
 })();

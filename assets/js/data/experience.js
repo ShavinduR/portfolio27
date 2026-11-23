@@ -33,7 +33,7 @@ window.SITE.experience = [
       'DaVinci Resolve', 'Lightroom Classic', 'Premiere Pro', 'Photoshop',
     ],
     links: [
-      { label: 'Read the case study', icon: 'fa-solid fa-arrow-right', url: 'case-study.html?slug=peak-moments-group', internal: true },
+      { label: 'Read the case study', icon: 'fa-solid fa-arrow-right', url: 'case-studies/peak-moments-group.html', internal: true },
     ],
   },
   {

@@ -6,12 +6,12 @@
  *
  * Requires assets/js/data/profile.js to be loaded first.
  * Set <body data-page="home"> on index.html; any other value marks a sub-page
- * (nav links then point back to index.html#section).
+ * (nav links then point back to ./#section, the home page).
  */
 (function () {
   const { profile, nav } = window.SITE;
   const isHome = document.body.dataset.page === 'home';
-  const href = (id) => (isHome ? `#${id}` : `index.html#${id}`);
+  const href = (id) => (isHome ? `#${id}` : `./#${id}`); // ./ = the canonical home URL
   const year = new Date().getFullYear();
 
   const logo = `
@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="mt-16 pt-6 border-t border-line flex flex-col sm:flex-row gap-3 justify-between text-xs text-muted">
-          <p>© ${year} ${profile.legalName} (${profile.name}). All rights reserved.</p>
+          <p>© ${year} ${profile.name} Rathnayaka (${profile.legalName}). All rights reserved.</p>
           <a href="${href('home')}" class="hover:text-fg transition">Back to top <i class="fas fa-arrow-up ml-1" aria-hidden="true"></i></a>
         </div>
       </div>`;

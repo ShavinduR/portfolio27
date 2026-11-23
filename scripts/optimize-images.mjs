@@ -4,8 +4,10 @@
  *
  * 1. Finds every .jpg / .jpeg / .png / .jfif under assets/img/
  *    (a .webp added directly is kept as-is and just gets its -800 variant).
- * 2. Writes   <name>.webp      (long edge ≤ 2000px)
- *    and      <name>-800.webp  (width ≤ 800px, used on small screens via srcset)
+ * 2. Writes   <name>.webp       (long edge ≤ 2000px)
+ *    and      <name>-800.webp   (width ≤ 800px, used on small screens via srcset)
+ *    and      <name>-1200.webp  (only for images wider than 1200px: high-density
+ *                                phones pick this instead of the full-size file)
  * 3. Deletes the original (pass --keep to keep it).
  * 4. Rewrites references in *.html and assets/js/**.js from the old
  *    extension to .webp — so you can reference "assets/img/projects/customt.png"
@@ -23,6 +25,8 @@ const KEEP = process.argv.includes('--keep');
 const SOURCE = /\.(jpe?g|png|jfif)$/i;
 const MAX = 2000;
 const SMALL = 800;
+const MEDIUM = 1200;
+const isVariant = (f) => f.endsWith(`-${SMALL}.webp`) || f.endsWith(`-${MEDIUM}.webp`);
 
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
@@ -53,6 +57,8 @@ async function convert(file) {
     .resize({ width: SMALL, withoutEnlargement: true })
     .webp(opts)
     .toFile(`${base}-${SMALL}.webp`);
+  if (Math.min(meta.width, MAX) > MEDIUM)
+    await img.clone().resize({ width: MEDIUM }).webp(opts).toFile(`${base}-${MEDIUM}.webp`);
 
   const before = (await stat(file)).size;
   const after = (await stat(`${base}.webp`)).size;
@@ -79,7 +85,7 @@ async function rewriteRefs(map) {
 }
 
 async function writeManifest() {
-  const files = (await walk(IMG_DIR)).filter((f) => f.endsWith('.webp') && !f.endsWith(`-${SMALL}.webp`)).sort();
+  const files = (await walk(IMG_DIR)).filter((f) => f.endsWith('.webp') && !isVariant(f)).sort();
   const entries = await Promise.all(
     files.map(async (f) => {
       const { width, height } = await sharp(f).metadata();
@@ -96,13 +102,19 @@ ${entries.join('\n')}
   console.log(`\nManifest: ${entries.length} images → assets/js/data/images.js`);
 }
 
-// WebP files dropped in directly just need their small variant.
+// WebP files dropped in directly (or created before a size existed) just need their variants.
 const all = await walk(IMG_DIR);
-for (const f of all.filter((f) => f.endsWith('.webp') && !f.endsWith(`-${SMALL}.webp`))) {
+for (const f of all.filter((f) => f.endsWith('.webp') && !isVariant(f))) {
   const small = f.replace(/\.webp$/, `-${SMALL}.webp`);
-  if (all.includes(small)) continue;
-  await sharp(f).resize({ width: SMALL, withoutEnlargement: true }).webp({ quality: 80, effort: 5 }).toFile(small);
-  console.log(`  ${posix(f)}  + ${SMALL}px variant`);
+  if (!all.includes(small)) {
+    await sharp(f).resize({ width: SMALL, withoutEnlargement: true }).webp({ quality: 80, effort: 5 }).toFile(small);
+    console.log(`  ${posix(f)}  + ${SMALL}px variant`);
+  }
+  const medium = f.replace(/\.webp$/, `-${MEDIUM}.webp`);
+  if (!all.includes(medium) && (await sharp(f).metadata()).width > MEDIUM) {
+    await sharp(f).resize({ width: MEDIUM }).webp({ quality: 80, effort: 5 }).toFile(medium);
+    console.log(`  ${posix(f)}  + ${MEDIUM}px variant`);
+  }
 }
 
 const sources = all.filter((f) => SOURCE.test(f));

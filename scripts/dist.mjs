@@ -28,6 +28,9 @@ for (const entry of await readdir(ROOT, { withFileTypes: true })) {
   }
 }
 
+// Generated detail pages (case studies, web builds).
+for (const dir of ['case-studies', 'projects']) await cp(join(ROOT, dir), join(OUT, dir), { recursive: true });
+
 await cp(join(ROOT, 'assets'), join(OUT, 'assets'), {
   recursive: true,
   filter: (src) => !PRIVATE_EXT.has(extname(src)),

@@ -10,7 +10,7 @@ const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./*.html', './assets/js/**/*.js'],
+  content: ['./*.html', './assets/js/**/*.js', './scripts/templates/*.html'],
   darkMode: 'class',
   theme: {
     extend: {
