@@ -113,17 +113,17 @@ window.UI = (function () {
     return out.join('');
   };
 
-  function projectCard(p, index) {
+  function projectCard(p, index, { compact = false } = {}) {
     const isClient = p.group === 'client';
-    const variant = isClient ? 'is-client' : p.feature ? 'is-feature' : 'is-core';
-    const stack = p.stack.slice(0, p.feature ? 8 : 4);
+    const variant = (isClient ? 'is-client' : p.feature && !compact ? 'is-feature' : 'is-core') + (compact ? ' is-compact' : '');
+    const stack = p.stack.slice(0, compact ? 3 : p.feature ? 8 : 4);
     return `
       <article class="project-card ${variant} reveal" data-categories="${p.categories.join(' ')}" data-group="${p.group}">
-        <div class="project-thumb">${thumb(p, { size: p.feature ? 'lg' : 'md' })}</div>
+        <div class="project-thumb">${thumb(p, { size: p.feature && !compact ? 'lg' : 'md' })}</div>
         <div class="project-body">
           <div class="flex items-center justify-between gap-4">
             <span class="project-index">${pad(index + 1)}</span>
-            ${isClient ? `<span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>` : ''}
+            ${isClient && !compact ? `<span class="badge-gold"><i class="fa-solid fa-star text-[9px]" aria-hidden="true"></i> Client work</span>` : ''}
           </div>
           <p class="project-kicker">${esc(p.kicker)}</p>
           <h3 class="project-title">
@@ -132,7 +132,7 @@ window.UI = (function () {
           <p class="project-summary">${esc(p.summary)}</p>
           <ul class="project-stack" aria-label="Tech and focus">${stack.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
           <div class="project-actions">
-            <span class="project-cta">View case study <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+            <span class="project-cta">${compact ? 'View project' : 'View case study'} <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
             <span class="flex gap-2 relative z-[2]">${linkBtns(p)}</span>
           </div>
         </div>
@@ -157,7 +157,10 @@ window.UI = (function () {
           </div>
           <ul class="tl-points">${x.points.map((pt) => `<li>${esc(pt)}</li>`).join('')}</ul>
           ${x.tags && x.tags.length ? `<ul class="flex flex-wrap gap-2 mt-5">${x.tags.map((t) => `<li class="chip">${esc(t)}</li>`).join('')}</ul>` : ''}
-          ${x.links && x.links.length ? `<ul class="flex flex-wrap gap-2 mt-5">${x.links.map((l) => `
+          ${x.links && x.links.length ? `<ul class="flex flex-wrap gap-2 mt-5">${x.links.map((l) => l.internal ? `
+            <li><a href="${esc(l.url)}" class="btn btn-ghost !py-2.5 !px-4 text-xs">
+              ${esc(l.label)} <i class="${esc(l.icon)} text-accent" aria-hidden="true"></i>
+            </a></li>` : `
             <li><a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost !py-2.5 !px-4 text-xs">
               <i class="${esc(l.icon)}" aria-hidden="true"></i> ${esc(l.label)}<span class="sr-only"> — ${esc(x.org)} (opens in a new tab)</span>
             </a></li>`).join('')}</ul>` : ''}
@@ -179,6 +182,55 @@ window.UI = (function () {
       </div>`;
   }
 
+  /* ------------------------------------------------------- Case studies */
+  /** Metrics with a real value. `todo` placeholders never reach the page. */
+  const publishedResults = (cs) => (cs.results || []).filter((r) => !r.todo && String(r.value || '').trim());
+
+  function resultTiles(results, cls = '') {
+    if (!results.length) return '';
+    return `<dl class="cs-results ${cls}" style="--n:${results.length}">${results.map((r) => `
+        <div class="cs-result">
+          <dt>${esc(r.label)}</dt>
+          <dd>${esc(r.value)}</dd>
+          ${r.note ? `<p class="cs-result-note">${esc(r.note)}</p>` : ''}
+        </div>`).join('')}</dl>`;
+  }
+
+  function caseLogo(cs) {
+    const l = cs.logo;
+    if (!l || !(window.SITE.images || {})[l.src]) return `<span class="case-mono">${esc(cs.title)}</span>`;
+    return `<span class="case-logo${l.knockout ? ' is-knockout' : ''}"><img ${imgAttrs(l.src, '240px')} alt="${esc(cs.title)} logo" loading="lazy" decoding="async"></span>`;
+  }
+
+  function caseCard(cs, i, total) {
+    const results = publishedResults(cs);
+    return `
+      <article class="case-card reveal" style="--h:${cs.hue ?? 80}">
+        <div class="case-visual" aria-hidden="true">${caseLogo(cs)}</div>
+        <div class="case-body">
+          <span class="project-index">${pad(i + 1)} / ${pad(total)}</span>
+          <p class="project-kicker !text-accent">${esc(cs.kicker)}</p>
+          <h3 class="project-title">
+            <a href="case-study.html?slug=${encodeURIComponent(cs.slug)}" class="stretched">${esc(cs.title)}</a>
+          </h3>
+          <p class="project-summary">${esc(cs.summary)}</p>
+          ${results.length ? `<ul class="case-stats">${results.slice(0, 2).map((r) => `<li><strong>${esc(r.value)}</strong> ${esc(r.label)}</li>`).join('')}</ul>` : ''}
+          <div class="project-actions">
+            <span class="project-cta">Read the case study <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  function testimonialCard(t) {
+    return `
+      <figure class="quote-card reveal">
+        <i class="fa-solid fa-quote-left text-accent text-2xl" aria-hidden="true"></i>
+        <blockquote class="mt-6 font-heading font-semibold text-xl md:text-2xl leading-snug">${esc(t.text)}</blockquote>
+        <figcaption class="mt-6 text-sm"><span class="font-semibold">${esc(t.name)}</span>${t.role ? ` <span class="text-muted">· ${esc(t.role)}</span>` : ''}</figcaption>
+      </figure>`;
+  }
+
   /* ------------------------------------------------------ Expertise card */
   function expertiseCard(x, i) {
     return `
@@ -193,5 +245,8 @@ window.UI = (function () {
       </article>`;
   }
 
-  return { esc, domain, pad, imgAttrs, thumb, projectCard, linkBtns, timelineItem, educationCard, expertiseCard };
+  return {
+    esc, domain, pad, imgAttrs, thumb, projectCard, linkBtns, timelineItem, educationCard, expertiseCard,
+    publishedResults, resultTiles, caseCard, testimonialCard,
+  };
 })();

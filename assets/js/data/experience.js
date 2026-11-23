@@ -7,47 +7,34 @@ window.SITE = window.SITE || {};
 
 window.SITE.experience = [
   {
-    role: 'Founder',
-    org: 'BizMax Solutions',
-    period: '', // add dates, e.g. '2023 — Present' (and `current: true` if ongoing)
-    logo: { src: 'assets/img/brands/bizmax/bizmax-logo-badge.webp', alt: 'BizMax Solutions logo' },
-    points: [
-      'Founded BizMax Solutions, a digital growth partner helping Sri Lankan businesses go digital with confidence.',
-      'Offers brand development, website design and digital content creation, delivered through a Deep Dive → Strategy → Launch process.',
-      'Designed and built the company website, and lead its digital media operations.',
-    ],
-    tags: ['Brand Development', 'Website Design', 'Digital Content', 'Entrepreneurship'],
-    links: [
-      { label: 'Website', icon: 'fa-solid fa-arrow-up-right-from-square', url: 'https://shavindur.github.io/BizMax/' },
-      { label: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/share/1Fo4taBaAg/' },
-      { label: 'Instagram', icon: 'fab fa-instagram', url: 'https://www.instagram.com/bizmax.solutions/' },
-    ],
-  },
-  {
-    role: 'ICT & Digital Media Intern / Executive',
-    org: 'Peak Moments',
-    orgDetail: 'PM · PMR · ILM',
-    period: 'Dec 2025 — Present',
+    role: 'Freelance Social Media Designer, Photographer & Visual Creator',
+    org: 'Freelance',
+    period: '2021 — Present',
     current: true,
     points: [
-      'Managed social media strategy and designed and developed the three official photography brand websites.',
-      'Freelance event photography and videography with advanced post-production — editing and colour grading — for boutique weddings and corporate events.',
-      'Hands-on with high-end studio gear and professional post-production software.',
+      'Plan and run social media for small businesses in hospitality, leisure and retail, from content calendars to campaigns and giveaways.',
+      'Shoot, edit and colour-grade the photo and video content myself, including reels and event coverage.',
+      'Design the brand identities, logos and social creatives that keep every channel consistent.',
+    ],
+    tags: ['Social Media Management', 'Content Strategy', 'Photography', 'Videography', 'Brand Identity', 'Graphic Design'],
+  },
+  {
+    role: 'ICT & Digital Media Intern',
+    org: 'Peak Moments',
+    orgDetail: 'PM · PMR · ILM',
+    period: 'Dec 2025 — Aug 2026',
+    points: [
+      'Managed social media strategy and content for three photography brands: Peak Moments, Peak Moments by Rumesh and I Like Media.',
+      'Photographed and filmed boutique weddings and corporate events, through to editing and colour grading.',
+      'Designed and built all three official brand websites, keeping one visual language across the group.',
     ],
     tags: [
       'Sony Alpha A7 III', 'Canon EOS R6', 'DJI Air 3S', 'DJI Ronin',
       'DaVinci Resolve', 'Lightroom Classic', 'Premiere Pro', 'Photoshop',
     ],
-  },
-  {
-    role: 'Social Media Designer & Freelance Graphic Designer',
-    org: 'Freelance',
-    period: '2021 — Present',
-    current: true,
-    points: [
-      'Designed brand-aligned logos, digital assets and complete content strategies for a range of clients.',
+    links: [
+      { label: 'Read the case study', icon: 'fa-solid fa-arrow-right', url: 'case-study.html?slug=peak-moments-group', internal: true },
     ],
-    tags: ['Brand Identity', 'Social Media Design', 'Content Strategy'],
   },
   {
     role: 'Trainee Banker',
@@ -72,27 +59,27 @@ window.SITE.education = [
 
 window.SITE.expertise = [
   {
-    title: 'Full-stack Engineering',
-    icon: 'fa-solid fa-layer-group',
-    summary: 'Production web apps on the MERN stack, including real-time features.',
-    items: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.IO', 'Tailwind CSS'],
-  },
-  {
-    title: 'Mobile & Cloud',
-    icon: 'fa-solid fa-cloud',
-    summary: 'Cross-platform apps, plus deployment and storage in the cloud.',
-    items: ['React Native', 'Expo', 'Vercel', 'Render', 'Cloudflare R2'],
-  },
-  {
-    title: 'Digital Media & Brand',
+    title: 'Social Media Strategy',
     icon: 'fa-solid fa-bullhorn',
-    summary: 'Strategy, identity and content that make brands look and perform their best.',
-    items: ['Digital Media Strategy', 'Social Media Management', 'UI/UX Design', 'Brand Identity'],
+    summary: 'Channel strategy, content planning and campaigns built around what the brand needs to grow.',
+    items: ['Social Media Management', 'Content Strategy', 'Content Planning', 'Campaigns & Giveaways', 'Paid Ads'],
   },
   {
-    title: 'Visual Production & 3D',
+    title: 'Content Production',
     icon: 'fa-solid fa-camera-retro',
-    summary: 'Photography, film and motion, from the shoot through to the final grade.',
-    items: ['Event Photography', 'Videography', 'Colour Grading', 'Autodesk Maya', 'Procedural Animation'],
+    summary: 'I shoot, film and edit the content myself, from the first frame to the final colour grade.',
+    items: ['Photography', 'Videography', 'Reels & Short-form', 'Editing', 'Colour Grading'],
+  },
+  {
+    title: 'Design & Brand Identity',
+    icon: 'fa-solid fa-pen-nib',
+    summary: 'Logos, brand systems and social creatives that make every post look like the same brand.',
+    items: ['Brand Identity', 'Logo Design', 'Social Media Design', 'Print & Merch'],
+  },
+  {
+    title: 'Web, as a bonus',
+    icon: 'fa-solid fa-code',
+    summary: 'When the campaign needs somewhere to land, I build it: websites, booking flows and simple business tools.',
+    items: ['Website Design', 'Booking Websites', 'SEO', 'React'],
   },
 ];

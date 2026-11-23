@@ -1,10 +1,12 @@
 /*
- * Projects — rendered in the order listed here.
+ * Web builds — rendered in the order listed here, in the compact
+ * "Web builds" section near the bottom of the home page. Social media and
+ * content work lives in case-studies.js instead.
  *
  * Fields
  *   slug         URL id → project.html?slug=<slug>
  *   group        'client' (highlighted real-world work) | 'core' (technical builds)
- *   categories   used by the filter bar on the home page
+ *   categories   tags (client, fullstack, ecommerce, realtime, mobile)
  *   links        { live, github } — omit or leave null to hide a button
  *   image        screenshot (assets/img/projects/…), shown inside a browser frame.
  *                While null, an elegant CSS wireframe is drawn instead.
@@ -13,15 +15,6 @@
  *                hue:    0–360, tints the card's ambient glow
  */
 window.SITE = window.SITE || {};
-
-window.SITE.projectFilters = [
-  { id: 'all', label: 'All work' },
-  { id: 'client', label: 'Client work' },
-  { id: 'fullstack', label: 'Full-stack' },
-  { id: 'ecommerce', label: 'E-commerce' },
-  { id: 'realtime', label: 'Real-time' },
-  { id: 'mobile', label: 'Mobile' },
-];
 
 window.SITE.projects = [
   /* ------------------------------------------------ Highlighted client work */
@@ -135,27 +128,6 @@ window.SITE.projects = [
     placeholder: { layout: 'shop', hue: 330, monogram: 'KL' },
   },
   {
-    slug: 'tranquil-rest',
-    title: 'Tranquil Rest Kosnathota',
-    kicker: 'Boutique Guest House',
-    group: 'core',
-    categories: ['client'],
-    role: 'Design & Development',
-    summary:
-      'The official web platform for a boutique guest house, with direct WhatsApp booking and a 100 Lighthouse SEO score.',
-    description:
-      'The official website for Tranquil Rest, a boutique guest house in Kosnathota. Guests can browse rooms and book directly over WhatsApp, and the build is tuned for search with a perfect Lighthouse SEO score.',
-    highlights: [
-      'Direct WhatsApp booking flow — no third-party booking fees',
-      '100 / 100 Lighthouse SEO score',
-      'Fast React + Vite build deployed on Vercel',
-    ],
-    stack: ['React (Vite)', 'Tailwind CSS', 'SEO', 'Vercel'],
-    links: { live: 'https://tranquil-rest.vercel.app/' },
-    image: 'assets/img/projects/tranquil-rest.webp',
-    placeholder: { layout: 'site', hue: 158, monogram: 'TR' },
-  },
-  {
     slug: 'sri-lankan-dam',
     title: 'Sri Lankan Dam Multiplayer',
     kicker: 'Real-time Board Game',
@@ -197,28 +169,5 @@ window.SITE.projects = [
     links: { live: 'https://facet-seven-xi.vercel.app/', github: 'https://github.com/ShavinduR/GEM-CITY' },
     image: 'assets/img/projects/facet.webp',
     placeholder: { layout: 'shop', hue: 44, monogram: 'FA' },
-  },
-  {
-    slug: 'bizmax',
-    title: 'BizMax Solutions',
-    kicker: 'My Company · Business Website',
-    group: 'core',
-    feature: true, // wide card: ends the grid on a full row
-    categories: [],
-    role: 'Founder · Design & Development',
-    summary:
-      'The website for my own digital agency, BizMax Solutions: a bold, conversion-focused site that presents our services and pricing and turns visitors into WhatsApp enquiries.',
-    description:
-      'BizMax Solutions is the digital growth agency I founded to help Sri Lankan businesses go digital with confidence. I designed and built its website to explain what we offer (brand development, website design and digital creation), show how we work (Deep Dive → Strategy → Launch), and make starting a project as simple as a WhatsApp message.',
-    highlights: [
-      'Home, Services and Pricing pages with a bold orange-and-black brand system',
-      '“Start Project” enquiry form with a service selector, plus a floating WhatsApp button',
-      'Clear three-step process section that explains how projects run',
-      'Fast static build, hosted on GitHub Pages',
-    ],
-    stack: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
-    links: { live: 'https://shavindur.github.io/BizMax/', github: 'https://github.com/ShavinduR/BizMax' },
-    image: 'assets/img/projects/bizmax.webp',
-    placeholder: { layout: 'site', hue: 24, monogram: 'BM' },
   },
 ];

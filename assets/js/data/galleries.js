@@ -48,8 +48,8 @@ window.SITE.galleries = {
             src: 'assets/img/brands/bizmax/bizmax-logo.webp',
             alt: 'BizMax Solutions logo: a tilted, rounded black hash symbol with an orange square at its centre, above a rounded BizMax Solutions wordmark',
             title: 'BizMax Solutions',
-            kicker: 'My Agency · Brand Identity',
-            text: 'Logo for BizMax Solutions, the digital growth agency I founded. A bold, tilted, rounded hash symbol frames an orange square at its centre, paired with a friendly rounded wordmark in black. The orange accent carries through the company’s website.',
+            kicker: 'Digital Agency · Brand Identity',
+            text: 'Logo for BizMax Solutions, a digital growth agency. A bold, tilted, rounded hash symbol frames an orange square at its centre, paired with a friendly rounded wordmark in black, with the orange accent as the brand’s signature colour.',
           },
           {
             src: 'assets/img/branding/space-billiards/space-billiards-logo.webp',

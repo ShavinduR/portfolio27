@@ -36,41 +36,121 @@ window.RENDER = (function () {
   /* ============================================================ Home page */
   const expertise = () => (SITE.expertise || []).map(UI.expertiseCard).join('');
 
+  /** Featured case studies ("Selected work"). */
+  const work = () => {
+    const list = SITE.caseStudies || [];
+    return list.map((cs, i) => UI.caseCard(cs, i, list.length)).join('');
+  };
+
+  /** Web builds: compact cards, client sites first, then personal builds. */
   function projects() {
     const list = SITE.projects || [];
-    const filters = SITE.projectFilters || [];
-    const counts = Object.fromEntries(
-      filters.map((f) => [f.id, f.id === 'all' ? list.length : list.filter((p) => p.categories.includes(f.id)).length])
-    );
-    return `
-      <div class="filter-bar" role="toolbar" aria-label="Filter projects">
-        ${filters
-          .filter((f) => counts[f.id] > 0)
-          .map((f, i) => `<button type="button" class="filter-btn" data-filter="${f.id}" aria-pressed="${i === 0}">
-              ${f.label}<span>${counts[f.id]}</span></button>`)
-          .join('')}
-      </div>
-      <div class="project-grid" data-grid>
-        ${list
-          .map((p, i) => {
-            const prev = list[i - 1];
-            const label = !prev || prev.group !== p.group
-              ? `<p class="group-label">${p.group === 'client' ? 'Highlighted · Client work' : 'Technical builds'}</p>`
-              : '';
-            return label + UI.projectCard(p, i);
-          })
-          .join('')}
-      </div>
-      <p class="sr-only" aria-live="polite" data-filter-status></p>`;
+    return list
+      .map((p, i) => {
+        const prev = list[i - 1];
+        const label = !prev || prev.group !== p.group
+          ? `<p class="group-label">${p.group === 'client' ? 'Client websites' : 'Personal builds'}</p>`
+          : '';
+        return label + UI.projectCard(p, i, { compact: true });
+      })
+      .join('');
   }
 
+  /** Testimonials — empty string while there are none (section stays hidden). */
+  const testimonials = () => (SITE.testimonials || []).map(UI.testimonialCard).join('');
+
   const clients = () => (SITE.clients || []).map((c) => `
-      <li><a href="${esc(c.href)}" class="client-logo${c.knockout ? ' is-knockout' : ''}${c.tall ? ' is-tall' : ''}" title="${esc(c.name)}">
+      <li><a href="${esc(c.href)}" class="client-logo${c.knockout ? ' is-knockout' : ''}${c.tall ? ' is-tall' : ''}${c.boost ? ' is-boost' : ''}" title="${esc(c.name)}">
         <img ${UI.imgAttrs(c.logo, '160px')} alt="${esc(c.name)} logo" loading="lazy" decoding="async">
       </a></li>`).join('');
 
   const experience = () => `<ol class="timeline">${(SITE.experience || []).map(UI.timelineItem).join('')}</ol>`;
   const education = () => (SITE.education || []).map(UI.educationCard).join('');
+
+  /* ===================================================== Case-study page */
+  function caseStudy(slug) {
+    const list = SITE.caseStudies || [];
+    const i = list.findIndex((c) => c.slug === slug);
+    if (i === -1) return '';
+    const cs = list[i];
+    const prev = list[(i - 1 + list.length) % list.length];
+    const next = list[(i + 1) % list.length];
+    const results = UI.publishedResults(cs);
+    const has = (src) => Boolean((SITE.images || {})[src]);
+    const gallery = (cs.gallery || []).filter((g) => has(g.src));
+    const facts = [['Client', cs.client], ['Role', cs.role], ['Timeframe', cs.timeframe], ['Channels', cs.channels]]
+      .filter(([, v]) => v);
+    const figure = (g, sizes) => `
+      <figure class="cs-figure${g.fit === 'contain' ? ' is-contain' : ''}">
+        <img ${UI.imgAttrs(g.src, sizes)} alt="${esc(g.alt)}" loading="lazy" decoding="async">
+        ${g.title ? `<figcaption>${esc(g.title)}</figcaption>` : ''}
+      </figure>`;
+    const step = (n, label, body) => `
+      <div class="cs-step reveal">
+        <p class="cs-step-label"><span>${UI.pad(n)}</span>${label}</p>
+        <div>${body}</div>
+      </div>`;
+
+    return `
+    <section class="container-x pt-[calc(var(--nav-h)+3.5rem)]">
+      <a href="index.html#work" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Selected work
+      </a>
+      <p class="mt-10 project-index">Case study ${UI.pad(i + 1)} / ${UI.pad(list.length)}</p>
+      <p class="project-kicker !text-accent">${esc(cs.kicker)}</p>
+      <h1 class="mt-4 font-heading font-extrabold tracking-tightest leading-[1] text-[clamp(2.5rem,7vw,5.5rem)]">${esc(cs.title)}<span class="text-accent">.</span></h1>
+      <p class="mt-6 max-w-2xl text-lg text-muted leading-relaxed">${esc(cs.summary)}</p>
+      ${facts.length ? `<dl class="cs-meta mt-12 py-8 border-y border-line" style="--n:${facts.length}">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>` : ''}
+      ${UI.resultTiles(results, 'mt-10')}
+    </section>
+
+    ${cs.cover && has(cs.cover.src) ? `
+    <section class="container-x mt-14 animate-fade-up">
+      <div class="cs-cover${cs.cover.fit === 'contain' ? ' is-contain' : ''}" style="--h:${cs.hue ?? 80}">
+        <img ${UI.imgAttrs(cs.cover.src, '(min-width: 1280px) 1200px, 100vw')} alt="${esc(cs.cover.alt)}" fetchpriority="high" decoding="async">
+      </div>
+    </section>` : ''}
+
+    <section class="container-x section !pt-20 space-y-16 md:space-y-20">
+      ${step(1, 'The problem', `<p class="cs-lead">${esc(cs.problem)}</p>`)}
+      ${step(2, 'What I did', `<ol class="cs-actions">${(cs.actions || []).map((a) => `<li>${esc(a)}</li>`).join('')}</ol>
+        ${cs.bonus ? `<aside class="cs-bonus"><p class="cs-bonus-title"><i class="fa-solid fa-plus" aria-hidden="true"></i> ${esc(cs.bonus.title)}</p><p class="mt-3 text-muted leading-relaxed">${esc(cs.bonus.text)}</p></aside>` : ''}`)}
+      ${step(3, 'The result', `<p class="cs-lead">${esc(cs.outcome)}</p>
+        ${cs.quote ? UI.testimonialCard(cs.quote).replace('reveal', 'mt-10') : ''}`)}
+    </section>
+
+    ${gallery.length ? `
+    <section class="container-x pb-20">
+      <p class="group-label mb-8">The work</p>
+      <div class="cs-gallery" data-count="${gallery.length}">${gallery.map((g) => figure(g, '(min-width: 1024px) 50vw, 100vw')).join('')}</div>
+    </section>` : ''}
+
+    <section class="container-x pb-20 grid md:grid-cols-2 gap-10">
+      ${(cs.tools || []).length ? `<div>
+        <p class="group-label mb-5">Tools &amp; skills</p>
+        <ul class="flex flex-wrap gap-2">${cs.tools.map((t) => `<li class="chip">${esc(t)}</li>`).join('')}</ul>
+      </div>` : ''}
+      ${(cs.links || []).length ? `<div>
+        <p class="group-label mb-5">See it live</p>
+        <ul class="flex flex-wrap gap-2">${cs.links.map((l) => `
+          <li><a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost !py-2.5 !px-4 text-xs">
+            ${esc(l.label)} <i class="fa-solid fa-arrow-up-right-from-square text-accent" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span>
+          </a></li>`).join('')}</ul>
+      </div>` : ''}
+    </section>
+
+    ${list.length > 1 ? `
+    <nav class="container-x pb-24 grid sm:grid-cols-2 gap-4 cs-nav" aria-label="More case studies">
+      <a href="case-study.html?slug=${encodeURIComponent(prev.slug)}">
+        <span class="project-index"><i class="fa-solid fa-arrow-left mr-2" aria-hidden="true"></i>Previous</span>
+        <span class="block mt-3 font-heading font-bold text-xl">${esc(prev.title)}</span>
+      </a>
+      <a href="case-study.html?slug=${encodeURIComponent(next.slug)}" class="sm:text-right">
+        <span class="project-index">Next<i class="fa-solid fa-arrow-right ml-2" aria-hidden="true"></i></span>
+        <span class="block mt-3 font-heading font-bold text-xl">${esc(next.title)}</span>
+      </a>
+    </nav>` : ''}`;
+  }
 
   /* ======================================================= Gallery pages */
   // The first image is the LCP candidate (high priority); the rest of the first
@@ -275,5 +355,5 @@ window.RENDER = (function () {
     </section>`;
   }
 
-  return { hash, hydrate, clients, expertise, projects, experience, education, gallery };
+  return { hash, hydrate, clients, expertise, work, projects, testimonials, experience, education, gallery, caseStudy };
 })();

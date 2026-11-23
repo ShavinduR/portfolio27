@@ -497,3 +497,140 @@
   .lb-stage { padding-bottom: 3.5rem; }
   .lb-stage img { max-height: calc(100dvh - 13rem); }
 }
+
+/* =========================================================================
+   Selected work — case-study cards (home)
+   ========================================================================= */
+.case-card {
+  position: relative; isolation: isolate;
+  display: flex; flex-direction: column;
+  border-radius: 1.5rem; overflow: hidden;
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--line));
+  transition: transform .5s cubic-bezier(.2,.7,.2,1), border-color .35s ease, box-shadow .5s ease;
+}
+.case-card::before { /* cursor spotlight */
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgb(var(--fg) / .06), transparent 45%);
+  opacity: 0; transition: opacity .4s ease;
+}
+.case-card:hover { transform: translateY(-4px); border-color: rgb(var(--accent) / .45); box-shadow: 0 30px 60px -30px rgb(var(--shadow)); }
+.case-card:hover::before { opacity: 1; }
+.case-card:focus-within { border-color: rgb(var(--accent) / .6); }
+.case-card .project-body, .case-body { position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1; padding: 1.6rem 1.75rem 1.5rem; }
+.case-card .project-summary { margin-bottom: 1.5rem; }
+.case-card:hover .project-cta { color: rgb(var(--accent)); }
+.case-card:hover .project-cta i { transform: translateX(4px); }
+
+/* Visual: the client's mark on a softly tinted panel */
+.case-visual {
+  position: relative; display: grid; place-items: center; aspect-ratio: 16 / 10; overflow: hidden;
+  background:
+    radial-gradient(80% 70% at 85% 0%, hsl(var(--h) 70% 60% / .20), transparent 60%),
+    radial-gradient(60% 60% at 0% 110%, hsl(var(--h) 60% 50% / .10), transparent 60%),
+    linear-gradient(180deg, rgb(var(--elevated)), rgb(var(--surface)));
+  border-bottom: 1px solid rgb(var(--line));
+}
+.case-visual::after { /* film grain, as on the project thumbnails */
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.case-logo img {
+  width: auto; height: auto; max-width: min(56%, 13rem); max-height: 7.5rem; margin: auto; object-fit: contain;
+  filter: grayscale(1) invert(1) contrast(1.15); mix-blend-mode: screen; opacity: .9;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.case-logo { display: grid; place-items: center; width: 100%; height: 100%; }
+.case-logo.is-knockout img { filter: grayscale(1) brightness(1.25); mix-blend-mode: normal; opacity: .8; max-height: 6.5rem; }
+:root:not(.dark) .case-logo img { filter: grayscale(1) contrast(1.1); mix-blend-mode: multiply; opacity: .85; }
+:root:not(.dark) .case-logo.is-knockout img { filter: grayscale(1) brightness(.4); mix-blend-mode: normal; }
+.case-card:hover .case-logo img { transform: scale(1.05); }
+.case-mono { font: 800 clamp(1.5rem, 3vw, 2.25rem)/1 Montserrat, sans-serif; letter-spacing: -.03em; color: rgb(var(--fg) / .85); }
+
+/* Published metrics on the card (placeholders never render) */
+.case-stats { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: -.5rem 0 1.5rem; font-size: .8rem; color: rgb(var(--muted)); }
+.case-stats strong { color: rgb(var(--accent)); font: 700 1rem/1 Montserrat, sans-serif; margin-right: .2rem; font-variant-numeric: tabular-nums; }
+
+/* =========================================================================
+   Case-study page
+   ========================================================================= */
+.cs-meta[style*="--n"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 768px) { .cs-meta[style*="--n"] { grid-template-columns: repeat(var(--n), minmax(0, 1fr)); } }
+
+/* Headline results */
+.cs-results { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .cs-results { grid-template-columns: repeat(3, minmax(0, 1fr)); } } /* fixed 3-up: one published number doesn't stretch */
+.cs-result { padding: 1.5rem 1.6rem; border-radius: 1.25rem; border: 1px solid rgb(var(--line)); background: rgb(var(--surface)); display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+.cs-result dd { font: 800 clamp(2.1rem, 4.5vw, 3rem)/1 Montserrat, sans-serif; letter-spacing: -.03em; color: rgb(var(--accent)); font-variant-numeric: tabular-nums; }
+.cs-result dt { margin-top: .75rem; font-size: .88rem; color: rgb(var(--muted)); }
+.cs-result-note { order: -1; margin-top: .35rem; font-size: .75rem; color: rgb(var(--muted) / .75); }
+
+/* Cover */
+.cs-cover { overflow: hidden; border-radius: 1.75rem; border: 1px solid rgb(var(--line)); background: rgb(var(--surface)); }
+.cs-cover img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
+.cs-cover.is-contain {
+  display: grid; place-items: center; aspect-ratio: 21 / 9;
+  background:
+    radial-gradient(70% 80% at 80% 0%, hsl(var(--h) 70% 60% / .18), transparent 60%),
+    linear-gradient(180deg, rgb(var(--elevated)), rgb(var(--surface)));
+}
+.cs-cover.is-contain img { width: auto; max-width: 60%; height: clamp(9rem, 22vw, 18rem); aspect-ratio: auto; object-fit: contain; filter: grayscale(1) invert(1) contrast(1.1); mix-blend-mode: screen; }
+:root:not(.dark) .cs-cover.is-contain img { filter: none; mix-blend-mode: multiply; }
+
+/* Problem → What I did → Result */
+.cs-step { display: grid; gap: 1.25rem; }
+@media (min-width: 1024px) { .cs-step { grid-template-columns: 1fr 2.2fr; gap: 4rem; } }
+.cs-step-label { display: flex; align-items: baseline; gap: .85rem; font: 700 1.1rem/1.2 Montserrat, sans-serif; letter-spacing: -.01em; }
+.cs-step-label span { font: 600 .72rem/1 Montserrat, sans-serif; letter-spacing: .2em; color: rgb(var(--accent)); }
+@media (min-width: 1024px) { .cs-step-label { position: sticky; top: calc(var(--nav-h) + 2rem); align-self: start; } }
+.cs-lead { font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.6; text-wrap: pretty; }
+.cs-actions { counter-reset: act; }
+.cs-actions li {
+  counter-increment: act; position: relative; padding: 1.15rem 0 1.15rem 3rem;
+  border-bottom: 1px solid rgb(var(--line)); color: rgb(var(--muted)); line-height: 1.7;
+}
+.cs-actions li:first-child { padding-top: 0; }
+.cs-actions li:first-child::before { top: .15rem; }
+.cs-actions li::before {
+  content: counter(act, decimal-leading-zero); position: absolute; left: 0; top: 1.3rem;
+  font: 600 .72rem/1 Montserrat, sans-serif; letter-spacing: .15em; color: rgb(var(--accent));
+}
+.cs-bonus {
+  margin-top: 2rem; padding: 1.5rem 1.6rem; border-radius: 1.25rem;
+  border: 1px solid rgb(var(--accent) / .35); background: rgb(var(--accent) / .05);
+}
+.cs-bonus-title { display: flex; align-items: center; gap: .6rem; font: 700 1rem/1.35 Montserrat, sans-serif; }
+.cs-bonus-title i { color: rgb(var(--accent)); font-size: .8rem; }
+
+/* Gallery */
+.cs-gallery { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .cs-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .cs-gallery[data-count="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.cs-figure { overflow: hidden; border-radius: 1.25rem; border: 1px solid rgb(var(--line)); background: rgb(var(--surface)); }
+.cs-figure img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.cs-figure.is-contain img { object-fit: contain; object-position: center; padding: 1.75rem; background: #fff; }
+.cs-figure figcaption { padding: .9rem 1.15rem; font-size: .8rem; color: rgb(var(--muted)); border-top: 1px solid rgb(var(--line)); }
+
+/* Testimonial */
+.quote-card { padding: 2rem; border-radius: 1.5rem; border: 1px solid rgb(var(--line)); background: rgb(var(--surface)); }
+
+/* =========================================================================
+   Web builds — compact project cards
+   ========================================================================= */
+@media (min-width: 768px) {
+  .project-grid.is-compact .group-label + .is-client { grid-column: auto; }
+}
+@media (min-width: 1024px) {
+  .project-grid.is-compact { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.25rem; }
+  .project-grid.is-compact .project-card { grid-column: span 3; }
+  .project-grid.is-compact .project-card.is-client { grid-column: span 4; }
+}
+.project-card.is-compact .project-body { padding: 1.25rem 1.35rem 1.15rem; }
+.project-card.is-compact .project-kicker { margin-top: .85rem; font-size: .64rem; }
+.project-card.is-compact .project-title { font-size: 1.15rem; }
+.project-card.is-compact .project-summary { font-size: .84rem; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.project-card.is-compact .project-stack { margin: 1rem 0 1.15rem; }
+.project-card.is-compact .project-actions { padding-top: 1rem; }
+
+/* Client strip: fine-lined logos drawn a little larger and brighter */
+.client-logo.is-boost img { max-height: 5.25rem; max-width: min(100%, 9.5rem); opacity: .85; }

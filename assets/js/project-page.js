@@ -11,6 +11,13 @@
   const slug = new URLSearchParams(location.search).get('slug');
   const i = projects.findIndex((p) => p.slug === slug);
 
+  // Moved to the case studies (or retired): keep old links working.
+  const moved = { 'tranquil-rest': 'case-study.html?slug=tranquil-rest' };
+  if (i === -1 && moved[slug]) {
+    location.replace(moved[slug]);
+    return;
+  }
+
   if (i === -1) {
     document.title = `Project not found | ${profile.name}`;
     root.innerHTML = `
@@ -18,7 +25,7 @@
         <span class="eyebrow">404</span>
         <h1 class="section-title mt-5">Project not found.</h1>
         <p class="mt-4 text-muted">That case study doesn't exist or has moved.</p>
-        <a href="index.html#projects" class="btn btn-primary mt-8"><i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> All projects</a>
+        <a href="index.html#projects" class="btn btn-primary mt-8"><i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Web builds</a>
       </section>`;
     return;
   }
@@ -42,7 +49,7 @@
   root.innerHTML = `
     <section class="container-x pt-[calc(var(--nav-h)+3.5rem)]">
       <a href="index.html#projects" class="inline-flex items-center gap-2 text-sm text-muted hover:text-fg transition">
-        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> All projects
+        <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i> Web builds
       </a>
       <div class="mt-10 flex flex-wrap items-center gap-3">
         <span class="project-index">${UI.pad(i + 1)} / ${UI.pad(projects.length)}</span>

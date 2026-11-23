@@ -10,23 +10,21 @@ window.SITE.profile = {
   shortName: 'shavindu',
   url: 'https://shavindur.github.io/portfolio27/', // live site — used for share tags, canonical URLs and sitemap.xml
   location: 'Sri Lanka',
-  headline: 'Creative Technologist',
-  roles: ['Social Media Manager', 'Web Developer'],
-  tagline: 'Building Premium Digital Experiences',
+  headline: 'Social Media Strategist & Visual Creator',
+  tagline: 'I plan the strategy, shoot the content and build the page it lands on.',
   summary:
-    'I design and engineer full-stack products on the MERN stack, run digital media strategy for brands, and bring ideas to life through photography, video and 3D.',
+    'I plan social media strategy, then shoot, edit and design the content myself, and build the website when a brand needs one.',
   cv: 'MYCV.pdf',
   portrait: 'assets/img/home/shavindu-portrait.webp',
   contact: {
     email: 'shavindu.rashmika928@gmail.com',
-    phones: ['+94 74 23 27 807', '+94 71 10 98 429'],
+    phones: ['+94 71 109 8429'],
     whatsapp: 'https://wa.me/94711098429',
   },
   socials: [
-    { label: 'GitHub', icon: 'fab fa-github', url: 'https://github.com/ShavinduR' },
     { label: 'LinkedIn', icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/shavindu-rashmika-rathnayake' },
-    { label: 'Facebook', icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/share/1DWMwvZ1x4/?mibextid=wwXIfr' },
-    { label: 'Discord', icon: 'fab fa-discord', url: 'https://discord.com/users/1043745550467616788' },
+    { label: 'Instagram', icon: 'fab fa-instagram', url: 'https://www.instagram.com/_shavi.boy_/' },
+    { label: 'GitHub', icon: 'fab fa-github', url: 'https://github.com/ShavinduR' },
   ],
   stack: {
     core: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Socket.IO'],
@@ -46,13 +44,14 @@ window.SITE.profile = {
  * that blend into the page; `href` links to the related project or case study.
  * `tall: true` gives square/tall logos more height so all marks look balanced.
  * `knockout: true` = a transparent logo (lettering cut out of a shape), tinted instead of inverted.
+ * `boost: true` = a fine-lined logo that reads faint next to the others; drawn larger and brighter.
  */
 window.SITE.clients = [
-  { name: 'Peak Moments', logo: 'assets/img/clients/peak-moments-logo-knockout.webp', href: 'project.html?slug=peak-moments', knockout: true },
-  { name: 'Peak Moments by Rumesh', logo: 'assets/img/clients/peak-moments-by-rumesh-logo-strip.webp', href: 'project.html?slug=peak-moments-by-rumesh', tall: true },
-  { name: 'I Like Media', logo: 'assets/img/clients/i-like-media-logo-strip.webp', href: 'project.html?slug=i-like-media' },
-  { name: 'Tranquil Rest Kosnathota', logo: 'assets/img/clients/tranquil-rest-logo-strip.webp', href: 'branding.html#tranquil-rest', tall: true },
-  { name: 'Space Billiards', logo: 'assets/img/clients/space-billiards-logo-strip.webp', href: 'branding.html#space-billiards' },
+  { name: 'Peak Moments', logo: 'assets/img/clients/peak-moments-logo-knockout.webp', href: 'case-study.html?slug=peak-moments-group', knockout: true },
+  { name: 'Peak Moments by Rumesh', logo: 'assets/img/clients/peak-moments-by-rumesh-logo-strip.webp', href: 'case-study.html?slug=peak-moments-group', tall: true, boost: true },
+  { name: 'I Like Media', logo: 'assets/img/clients/i-like-media-logo-strip.webp', href: 'case-study.html?slug=peak-moments-group' },
+  { name: 'Tranquil Rest Kosnathota', logo: 'assets/img/clients/tranquil-rest-logo-strip.webp', href: 'case-study.html?slug=tranquil-rest', tall: true, boost: true },
+  { name: 'Space Billiards', logo: 'assets/img/clients/space-billiards-logo-strip.webp', href: 'case-study.html?slug=space-billiards' },
 ];
 
 /*
@@ -61,10 +60,9 @@ window.SITE.clients = [
  * desktop nav, mobile menu, and footer links from this list.
  */
 window.SITE.nav = [
-  { id: 'home', label: 'Home' },
-  { id: 'skills', label: 'Expertise' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'experience', label: 'Experience' },
+  { id: 'work', label: 'Work' },
+  { id: 'skills', label: 'Skills' },
   { id: 'design', label: 'Creative' },
+  { id: 'experience', label: 'Experience' },
   { id: 'contact', label: 'Contact' },
 ];

@@ -1,6 +1,6 @@
 # Shavindu Rashmika — Portfolio
 
-Portfolio of **W.S.R. Rathnayaka (Shavindu Rashmika)**, Creative Technologist, Social Media Manager and Web Developer.
+Portfolio of **W.S.R. Rathnayaka (Shavindu Rashmika)**, Social Media Strategist & Visual Creator.
 
 It's a static site: plain HTML, CSS and JavaScript with no framework. Everything the site needs is committed to the repo, including the built CSS and prerendered HTML, so **any static host works with no build step** (Vercel, Netlify, GitHub Pages, Cloudflare Pages).
 
@@ -15,14 +15,16 @@ npm run serve      # http://localhost:8000
 
 ```
 index.html                 Home: hero, expertise, projects, experience, creative, contact
-project.html               Case-study template → project.html?slug=customt
+case-study.html            Social/content case study → case-study.html?slug=tranquil-rest
+project.html               Web build page → project.html?slug=customt
 logo.html … portrait.html  Creative galleries (thin shells, content comes from data)
 404.html                   Not-found page
 
 assets/
   js/data/
     profile.js             Name, contact, socials, nav links
-    projects.js            Projects, in display order
+    case-studies.js        Featured case studies (Problem → Action → Result), testimonials
+    projects.js            Web builds, in display order
     experience.js          Experience, education, expertise
     galleries.js           Creative gallery pages and client work
     images.js              AUTO-GENERATED image sizes (don't edit)
@@ -49,6 +51,19 @@ scripts/
 ```
 
 ## Common tasks
+
+### Fill in case-study numbers
+
+Metrics live in `assets/js/data/case-studies.js` under `results`. A placeholder looks like:
+
+```js
+{ value: '', label: 'Follower growth', todo: true },
+```
+
+Placeholders are hidden on the live site, and `npm run build` lists every one that's
+still open. To publish a number, set `value` (e.g. `'+240%'`) and delete `todo: true`,
+then run `npm run build`. Add a client quote with `quote: { text, name, role }` on a
+case study, or to `window.SITE.testimonials` to show the "Kind words" section.
 
 ### Edit text, projects or experience
 Edit the file in `assets/js/data/`, then run:

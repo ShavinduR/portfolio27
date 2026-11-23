@@ -21,6 +21,7 @@ const ROOT = new URL('..', import.meta.url).pathname;
 const SCRIPTS = [
   'assets/js/data/profile.js',
   'assets/js/data/projects.js',
+  'assets/js/data/case-studies.js',
   'assets/js/data/experience.js',
   'assets/js/data/galleries.js',
   'assets/js/data/images.js',
@@ -71,10 +72,11 @@ const today = new Date().toISOString().slice(0, 10);
 const urls = [
   ['', '1.0'],
   ...pages
-    .filter((p) => !['index.html', '404.html', 'project.html'].includes(p))
+    .filter((p) => !['index.html', '404.html', 'project.html', 'case-study.html'].includes(p))
     .sort()
     .map((p) => [p, '0.7']),
-  ...ctx.window.SITE.projects.map((p) => [`project.html?slug=${encodeURIComponent(p.slug)}`, '0.8']),
+  ...ctx.window.SITE.caseStudies.map((c) => [`case-study.html?slug=${encodeURIComponent(c.slug)}`, '0.9']),
+  ...ctx.window.SITE.projects.map((p) => [`project.html?slug=${encodeURIComponent(p.slug)}`, '0.6']),
 ];
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -83,3 +85,16 @@ ${urls.map(([path, pr]) => `  <url><loc>${SITE_URL}${path.replace(/&/g, '&amp;')
 `;
 await writeFile(join(ROOT, 'sitemap.xml'), xml);
 console.log(`sitemap.xml: ${urls.length} URLs`);
+
+/* ------------------------------------------------ Case-study placeholders */
+// Placeholder metrics (`todo: true`) are hidden on the live site. List them
+// here on every build so none are forgotten.
+const todos = [];
+for (const c of ctx.window.SITE.caseStudies) {
+  for (const r of c.results || []) if (r.todo || !String(r.value || '').trim()) todos.push(`${c.title} → ${r.label}`);
+  if (!c.timeframe) todos.push(`${c.title} → timeframe (hidden until filled in)`);
+}
+if (todos.length) {
+  console.warn(`\n⚠  ${todos.length} case-study placeholder(s) to fill in (assets/js/data/case-studies.js):`);
+  todos.forEach((t) => console.warn(`   • ${t}`));
+}

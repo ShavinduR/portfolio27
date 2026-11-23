@@ -74,7 +74,7 @@
         <div class="grid gap-12 md:grid-cols-[1.4fr_1fr]">
           <div>
             <span class="eyebrow">Contact</span>
-            <h2 class="section-title mt-5">Let's build something<br><span class="text-accent">premium.</span></h2>
+            <h2 class="section-title mt-5">Let's make<br>your brand<br><span class="text-accent">worth following.</span></h2>
             <p class="mt-6 max-w-lg text-muted leading-relaxed">${profile.summary}</p>
             <div class="mt-8 flex flex-wrap gap-3">
               <a href="mailto:${profile.contact.email}" class="btn btn-primary">
