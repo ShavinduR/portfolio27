@@ -634,9 +634,3 @@
 
 /* Client strip: fine-lined logos drawn a little larger and brighter */
 .client-logo.is-boost img { max-height: 5.25rem; max-width: min(100%, 9.5rem); opacity: .85; }
-
-/* Hero skill chips that jump to the matching section */
-a.chip-link { transition: color .2s ease, border-color .2s ease, background-color .2s ease; }
-a.chip-link:hover, a.chip-link:focus-visible { color: rgb(var(--fg)); border-color: rgb(var(--accent) / .6); }
-a.chip-link i { font-size: .6rem; opacity: .45; transform: translateY(-1px); transition: opacity .2s ease, transform .2s ease; color: rgb(var(--accent)); }
-a.chip-link:hover i, a.chip-link:focus-visible i { opacity: 1; transform: translateY(1px); }
